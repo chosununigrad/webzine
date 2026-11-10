@@ -111,6 +111,32 @@ button:focus-visible{ text-decoration:underline!important;text-decoration-thickn
 #menu .issue-article-link[href="#a9"]>span>span:nth-child(2){min-height:0!important;margin-bottom:0!important}
 @media(max-width:600px){.reading-main{grid-template-columns:76px minmax(0,1fr) 76px;gap:8px}.reading-main .reading-home{font-size:13px;gap:3px}.reading-home span{font-size:11px}.reading-prev,.reading-next{height:38px!important;min-height:38px!important}}
 </style>
+<style>
+/* Editorial refinement: compact rhythm, clear hierarchy, restrained decoration. */
+.reading-main .reading-home>.page-counter{display:inline-flex!important;flex-direction:row!important;align-items:center!important;justify-content:center!important;gap:5px!important;width:auto!important;min-width:58px!important;white-space:nowrap!important;flex-shrink:0!important}
+.reading-main .reading-home>.page-counter>span{display:inline!important;flex:0 0 auto!important;width:auto!important;min-width:0!important;white-space:nowrap!important;word-break:normal!important;overflow-wrap:normal!important;font-size:12px!important;line-height:16px!important}
+#top{font-family:'Malgun Gothic','Apple SD Gothic Neo',sans-serif;color:#201e1d}
+#top h1,#top h2,#top h3{letter-spacing:-.025em}
+#p-cover>div{padding-top:28px!important;padding-bottom:30px!important}
+#p-cover>div>div:first-child{grid-template-columns:minmax(0,1fr) 160px!important;gap:20px!important;align-items:center!important}
+#p-cover h1{font-size:clamp(30px,4.3vw,42px)!important;line-height:1.25!important;margin-top:0!important}
+#p-cover>div>div:first-child>img{max-width:160px!important;width:100%!important}
+#p-cover>div>div:first-child p{font-size:18px!important;line-height:1.6!important}
+#menu{margin-top:24px!important}
+#menu>div:has(>.issue-article-link:has(.issue-open-button)){gap:14px!important}
+#menu .issue-article-link:has(.issue-open-button){border:1px solid #d5dfe8!important;background:#fff!important}
+#menu .issue-article-link:has(.issue-open-button)>span{padding:14px!important;gap:7px!important}
+#menu .issue-article-link:has(.issue-open-button)>span>span:nth-child(2){font-size:17px!important;line-height:1.5!important;min-height:3em!important;margin-bottom:12px!important}
+#menu .issue-open-button{min-height:40px!important;font-size:15px!important;padding:8px 10px!important}
+#menu .issue-article-link[href="#a9"]{background:#f3f6fa!important;border:1px solid #d5dfe8!important;border-left:3px solid #0858a8!important}
+#top section[id^="a"]>div{padding-top:32px!important;padding-bottom:32px!important}
+#top section[id^="a"] h2{font-size:clamp(27px,3.8vw,36px)!important;line-height:1.35!important}
+#top section[id^="a"] p{line-height:1.85!important}
+#top section[id^="a"] figcaption{line-height:1.65!important;color:#55514e!important}
+#p-stats>div{padding-top:28px!important;padding-bottom:28px!important}
+#p-stats [data-count]{font-variant-numeric:tabular-nums}
+@media(max-width:600px){#p-cover>div>div:first-child{grid-template-columns:minmax(0,1fr) 90px!important;gap:12px!important}#p-cover>div>div:first-child p{font-size:15px!important}#p-cover h1{font-size:29px!important}#menu .issue-article-link:has(.issue-open-button)>span{padding:11px!important}#menu .issue-article-link:has(.issue-open-button)>span>span:nth-child(2){font-size:16px!important}#top section[id^="a"]>div{padding-top:26px!important;padding-bottom:26px!important}}
+</style>
 </head>
 <body>
 <x-dc>
@@ -961,7 +987,7 @@ button:focus-visible{ text-decoration:underline!important;text-decoration-thickn
 
 <sc-if value="{{ pageMode }}" hint-placeholder-val="{{ false }}">
   <nav id="pager" class="no-print refined-pager" aria-label="페이지 넘기기">
-<div class="reading-main"><button class="reading-prev" onClick="{{ prevPage }}" disabled="{{ atFirst }}">← 이전</button><button class="reading-home" onClick="{{ firstPage }}">첫 페이지로 가기<span>{{ pageNow }} / {{ pageMax }}</span></button><button class="reading-next" onClick="{{ nextPage }}">{{ nextLabel }} →</button></div>
+<div class="reading-main"><button class="reading-prev" onClick="{{ prevPage }}" disabled="{{ atFirst }}">← 이전</button><button class="reading-home" onClick="{{ firstPage }}">첫 페이지로 가기<span class="page-counter"><span>{{ pageNow }}</span><span aria-hidden="true">/</span><span>{{ pageMax }}</span></span></button><button class="reading-next" onClick="{{ nextPage }}">{{ nextLabel }} →</button></div>
 <div class="bottom-reading-tools"><button onClick="{{ toggleMode }}">{{ modeLabel }}</button><button onClick="{{ smaller }}" aria-label="글자 작게">글자 −</button><button onClick="{{ bigger }}" aria-label="글자 크게">글자 +</button><a href="#a7">학사 일정</a></div>
 </nav>
 </sc-if>
