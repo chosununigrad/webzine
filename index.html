@@ -93,6 +93,16 @@ button:focus-visible{ text-decoration:underline!important;text-decoration-thickn
 @media(max-width:600px){#menu>div:has(>.issue-article-link){gap:12px!important}#menu .issue-article-link>span{padding:12px!important}#menu .issue-article-link>span>span:nth-child(2){font-size:18px!important;min-height:4.65em!important}.reading-main{padding:8px 12px;gap:6px}.reading-main button{font-size:16px;padding:8px}.reading-main .reading-home{font-size:14px}.refined-pager .bottom-reading-tools button,.refined-pager .bottom-reading-tools a{padding:6px 8px}}
 @media(max-width:380px){#menu>div:has(>.issue-article-link){grid-template-columns:1fr!important}#menu .issue-article-link>span>span:nth-child(2){min-height:0!important}}
 </style>
+<style>
+/* Compact reader controls: no tall tiles, no wrapping page counter. */
+.reading-main{max-width:760px;grid-template-columns:110px minmax(0,1fr) 110px;gap:12px;padding:7px 16px;align-items:center}
+.reading-main button{height:40px;min-height:40px;padding:6px 12px;font-size:15px;line-height:1.3;white-space:nowrap}
+.reading-main .reading-home{display:flex;align-items:center;justify-content:center;gap:12px;font-size:14px;border:0;background:transparent}
+.reading-home span{display:inline!important;margin:0!important;font-size:13px;line-height:1.3;white-space:nowrap!important;word-break:normal!important;overflow-wrap:normal!important;flex-shrink:0;color:#55514e}
+.refined-pager>.bottom-reading-tools{padding:3px 10px;gap:6px;flex-wrap:nowrap}
+.refined-pager .bottom-reading-tools button,.refined-pager .bottom-reading-tools a{min-height:30px;padding:4px 10px;font-size:13px;white-space:nowrap}
+@media(max-width:600px){.reading-main{grid-template-columns:76px minmax(0,1fr) 76px;padding:6px 12px;gap:6px}.reading-main button{height:38px;min-height:38px;font-size:14px;padding:5px 8px}.reading-main .reading-home{font-size:13px;gap:8px}.reading-home span{font-size:12px}.refined-pager .bottom-reading-tools button,.refined-pager .bottom-reading-tools a{padding:4px 8px;font-size:12px}}
+</style>
 </head>
 <body>
 <x-dc>
