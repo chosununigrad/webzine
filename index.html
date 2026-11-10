@@ -642,26 +642,18 @@
         </div>
         <img loading="lazy" decoding="async" src="assets/joa-13.png" alt="" style="height:clamp(60px,9vw,84px);width:auto;display:block;flex:none;">
       </div>
-      <table style="width:100%;border-collapse:collapse;margin-top:22px;">
-        <thead>
-          <tr>
-            <th scope="col" style="text-align:left;font-size:13px;font-weight:700;color:#55514e;padding:0 12px 10px 0;border-bottom:2px solid #201e1d;">프로그램</th>
-            <th scope="col" style="text-align:right;font-size:13px;font-weight:700;color:#55514e;padding:0 0 10px;border-bottom:2px solid #201e1d;">인원</th>
-            <th scope="col" style="text-align:left;font-size:13px;font-weight:700;color:#55514e;padding:0 0 10px 18px;border-bottom:2px solid #201e1d;">내용</th>
-          </tr>
-        </thead>
-        <tbody>
-          <sc-for list="{{ people }}" as="p" hint-placeholder-count="7">
-            <tr>
-              <th scope="row" style="text-align:left;font-size:16px;font-weight:700;padding:14px 12px 14px 0;border-top:1px solid #e2dfdc;vertical-align:top;">{{ p.name }}</th>
-              <td style="text-align:right;font-size:20px;font-weight:800;color:#0858a8;padding:12px 0;border-top:1px solid #e2dfdc;white-space:nowrap;vertical-align:top;">{{ p.n }}<span style="font-size:13px;font-weight:700;color:#55514e;margin-left:2px;">{{ p.unit }}</span></td>
-              <td style="font-size:15px;line-height:1.7;color:#3a3735;padding:14px 0 14px 18px;border-top:1px solid #e2dfdc;vertical-align:top;">{{ p.text }}</td>
-            </tr>
-          </sc-for>
-        </tbody>
-      </table>
+      <div style="margin-top:22px;">
+        <div style="display:grid;grid-template-columns:minmax(0,1.3fr) 90px minmax(0,2fr);gap:12px;padding:0 0 10px;border-bottom:2px solid #201e1d;font-size:13px;font-weight:700;color:#55514e;"><span>프로그램</span><span style="text-align:right;">인원</span><span>내용</span></div>
+        <sc-for list="{{ people }}" as="p" hint-placeholder-count="7">
+          <div style="display:grid;grid-template-columns:minmax(0,1.3fr) 90px minmax(0,2fr);gap:12px;align-items:baseline;padding:14px 0;border-bottom:1px solid #e2dfdc;">
+            <span style="font-size:16px;font-weight:700;">{{ p.name }}</span>
+            <span style="text-align:right;font-size:20px;font-weight:800;color:#0858a8;white-space:nowrap;">{{ p.n }}<span style="font-size:13px;font-weight:700;color:#55514e;margin-left:2px;">{{ p.unit }}</span></span>
+            <span style="font-size:15px;line-height:1.7;color:#3a3735;">{{ p.text }}</span>
+          </div>
+        </sc-for>
+      </div>
       <figure style="margin:26px 0 0;">
-        <img loading="lazy" decoding="async" src="assets/rookie-talk.jpg" alt="Rookie 신진연구자 연구 성과 발표" style="display:block;width:100%;height:auto;">
+        <img loading="lazy" decoding="async" src="assets/rookie-talk.jpg" alt="Rookie 신진연구자 연구 성과 발표" style="display:block;width:100%;aspect-ratio:16/9;object-fit:cover;object-position:50% 60%;">
         <figcaption style="margin-top:8px;font-size:14px;color:#3a3735;line-height:1.6;">Rookie 신진연구자 연구 성과 발표</figcaption>
       </figure>
     </div>
