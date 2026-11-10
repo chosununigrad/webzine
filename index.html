@@ -118,7 +118,7 @@
         <a href="#a7" style="font-size:13px;font-weight:700;color:#ffffff;white-space:nowrap;" style-hover="color:#ffffff;text-decoration:underline;">학사 일정</a>
       </div>
     </div>
-    <div style="height:4px;background:rgba(255,255,255,.25);"><div id="progbar" style="height:100%;background:#ffffff;width:{{ progress }};transition:width .15s linear;"></div></div>
+    <div style="height:4px;background:rgba(255,255,255,.25);"><div id="progbar" style="height:100%;background:#f5b800;width:{{ progress }};transition:width .15s linear;"></div></div>
   </div>
 
   <section id="p-cover" style="background:#ffffff;">
@@ -143,7 +143,7 @@
           <h2 style="margin:0;font-size:clamp(22px,3vw,28px);font-weight:800;">이번 호 기사 보기</h2>
           <span style="font-size:14px;color:#55514e;">보고 싶은 기사를 누르세요</span>
         </div>
-        <div style="margin-top:16px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,180px),1fr));gap:12px;">
+        <div style="margin-top:16px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,148px),1fr));gap:12px;">
           <a href="#a8" style="display:flex;flex-direction:column;background:#ffffff;border:1px solid #cfdae6;color:#201e1d;" style-hover="border-color:#0858a8;text-decoration:none;color:#0858a8;">
             <img loading="lazy" decoding="async" src="assets/bk21-hall.jpg" alt="" style="display:block;width:100%;aspect-ratio:4/3;object-fit:cover;">
             <span style="padding:12px 14px 14px;display:flex;flex-direction:column;gap:4px;flex:1;"><span style="font-size:13px;font-weight:800;color:#0858a8;">커버스토리</span><span style="font-size:16.5px;font-weight:800;line-height:1.4;">BK21 5단계 교내 설명회</span><span style="margin-top:auto;padding-top:6px;font-size:13.5px;font-weight:700;color:#0858a8;">읽기 →</span></span>
@@ -197,10 +197,12 @@
       <p style="margin:10px 0 0;font-size:16px;line-height:1.8;">2026년 11월 첫째 주 기준</p>
       <div ref="{{ statsRef }}" style="margin-top:22px;display:grid;grid-template-columns:repeat(auto-fit,minmax(max(140px,calc((100% - 36px) / 4)),1fr));gap:12px;">
         <sc-for list="{{ stats }}" as="s" hint-placeholder-count="8">
-          <div style="padding:20px 16px;display:flex;flex-direction:column;gap:10px;border:1px solid #d8dee6;">
-            <div style="font-size:clamp(32px,4vw,40px);font-weight:800;line-height:1.1;white-space:nowrap;"><span data-count="{{ s.n }}">{{ s.value }}</span><span style="font-size:16px;font-weight:600;margin-left:3px;">{{ s.unit }}</span></div>
-            <div style="height:4px;background:#dde5ee;"><div style="height:4px;background:#0858a8;width:{{ s.bar }};transition:width 1.2s cubic-bezier(.2,.7,.2,1);" data-bar="1"></div></div>
-            <div style="font-size:14.5px;line-height:1.6;">{{ s.label }}</div>
+          <div style="padding:18px 18px 16px;display:flex;flex-direction:column;gap:8px;background:#ffffff;border:1px solid #d8dee6;border-radius:8px;">
+            <div style="font-size:12.5px;font-weight:800;color:#0858a8;letter-spacing:.02em;">{{ s.group }}</div>
+            <div style="font-size:clamp(32px,4vw,40px);font-weight:800;line-height:1.05;white-space:nowrap;color:#201e1d;"><span data-count="{{ s.n }}">{{ s.value }}</span><span style="font-size:16px;font-weight:700;margin-left:3px;color:#55514e;">{{ s.unit }}</span></div>
+            <div style="height:6px;background:#e6ecf3;border-radius:3px;overflow:hidden;"><div style="height:6px;background:#0858a8;border-radius:3px;width:{{ s.bar }};" data-bar="{{ s.bar }}"></div></div>
+            <div style="font-size:15px;font-weight:800;line-height:1.45;">{{ s.label }}</div>
+            <div style="font-size:13.5px;line-height:1.5;color:#55514e;">{{ s.sub }}</div>
           </div>
         </sc-for>
       </div>
@@ -710,6 +712,14 @@
         </div>
       </div>
 
+      <figure style="margin:24px 0 0;">
+        <img loading="lazy" decoding="async" src="assets/koica-01.jpg" alt="KOICA 전문인재양성프로그램 오리엔테이션 단체 기념촬영" style="display:block;width:100%;aspect-ratio:16/9;object-fit:cover;">
+        <div style="margin-top:10px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:10px;">
+          <img loading="lazy" decoding="async" src="assets/koica-04.jpg" alt="실시간 AI 통번역 화면을 띄우고 진행하는 오리엔테이션" style="display:block;width:100%;aspect-ratio:4/3;object-fit:cover;">
+          <img loading="lazy" decoding="async" src="assets/koica-06.jpg" alt="환영 인사를 하는 김도경 대학원장" style="display:block;width:100%;aspect-ratio:4/3;object-fit:cover;">
+        </div>
+        <figcaption style="margin-top:8px;font-size:14px;line-height:1.6;color:#3a3735;">10월 1일(목) 오리엔테이션 · 단체 기념촬영 · 한국어·베트남어 실시간 AI 통번역 · 김도경 대학원장 환영 인사</figcaption>
+      </figure>
       <div style="margin-top:24px;background:#f3f6fa;color:#201e1d;border-left:4px solid #0858a8;padding:clamp(22px,4vw,34px);">
         <div style="font-size:14px;font-weight:700;">KOICA(한국국제협력단) 전문인재 양성 프로그램</div>
         <h3 style="margin:8px 0 0;font-size:clamp(21px,3.2vw,26px);font-weight:800;">협력국 학생 10명, 기계공학 석사과정 시작</h3>
@@ -725,14 +735,6 @@
       <h3 style="margin:8px 0 0;font-size:clamp(21px,3.2vw,26px);font-weight:800;line-height:1.4;text-wrap:balance;">언어 장벽 없이 시작한 대학원 생활</h3>
       <p style="margin:14px 0 0;font-size:17.5px;line-height:1.95;color:#2b2927;">10월 1일(목) 국제관에서 ‘2026학년도 KOICA 전문인재양성프로그램(KOICA NEXT Fellowship) 오리엔테이션’이 열렸습니다. 김도경 대학원장과 기계공학과 교수진, 대학원교학팀·국제협력팀 교직원이 신규 연수생을 맞았고, 프로그램 운영 방식과 학사 일정, 지원 내용을 안내했습니다.</p>
       <p style="margin:12px 0 0;font-size:17.5px;line-height:1.95;color:#2b2927;">이날 행사에는 실시간 AI 통번역 시스템을 처음 도입해 발표 내용을 한국어와 베트남어로 화면에 띄웠습니다. 연수생들은 앞으로 함께할 지도교수진과 첫인사를 나눴습니다.</p>
-      <figure style="margin:22px 0 0;">
-        <img loading="lazy" decoding="async" src="assets/koica-01.jpg" alt="KOICA 전문인재양성프로그램 오리엔테이션 단체 기념촬영" style="display:block;width:100%;aspect-ratio:16/9;object-fit:cover;">
-        <div style="margin-top:10px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:10px;">
-          <img loading="lazy" decoding="async" src="assets/koica-04.jpg" alt="실시간 AI 통번역 화면을 띄우고 진행하는 오리엔테이션" style="display:block;width:100%;aspect-ratio:4/3;object-fit:cover;">
-          <img loading="lazy" decoding="async" src="assets/koica-06.jpg" alt="환영 인사를 하는 김도경 대학원장" style="display:block;width:100%;aspect-ratio:4/3;object-fit:cover;">
-        </div>
-        <figcaption style="margin-top:8px;font-size:14px;line-height:1.6;color:#3a3735;">10월 1일(목) 오리엔테이션 · 단체 기념촬영 · 한국어·베트남어 실시간 AI 통번역 · 김도경 대학원장 환영 인사</figcaption>
-      </figure>
       <blockquote style="margin:20px 0 0;background:#ffffff;border-left:4px solid #0858a8;padding:clamp(18px,3vw,26px);">
         <p style="margin:0;font-size:clamp(17px,2.4vw,20px);line-height:1.85;font-weight:600;">“조선대에서 쌓은 전문지식과 경험이 여러분의 나라 발전에 큰 힘이 되기를 바랍니다.”</p>
         <div style="margin-top:14px;font-size:15px;font-weight:800;color:#0858a8;">김도경 · 대학원장</div>
@@ -865,19 +867,15 @@
               <div style="padding:40px 0;text-align:center;font-size:15.5px;color:#55514e;">남은 일정이 없습니다.</div>
             </sc-if>
         <sc-for list="{{ monthEvents }}" as="s" hint-placeholder-count="5">
-          <div style="display:grid;grid-template-columns:76px minmax(0,1fr) 54px;gap:12px;align-items:start;padding:16px 0;border-top:1px solid #d8d5d2;opacity:{{ s.op }};">
-            <span style="display:flex;flex-direction:column;gap:2px;">
-              <span style="font-size:13px;font-weight:700;color:#55514e;white-space:nowrap;">{{ s.y }}</span>
-              <span style="font-size:21px;font-weight:800;color:#0858a8;line-height:1.15;white-space:nowrap;">{{ s.d }}</span>
-              <span style="font-size:14px;font-weight:800;color:#0858a8;white-space:nowrap;">{{ s.to }}</span>
-            </span>
-            <span>
-              <span style="display:block;font-size:17px;font-weight:800;line-height:1.45;">{{ s.title }}</span>
-              <span style="display:block;margin-top:4px;font-size:15.5px;line-height:1.7;color:#3a3735;">{{ s.text }}</span>
-            </span>
-            <span style="font-size:14px;font-weight:800;text-align:right;padding-top:18px;color:{{ s.ddColor }};">{{ s.dday }}</span>
+          <div style="display:grid;grid-template-columns:96px minmax(0,1fr) auto;gap:10px;align-items:baseline;padding:11px 0;border-top:1px solid #e2dfdc;opacity:{{ s.op }};">
+            <span style="font-size:15px;font-weight:800;color:#0858a8;white-space:nowrap;">{{ s.d }}<span style="font-size:12.5px;font-weight:700;margin-left:3px;">{{ s.to }}</span></span>
+            <span style="font-size:15.5px;font-weight:700;line-height:1.45;">{{ s.title }}</span>
+            <span style="font-size:13px;font-weight:800;text-align:right;white-space:nowrap;color:{{ s.ddColor }};">{{ s.dday }}</span>
           </div>
         </sc-for>
+        <sc-if value="{{ moreEvents }}" hint-placeholder-val="{{ false }}">
+          <button onClick="{{ toggleEvents }}" style="font:inherit;margin-top:6px;width:100%;padding:10px 0;border:1px solid #d8dee6;background:#f6f8fa;color:#0858a8;font-size:14px;font-weight:800;cursor:pointer;border-radius:6px;" style-hover="background:#eef4fa;">{{ moreLabel }}</button>
+        </sc-if>
           </div>
         </div>
       </div>
@@ -987,6 +985,7 @@ class Component extends DCLogic {
       this.layout();
       const top = document.getElementById('top');
       if (top) top.scrollTop = 0;
+      if (this._cuCheck) setTimeout(this._cuCheck, 60);
       this.pages[n].ids.forEach(id => {
         const el = document.getElementById(id);
         if (el && el.animate) el.animate([{ opacity: 0, transform: 'translateX(' + (40 * dir) + 'px)' }, { opacity: 1, transform: 'none' }], { duration: 200, easing: 'cubic-bezier(.2,.7,.2,1)' });
@@ -1112,34 +1111,39 @@ class Component extends DCLogic {
   componentDidUpdate() { this.scheduleLayout(); this.countUp(); }
 
   countUp() {
-    const box = this.statsRef.current;
+    const box = document.getElementById('p-stats');
     if (!box || this._cuBox === box) return;
     this._cuBox = box;
-    const nums = [...box.querySelectorAll('[data-count]')], bars = [...box.querySelectorAll('[data-bar]')];
-    const reset = () => { nums.forEach(el => { el.textContent = '0'; }); bars.forEach(el => { el.style.transition = 'none'; el.style.width = '0%'; }); };
+    const nums = () => [...box.querySelectorAll('[data-count]')], bars = () => [...box.querySelectorAll('[data-bar]')];
+    let shown = false;
+    const reset = () => { nums().forEach(el => { el.textContent = '0'; }); bars().forEach(el => { el.style.transition = 'none'; el.style.width = '0%'; }); };
     const play = () => {
-      bars.forEach(el => { void el.offsetWidth; });
-      setTimeout(() => bars.forEach((el, i) => { el.style.transition = 'width 1.6s cubic-bezier(.2,.7,.2,1) ' + (i * 0.08) + 's'; el.style.width = '100%'; }), 30);
-      const t0 = performance.now(), dur = 1600, id = (this._cuId = (this._cuId || 0) + 1);
+      const bs = bars(); bs.forEach(el => { void el.offsetWidth; });
+      setTimeout(() => bs.forEach((el, i) => { el.style.transition = 'width 1.6s cubic-bezier(.2,.7,.2,1) ' + (i * 0.08) + 's'; el.style.width = el.getAttribute('data-bar') || '100%'; }), 40);
+      const ns = nums(), t0 = performance.now(), dur = 1600, id = (this._cuId = (this._cuId || 0) + 1);
       const tick = now => {
         if (id !== this._cuId) return;
         const k = Math.min(1, (now - t0) / dur), ease = 1 - Math.pow(1 - k, 3);
-        nums.forEach(el => { el.textContent = String(Math.round((+el.getAttribute('data-count') || 0) * ease)); });
+        ns.forEach(el => { el.textContent = String(Math.round((+el.getAttribute('data-count') || 0) * ease)); });
         if (k < 1) requestAnimationFrame(tick);
       };
       requestAnimationFrame(tick);
     };
-    if (!('IntersectionObserver' in window) || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-    reset();
-    if (this._cuIo) this._cuIo.disconnect();
-    let shown = false;
-    this._cuIo = new IntersectionObserver(es => {
-      const vis = es.some(x => x.isIntersecting);
+    const check = () => {
+      if (!box.isConnected) return;
+      const r = box.getBoundingClientRect(), h = window.innerHeight || document.documentElement.clientHeight;
+      const vis = r.width > 0 && r.top < h * 0.8 && r.bottom > h * 0.2;
       if (vis && !shown) { shown = true; play(); }
-      else if (!vis && shown) { shown = false; this._cuId++; reset(); }
-    }, { threshold: 0.3 });
-    this._cuIo.observe(box);
+      else if (!vis && shown && (r.bottom < -40 || r.top > h + 40)) { shown = false; this._cuId = (this._cuId || 0) + 1; reset(); }
+    };
+    reset();
+    this._cuCheck = () => { if (this._cuRaf) return; this._cuRaf = requestAnimationFrame(() => { this._cuRaf = null; check(); }); };
+    window.addEventListener('scroll', this._cuCheck, { passive: true });
+    window.addEventListener('resize', this._cuCheck);
+    const top = document.getElementById('top'); if (top) top.addEventListener('scroll', this._cuCheck, { passive: true });
+    setTimeout(check, 300); setTimeout(check, 1200);
   }
+
 
   setZoom(z) {
     const v = Math.min(1.6, Math.max(1, Math.round(z * 100) / 100));
@@ -1327,7 +1331,11 @@ class Component extends DCLogic {
       statsRef: this.statsRef,
       nextUp,
       schedule: sched,
-      cells, months, monthEvents,
+      cells, months,
+      monthEvents: this.state.allEv ? monthEvents : monthEvents.slice(0, 5),
+      moreEvents: monthEvents.length > 5,
+      moreLabel: this.state.allEv ? '접기 ▲' : '이달 일정 ' + monthEvents.length + '건 모두 보기 ▼',
+      toggleEvents: () => this.setState({ allEv: !this.state.allEv }),
       noEvents: monthEvents.length === 0,
       calYear: String(cy),
       calTitle: cy + '년 ' + (cm + 1) + '월',
@@ -1354,15 +1362,15 @@ class Component extends DCLogic {
         { href: '#a7', no: '05', label: '학사 일정', title: '학위논문 심사부터 실험실습비 정산까지', line: '#c3d5e6', pad: '16px 0 6px' }
       ],
       stats: [
-        { label: '논문게재 장학금 지급', n: 261, unit: '건' },
-        { label: 'Rookie 연구비 선정', n: 79, unit: '명' },
-        { label: 'Triangle 참여 학생', n: 72, unit: '명' },
-        { label: 'MECA 장학생', n: 70, unit: '명' },
-        { label: '세미나·포럼 참여', n: 384, unit: '명' },
-        { label: 'CAPSTONE 수강생', n: 37, unit: '명' },
-        { label: '싱가포르 현장학습', n: 36, unit: '명' },
-        { label: 'KOICA 연수생', n: 10, unit: '명' }
-      ].map(s => ({ label: s.label, unit: s.unit, value: String(s.n), n: String(s.n), bar: '100%' })),
+        { group: '장학·연구비', label: '논문게재 장학금 지급', n: 261, unit: '건', sub: '목표 175건의 149%', bar: '100%' },
+        { group: '장학·연구비', label: 'Rookie 연구비 선정', n: 79, unit: '명', sub: '1·2·3차 선정 완료', bar: '100%' },
+        { group: '장학·연구비', label: 'MECA 장학생', n: 70, unit: '명', sub: '2학기 등록금 감면', bar: '100%' },
+        { group: '연구 활동', label: 'Triangle 참여 학생', n: 72, unit: '명', sub: '목표 30명의 240%', bar: '100%' },
+        { group: '연구 활동', label: '세미나·포럼 참여', n: 384, unit: '명', sub: '목표 120명의 320%', bar: '100%' },
+        { group: '연구 활동', label: 'CAPSTONE 수강생', n: 37, unit: '명', sub: '7개 학과 참여', bar: '100%' },
+        { group: '국제', label: '싱가포르 현장학습', n: 36, unit: '명', sub: '교비 18명 · 앵커사업 18명', bar: '100%' },
+        { group: '국제', label: 'KOICA 연수생', n: 10, unit: '명', sub: '기계공학과 석사과정', bar: '100%' }
+      ].map(s => ({ ...s, value: String(s.n), n: String(s.n) })),
       anchor: [
         { n: '70', unit: '명', name: 'MECA 장학생 선정', text: '석·박사 전일제 재학생 70명의 2학기 등록금에서 장학금을 먼저 감면했습니다.' },
         { n: '79', unit: '명', name: 'Rookie 연구비 선정', text: '국제학술지 논문을 준비하는 석·박사과정생 79명(1차 66명, 2차 11명, 3차 2명)에게 연구비를 지원합니다.' },
