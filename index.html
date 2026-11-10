@@ -68,31 +68,7 @@ button:focus-visible{ text-decoration:underline!important;text-decoration-thickn
 .scroll-reading-tools{position:fixed;bottom:0;left:0;right:0;z-index:41;border-top:2px solid #0858a8}
 @media(max-width:600px){.bottom-reading-tools{gap:5px!important}.bottom-reading-tools button,.bottom-reading-tools a{font-size:14px;padding:7px 9px}}
 </style>
-<style>
-/* Quiet typography, generous spacing, and one clear navigation hierarchy. */
-#top{font-family:system-ui,'Apple SD Gothic Neo','Malgun Gothic','Nanum Gothic',sans-serif;word-break:keep-all;overflow-wrap:break-word}
-#top h1,#top h2,#top h3{letter-spacing:-.025em}
-#top p{line-height:1.9!important}
-#menu>div:has(>.issue-article-link){grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:18px!important}
-#menu .issue-article-link{border-color:#d4dde5!important}
-#menu .issue-article-link>img{aspect-ratio:16/9!important}
-#menu .issue-article-link>span{padding:18px!important;gap:8px!important}
-#menu .issue-article-link>span>span:nth-child(2){min-height:3.1em!important;font-size:20px!important;line-height:1.55!important}
-#menu .issue-open-button{min-height:48px;font-size:17px!important}
-#p-stats [data-count]{font-variant-numeric:tabular-nums}
-#p-stats [data-bar]{will-change:width}
-.refined-pager{position:fixed;left:0;right:0;bottom:0;z-index:41;background:#fff;border-top:2px solid #0858a8}
-.reading-main{max-width:960px;margin:auto;display:grid;grid-template-columns:1fr 1.45fr 1fr;gap:10px;padding:10px 20px}
-.reading-main button{font:inherit;min-height:54px;padding:8px 12px;font-size:17px;font-weight:800;cursor:pointer;border:1px solid #0858a8;background:#fff;color:#0858a8}
-.reading-main .reading-next{background:#0858a8;color:#fff}
-.reading-main .reading-home{border-color:transparent;font-size:16px}
-.reading-home span{display:block;margin-top:4px;font-size:13px;font-weight:600;color:#55514e}
-.reading-main button:disabled{opacity:.35;cursor:default}
-.refined-pager>.bottom-reading-tools{display:flex;align-items:center;justify-content:center;gap:8px;padding:6px 12px 8px;background:#f3f6fa;border-top:1px solid #e1e7ee}
-.refined-pager .bottom-reading-tools button,.refined-pager .bottom-reading-tools a{min-height:36px;background:transparent;border:0;font-size:14px;padding:6px 12px;font-weight:700}
-@media(max-width:600px){#menu>div:has(>.issue-article-link){gap:12px!important}#menu .issue-article-link>span{padding:12px!important}#menu .issue-article-link>span>span:nth-child(2){font-size:18px!important;min-height:4.65em!important}.reading-main{padding:8px 12px;gap:6px}.reading-main button{font-size:16px;padding:8px}.reading-main .reading-home{font-size:14px}.refined-pager .bottom-reading-tools button,.refined-pager .bottom-reading-tools a{padding:6px 8px}}
-@media(max-width:380px){#menu>div:has(>.issue-article-link){grid-template-columns:1fr!important}#menu .issue-article-link>span>span:nth-child(2){min-height:0!important}}
-</style>
+
 <style>
 /* Compact reader controls: no tall tiles, no wrapping page counter. */
 .reading-main{max-width:760px;grid-template-columns:110px minmax(0,1fr) 110px;gap:12px;padding:7px 16px;align-items:center}
@@ -102,6 +78,14 @@ button:focus-visible{ text-decoration:underline!important;text-decoration-thickn
 .refined-pager>.bottom-reading-tools{padding:3px 10px;gap:6px;flex-wrap:nowrap}
 .refined-pager .bottom-reading-tools button,.refined-pager .bottom-reading-tools a{min-height:30px;padding:4px 10px;font-size:13px;white-space:nowrap}
 @media(max-width:600px){.reading-main{grid-template-columns:76px minmax(0,1fr) 76px;padding:6px 12px;gap:6px}.reading-main button{height:38px;min-height:38px;font-size:14px;padding:5px 8px}.reading-main .reading-home{font-size:13px;gap:8px}.reading-home span{font-size:12px}.refined-pager .bottom-reading-tools button,.refined-pager .bottom-reading-tools a{padding:4px 8px;font-size:12px}}
+</style>
+<style>
+.refined-pager{position:fixed;left:0;right:0;bottom:0;z-index:41;background:#fff;border-top:1px solid #c6d7e8}
+.reading-main{margin:0 auto;display:grid}
+.reading-main button{font-family:inherit;font-weight:700;border:1px solid #9dbde0;background:#fff;color:#0858a8;cursor:pointer;box-sizing:border-box}
+.reading-main .reading-next{background:#0858a8;border-color:#0858a8;color:#fff}
+.reading-main button:disabled{opacity:.35;cursor:default}
+.refined-pager>.bottom-reading-tools{display:flex;align-items:center;justify-content:center;background:#f3f6fa;border-top:1px solid #e1e7ee}
 </style>
 </head>
 <body>
