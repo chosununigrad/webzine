@@ -87,6 +87,30 @@ button:focus-visible{ text-decoration:underline!important;text-decoration-thickn
 .reading-main button:disabled{opacity:.35;cursor:default}
 .refined-pager>.bottom-reading-tools{display:flex;align-items:center;justify-content:center;background:#f3f6fa;border-top:1px solid #e1e7ee}
 </style>
+<style>
+/* Scope card title sizing to article cards, not the admissions notice. */
+#menu .issue-article-link>span>span:nth-child(2){min-height:0!important;margin-bottom:0!important}
+#menu .issue-article-link:has(.issue-open-button)>span>span:nth-child(2){min-height:3.1em!important;margin-bottom:10px!important}
+#menu .issue-article-link:has(.issue-open-button)>span{padding-bottom:12px!important}
+#menu .issue-open-button{margin-top:10px!important}
+#menu .issue-article-link[href="#a9"]{padding:16px 20px!important;gap:12px!important;align-items:center!important}
+#menu .issue-article-link[href="#a9"]>span:first-child{gap:5px!important;flex:1 1 400px!important}
+#menu .issue-article-link[href="#a9"]>span:last-child{min-height:0!important;margin:0!important;flex:0 0 auto!important}
+</style>
+<style>
+/* Consistent proportions: symmetric reader controls and balanced card spacing. */
+.reading-main{grid-template-columns:110px minmax(0,1fr) 110px;align-items:center;gap:12px}
+.reading-main .reading-home{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;height:auto;min-height:44px;padding:3px 8px;line-height:1.3}
+.reading-home span{display:block!important;margin:0!important;line-height:1.3;font-size:12px;font-weight:500}
+.reading-prev,.reading-next{width:100%;height:40px!important;min-height:40px!important}
+#menu .issue-article-link:has(.issue-open-button){height:100%;box-sizing:border-box}
+#menu .issue-article-link:has(.issue-open-button)>img{width:100%;aspect-ratio:4/3;object-fit:cover}
+#menu .issue-article-link:has(.issue-open-button)>span{display:flex;flex-direction:column;flex:1;padding:12px 14px!important;gap:5px}
+#menu .issue-article-link:has(.issue-open-button)>span>span:nth-child(2){min-height:3.1em!important;margin-bottom:10px!important;line-height:1.55!important}
+#menu .issue-open-button{margin-top:auto!important;min-height:44px;padding:9px 12px!important;box-sizing:border-box}
+#menu .issue-article-link[href="#a9"]>span>span:nth-child(2){min-height:0!important;margin-bottom:0!important}
+@media(max-width:600px){.reading-main{grid-template-columns:76px minmax(0,1fr) 76px;gap:8px}.reading-main .reading-home{font-size:13px;gap:3px}.reading-home span{font-size:11px}.reading-prev,.reading-next{height:38px!important;min-height:38px!important}}
+</style>
 </head>
 <body>
 <x-dc>
@@ -170,7 +194,7 @@ button:focus-visible{ text-decoration:underline!important;text-decoration-thickn
 
   <div id="hdr" class="no-print" style="position:sticky;top:0;z-index:20;background:#0858a8;color:#ffffff;">
     <div style="max-width:960px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px 16px;padding:10px clamp(16px,5vw,48px);">
-      <div style="display:flex;align-items:center;gap:12px;min-width:0;flex-wrap:wrap;row-gap:4px;">
+      <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;min-width:0;width:100%;flex-wrap:nowrap;">
         <a href="https://grad.chosun.ac.kr" target="_blank" rel="noopener" title="조선대학교 대학원 홈페이지" style="display:block;flex:none;"><img src="assets/logo-grad-white.png" alt="조선대학교 대학원" style="display:block;height:28px;width:auto;"></a>
         <span style="font-size:13px;opacity:.92;white-space:nowrap;">뉴스레터 2026년 11월호</span>
       </div>
@@ -1118,7 +1142,7 @@ class Component extends DCLogic {
     const reset = () => { nums().forEach(el => { el.textContent = '0'; }); bars().forEach(el => { el.style.transition = 'none'; el.style.width = '0%'; }); };
     const play = () => {
       const ns = nums(), bs = bars();
-      const duration = 3200, token = this._cuId = (this._cuId || 0) + 1;
+      const duration = 2400, token = this._cuId = (this._cuId || 0) + 1;
       const start = performance.now();
       bs.forEach(el => { el.style.transition = 'none'; el.style.width = '0%'; });
       let previousStep = -1;
@@ -1127,10 +1151,10 @@ class Component extends DCLogic {
         const t = Math.min(1, (now - start) / duration);
         const progress = t * t * (3 - 2 * t);
         // Calm numeric changes: a small fixed number of updates, not a flickering counter.
-        const step = Math.min(12, Math.floor(t * 12));
+        const step = Math.min(40, Math.floor(t * 40));
         if (step !== previousStep || t === 1) {
           previousStep = step;
-          const q = step / 12, valueProgress = q * q * (3 - 2 * q);
+          const q = step / 40, valueProgress = q;
           ns.forEach(el => { el.textContent = Math.round(Number(el.getAttribute('data-count') || 0) * valueProgress).toLocaleString('ko-KR'); });
         }
         bs.forEach(el => {
