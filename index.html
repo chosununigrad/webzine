@@ -68,6 +68,31 @@ button:focus-visible{ text-decoration:underline!important;text-decoration-thickn
 .scroll-reading-tools{position:fixed;bottom:0;left:0;right:0;z-index:41;border-top:2px solid #0858a8}
 @media(max-width:600px){.bottom-reading-tools{gap:5px!important}.bottom-reading-tools button,.bottom-reading-tools a{font-size:14px;padding:7px 9px}}
 </style>
+<style>
+/* Quiet typography, generous spacing, and one clear navigation hierarchy. */
+#top{font-family:system-ui,'Apple SD Gothic Neo','Malgun Gothic','Nanum Gothic',sans-serif;word-break:keep-all;overflow-wrap:break-word}
+#top h1,#top h2,#top h3{letter-spacing:-.025em}
+#top p{line-height:1.9!important}
+#menu>div:has(>.issue-article-link){grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:18px!important}
+#menu .issue-article-link{border-color:#d4dde5!important}
+#menu .issue-article-link>img{aspect-ratio:16/9!important}
+#menu .issue-article-link>span{padding:18px!important;gap:8px!important}
+#menu .issue-article-link>span>span:nth-child(2){min-height:3.1em!important;font-size:20px!important;line-height:1.55!important}
+#menu .issue-open-button{min-height:48px;font-size:17px!important}
+#p-stats [data-count]{font-variant-numeric:tabular-nums}
+#p-stats [data-bar]{will-change:width}
+.refined-pager{position:fixed;left:0;right:0;bottom:0;z-index:41;background:#fff;border-top:2px solid #0858a8}
+.reading-main{max-width:960px;margin:auto;display:grid;grid-template-columns:1fr 1.45fr 1fr;gap:10px;padding:10px 20px}
+.reading-main button{font:inherit;min-height:54px;padding:8px 12px;font-size:17px;font-weight:800;cursor:pointer;border:1px solid #0858a8;background:#fff;color:#0858a8}
+.reading-main .reading-next{background:#0858a8;color:#fff}
+.reading-main .reading-home{border-color:transparent;font-size:16px}
+.reading-home span{display:block;margin-top:4px;font-size:13px;font-weight:600;color:#55514e}
+.reading-main button:disabled{opacity:.35;cursor:default}
+.refined-pager>.bottom-reading-tools{display:flex;align-items:center;justify-content:center;gap:8px;padding:6px 12px 8px;background:#f3f6fa;border-top:1px solid #e1e7ee}
+.refined-pager .bottom-reading-tools button,.refined-pager .bottom-reading-tools a{min-height:36px;background:transparent;border:0;font-size:14px;padding:6px 12px;font-weight:700}
+@media(max-width:600px){#menu>div:has(>.issue-article-link){gap:12px!important}#menu .issue-article-link>span{padding:12px!important}#menu .issue-article-link>span>span:nth-child(2){font-size:18px!important;min-height:4.65em!important}.reading-main{padding:8px 12px;gap:6px}.reading-main button{font-size:16px;padding:8px}.reading-main .reading-home{font-size:14px}.refined-pager .bottom-reading-tools button,.refined-pager .bottom-reading-tools a{padding:6px 8px}}
+@media(max-width:380px){#menu>div:has(>.issue-article-link){grid-template-columns:1fr!important}#menu .issue-article-link>span>span:nth-child(2){min-height:0!important}}
+</style>
 </head>
 <body>
 <x-dc>
@@ -917,32 +942,22 @@ button:focus-visible{ text-decoration:underline!important;text-decoration-thickn
 </div>
 
 <sc-if value="{{ pageMode }}" hint-placeholder-val="{{ false }}">
-  <nav id="pager" class="no-print" aria-label="페이지 넘기기" style="position:fixed;left:0;right:0;bottom:0;z-index:41;background:#ffffff;border-top:2px solid #0858a8;box-shadow:0 -4px 14px rgba(0,0,0,.08);"><div class="bottom-reading-tools" style="display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:8px;padding:8px 12px;background:#eef4fa;border-bottom:1px solid #c6d7e8;">
-<button onClick="{{ toggleMode }}">{{ modeLabel }}</button>
-<button onClick="{{ smaller }}" aria-label="글자 작게">가−</button><button onClick="{{ bigger }}" aria-label="글자 크게">가+</button>
-<a href="#menu">이번 호 기사 보기</a><a href="#a7">학사 일정</a></div>
-    <div style="max-width:960px;margin:0 auto;display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:center;gap:10px;padding:8px clamp(12px,4vw,48px);">
-      <button onClick="{{ prevPage }}" disabled="{{ atFirst }}" style="font:inherit;font-size:15px;font-weight:800;height:44px;padding:0 16px;border:1px solid #0858a8;background:#ffffff;color:#0858a8;cursor:pointer;opacity:{{ prevOp }};" style-hover="background:#eef4fa;">‹ 이전</button>
-      <div style="display:flex;flex-direction:column;align-items:center;gap:5px;min-width:0;">
-        <span style="display:flex;align-items:center;gap:8px;font-size:14.5px;font-weight:800;white-space:nowrap;max-width:100%;"><span style="overflow:hidden;text-overflow:ellipsis;">{{ pageTitle }}</span><input type="number" min="1" max="{{ pageMax }}" value="{{ pageInputVal }}" onChange="{{ pageInputChange }}" onKeyDown="{{ pageInputKey }}" onBlur="{{ pageInputGo }}" aria-label="이동할 페이지 번호" style="font:inherit;font-size:14.5px;font-weight:800;color:#0858a8;width:52px;height:30px;padding:0 4px;text-align:center;border:1px solid #9dbde0;background:#ffffff;"><span style="color:#0858a8;">/ {{ pageMax }}</span></span>
-        <button onClick="{{ firstPage }}" style="font:inherit;font-size:16px;font-weight:800;border:1px solid #9dbde0;background:#eef4fa;color:#0858a8;cursor:pointer;padding:8px 14px;min-height:42px;">첫 페이지로 가기</button>
-        <div onClick="{{ barClick }}" role="slider" aria-label="페이지 이동" aria-valuenow="{{ pageNow }}" aria-valuemin="1" aria-valuemax="{{ pageMax }}" style="width:min(100%,360px);padding:6px 0;cursor:pointer;"><div style="height:8px;background:#dceaf6;"><div style="height:100%;background:#0858a8;width:{{ pageBar }};transition:width .25s;"></div></div></div>
-      </div>
-      <button onClick="{{ nextPage }}" style="font:inherit;font-size:15px;font-weight:800;height:44px;padding:0 16px;border:1px solid #0858a8;background:#0858a8;color:#ffffff;cursor:pointer;white-space:nowrap;" style-hover="background:#064a8f;">{{ nextLabel }}</button>
-    </div>
-  </nav>
+  <nav id="pager" class="no-print refined-pager" aria-label="페이지 넘기기">
+<div class="reading-main"><button class="reading-prev" onClick="{{ prevPage }}" disabled="{{ atFirst }}">← 이전</button><button class="reading-home" onClick="{{ firstPage }}">첫 페이지로 가기<span>{{ pageNow }} / {{ pageMax }}</span></button><button class="reading-next" onClick="{{ nextPage }}">{{ nextLabel }} →</button></div>
+<div class="bottom-reading-tools"><button onClick="{{ toggleMode }}">{{ modeLabel }}</button><button onClick="{{ smaller }}" aria-label="글자 작게">글자 −</button><button onClick="{{ bigger }}" aria-label="글자 크게">글자 +</button><a href="#a7">학사 일정</a></div>
+</nav>
 </sc-if>
 
 <sc-if value="{{ !pageMode }}" hint-placeholder-val="{{ false }}"><nav class="scroll-reading-tools no-print" aria-label="읽기 도구"><div class="bottom-reading-tools" style="display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:8px;padding:8px 12px;background:#eef4fa;border-bottom:1px solid #c6d7e8;">
 <button onClick="{{ toggleMode }}">{{ modeLabel }}</button>
-<button onClick="{{ smaller }}" aria-label="글자 작게">가−</button><button onClick="{{ bigger }}" aria-label="글자 크게">가+</button>
+<button onClick="{{ smaller }}" aria-label="글자 작게">글자 −</button><button onClick="{{ bigger }}" aria-label="글자 크게">글자 +</button>
 <a href="#menu">이번 호 기사 보기</a><a href="#a7">학사 일정</a></div></nav></sc-if>
 <sc-if value="{{ false }}" hint-placeholder-val="{{ false }}">
 <div class="no-print" style="position:fixed;right:12px;bottom:{{ panelBottom }};z-index:40;display:flex;align-items:center;gap:5px;padding:5px;background:#ffffff;border:1px solid #201e1d;box-shadow:0 4px 14px rgba(0,0,0,.14);">
   <button onClick="{{ toggleMode }}" style="font:inherit;font-size:12px;font-weight:800;height:32px;padding:0 9px;border:1px solid #0858a8;background:#eef4fa;color:#0858a8;cursor:pointer;white-space:nowrap;" style-hover="background:#dceaf6;">{{ modeLabel }}</button>
   <span style="font-size:12px;font-weight:700;padding:0 4px;white-space:nowrap;color:#55514e;">글자</span>
-  <button onClick="{{ smaller }}" aria-label="글자 작게" style="font:inherit;font-size:13px;font-weight:800;min-width:34px;height:32px;border:1px solid #0858a8;background:#ffffff;color:#0858a8;cursor:pointer;" style-hover="background:#dceaf6;">가−</button>
-  <button onClick="{{ bigger }}" aria-label="글자 크게" style="font:inherit;font-size:15px;font-weight:800;min-width:34px;height:32px;border:1px solid #0858a8;background:#0858a8;color:#ffffff;cursor:pointer;" style-hover="background:#064a8f;">가+</button>
+  <button onClick="{{ smaller }}" aria-label="글자 작게" style="font:inherit;font-size:13px;font-weight:800;min-width:34px;height:32px;border:1px solid #0858a8;background:#ffffff;color:#0858a8;cursor:pointer;" style-hover="background:#dceaf6;">글자 −</button>
+  <button onClick="{{ bigger }}" aria-label="글자 크게" style="font:inherit;font-size:15px;font-weight:800;min-width:34px;height:32px;border:1px solid #0858a8;background:#0858a8;color:#ffffff;cursor:pointer;" style-hover="background:#064a8f;">글자 +</button>
   <a href="#top" style="font-size:12px;font-weight:700;padding:0 8px;height:32px;display:flex;align-items:center;border:1px solid #c9c6c3;color:#201e1d;" style-hover="background:#eef4fa;color:#0858a8;text-decoration:none;">맨 위로</a>
 </div>
 </sc-if>
