@@ -148,6 +148,15 @@ button:focus-visible{ text-decoration:underline!important;text-decoration-thickn
 @media(max-width:600px){#menu>div:has(>.issue-article-link:has(.issue-open-button)){grid-template-columns:repeat(2,minmax(0,1fr))!important}.related-article-links{gap:2px 14px;font-size:13px}}
 @media(max-width:340px){#menu>div:has(>.issue-article-link:has(.issue-open-button)){grid-template-columns:1fr!important}}
 </style>
+<style>
+.bottom-reading-tools button,.bottom-reading-tools a{transition:background-color .12s,color .12s,border-color .12s;touch-action:manipulation}
+.bottom-reading-tools button:active,.bottom-reading-tools a:active{background:#dceaf6!important;color:#06427e!important}
+.scroll-reading-tools{border-top:2px solid #0858a8}
+.scroll-reading-tools .bottom-reading-tools{background:#f5f8fc!important;border-bottom:0!important;gap:8px!important;padding:7px 12px!important}
+.scroll-reading-tools .bottom-reading-tools button,.scroll-reading-tools .bottom-reading-tools a{background:#fff;border-color:#c9d8e7;color:#0858a8;font-size:14px;min-height:38px;padding:7px 12px}
+.scroll-reading-tools .bottom-reading-tools button:first-child{background:#0858a8!important;border-color:#0858a8!important;color:#fff!important}
+.scroll-reading-tools .bottom-reading-tools button:first-child:hover{background:#06427e!important}
+</style>
 </head>
 <body>
 <x-dc>
@@ -1111,7 +1120,7 @@ class Component extends DCLogic {
         e.preventDefault();
         const hdr = document.getElementById('hdr');
         const go = (smooth) => { const off = (hdr ? hdr.getBoundingClientRect().height : 0) + 8; window.scrollTo({ top: window.scrollY + tel.getBoundingClientRect().top - off, behavior: smooth ? 'smooth' : 'auto' }); };
-        go(false); [250, 700, 1500].forEach(ms => setTimeout(() => go(false), ms));
+        go(false); 
         return;
       }
       if (!a) return;
@@ -1168,7 +1177,11 @@ class Component extends DCLogic {
     window.removeEventListener('touchend', this._onTe);
     if (this._io) this._io.disconnect();
   }
-  componentDidUpdate() { this.scheduleLayout(); this.countUp(); if (this._cuCheck) this._cuCheck(); }
+  componentDidUpdate(prevProps, prevState) {
+    if (!prevState || prevState.mode !== this.state.mode || prevState.page !== this.state.page || prevState.zoom !== this.state.zoom) this.scheduleLayout();
+    this.countUp();
+    if (this._cuCheck) this._cuCheck();
+  }
 
   countUp() {
     const box = document.getElementById('p-stats');
