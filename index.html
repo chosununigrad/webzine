@@ -20,6 +20,18 @@
 <script>window.__resources={"https://unpkg.com/react@18.3.1/umd/react.production.min.js":"vendor/react.production.min.js","https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js":"vendor/react-dom.production.min.js"};</script>
 <script src="./support.js"></script>
 
+<style>
+/* Clear, large controls without adding a second navigation section. */
+.clear-article-button{display:flex!important;flex-direction:column;justify-content:center;gap:8px;flex:1 1 200px;min-height:88px;padding:16px 20px;background:#0858a8!important;border:2px solid #0858a8!important;border-radius:9px;color:#fff!important;text-decoration:none!important;cursor:pointer;box-sizing:border-box}
+.clear-button-title{font-size:18px;font-weight:800;line-height:1.5}
+.clear-button-action{display:flex;align-items:center;justify-content:space-between;gap:20px;font-size:16px;font-weight:700;line-height:1.5}
+.clear-button-action>span{font-size:25px;line-height:1}
+.clear-article-button:hover{background:#06427e!important;border-color:#06427e!important;text-decoration:underline!important}
+a[href^="#"]:focus-visible,button:focus-visible{outline:3px solid #b35c00!important;outline-offset:4px}
+#menu a[href^="#a"]{cursor:pointer;min-height:64px}
+@media(max-width:600px){.clear-article-button{flex-basis:100%;min-height:88px}}
+@media(prefers-reduced-motion:reduce){#p-stats [data-bar]{transition:none!important}}
+</style>
 </head>
 <body>
 <x-dc>
@@ -208,11 +220,11 @@
         <img loading="lazy" decoding="async" src="assets/joa-mega.png" alt="" style="height:clamp(90px,12vw,130px);width:auto;flex:none;">
         <div style="flex:1 1 320px;min-width:0;">
           <p style="margin:0;font-size:clamp(18px,2.3vw,21px);font-weight:800;line-height:1.5;">숫자 뒤에는 학생 한 명 한 명의 연구가 있습니다.</p>
-          <p style="margin:6px 0 0;font-size:15.5px;line-height:1.7;color:#3a3735;">어떤 지원으로 어떤 성과가 나왔는지 기사에서 확인해 보세요.</p>
+          <p style="margin:6px 0 0;font-size:15.5px;line-height:1.7;color:#3a3735;">아래 파란색 버튼을 누르면 해당 기사를 볼 수 있습니다.</p>
           <div style="margin-top:14px;display:flex;flex-wrap:wrap;gap:8px;">
-            <a href="#a2" style="font-size:14.5px;font-weight:800;padding:9px 14px;background:#ffffff;color:#0858a8;border:1px solid #9dbde0;" style-hover="background:#eef4fa;text-decoration:none;">장학금·연구비 지원 →</a>
-            <a href="#a3" style="font-size:14.5px;font-weight:800;padding:9px 14px;background:#ffffff;color:#0858a8;border:1px solid #9dbde0;" style-hover="background:#eef4fa;text-decoration:none;">Triangle·논문 장학금 →</a>
-            <a href="#a6" style="font-size:14.5px;font-weight:800;padding:9px 14px;background:#ffffff;color:#0858a8;border:1px solid #9dbde0;" style-hover="background:#eef4fa;text-decoration:none;">싱가포르 현장학습 →</a>
+            <a class="clear-article-button" href="#a2" aria-label="장학금·연구비 지원 기사 보기"><span class="clear-button-title">장학금·연구비 지원</span><span class="clear-button-action">눌러서 기사 보기 <span aria-hidden="true">→</span></span></a>
+            <a class="clear-article-button" href="#a3" aria-label="Triangle·논문 장학금 기사 보기"><span class="clear-button-title">Triangle·논문 장학금</span><span class="clear-button-action">눌러서 기사 보기 <span aria-hidden="true">→</span></span></a>
+            <a class="clear-article-button" href="#a6" aria-label="싱가포르 현장학습 기사 보기"><span class="clear-button-title">싱가포르 현장학습</span><span class="clear-button-action">눌러서 기사 보기 <span aria-hidden="true">→</span></span></a>
           </div>
         </div>
       </div>
@@ -911,7 +923,7 @@
 </x-dc>
 <script type="text/x-dc" data-dc-script>
 class Component extends DCLogic {
-  state = { zoom: 1, p: 0, scroll: 0, field: '전체', cal: null, sel: null, mode: 'scroll', page: 0 };
+  state = { zoom: 1, p: 0, scroll: 0, field: '전체', cal: null, sel: null, mode: 'page', page: 0 };
   pages = [
     { t: '표지 · 이번 호 기사', ids: ['p-cover'] },
     { t: '숫자로 보는 대학원', ids: ['p-stats'] },
@@ -934,6 +946,7 @@ class Component extends DCLogic {
     if (n === this.state.page) { if (this.state.pageInput != null) this.setState({ pageInput: null }); return; }
     this.setState({ page: n, pageInput: null }, () => {
       this.layout();
+      if (this._cuCheck) this._cuCheck();
       const top = document.getElementById('top');
       if (top) top.scrollTop = 0;
       if (this._cuCheck) setTimeout(this._cuCheck, 60);
@@ -1070,7 +1083,7 @@ class Component extends DCLogic {
     const reset = () => { nums().forEach(el => { el.textContent = '0'; }); bars().forEach(el => { el.style.transition = 'none'; el.style.width = '0%'; }); };
     const play = () => {
       const bs = bars(); bs.forEach(el => { void el.offsetWidth; });
-      setTimeout(() => bs.forEach((el, i) => { el.style.transition = 'width 1.6s cubic-bezier(.2,.7,.2,1) ' + (i * 0.08) + 's'; el.style.width = el.getAttribute('data-bar') || '100%'; }), 40);
+      setTimeout(() => { if (!shown) return; bs.forEach((el, i) => { el.style.transition = 'width 1.6s cubic-bezier(.2,.7,.2,1) ' + (i * 0.08) + 's'; el.style.width = el.getAttribute('data-bar') || '100%'; }); }, 40);
       const ns = nums(), t0 = performance.now(), dur = 1600, id = (this._cuId = (this._cuId || 0) + 1);
       const tick = now => {
         if (id !== this._cuId) return;
@@ -1083,9 +1096,10 @@ class Component extends DCLogic {
     const check = () => {
       if (!box.isConnected) return;
       const r = box.getBoundingClientRect(), h = window.innerHeight || document.documentElement.clientHeight;
-      const vis = r.width > 0 && r.top < h * 0.8 && r.bottom > h * 0.2;
-      if (vis && !shown) { shown = true; play(); }
-      else if (!vis && shown && (r.bottom < -40 || r.top > h + 40)) { shown = false; this._cuId = (this._cuId || 0) + 1; reset(); }
+      const hiddenPage = !!box.closest('[data-off]');
+      const vis = !hiddenPage && r.width > 0 && r.height > 0 && r.top < h * 0.9 && r.bottom > h * 0.1;
+      if (vis && !shown) { shown = true; reset(); play(); }
+      else if (!vis && shown) { shown = false; this._cuId = (this._cuId || 0) + 1; reset(); }
     };
     reset();
     this._cuCheck = () => { if (this._cuRaf) return; this._cuRaf = requestAnimationFrame(() => { this._cuRaf = null; check(); }); };
