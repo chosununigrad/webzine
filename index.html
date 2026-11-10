@@ -32,6 +32,13 @@ a[href^="#"]:focus-visible,button:focus-visible{outline:3px solid #b35c00!import
 @media(max-width:600px){.clear-article-button{flex-basis:100%;min-height:88px}}
 @media(prefers-reduced-motion:reduce){#p-stats [data-bar]{transition:none!important}}
 </style>
+<style>
+#menu .issue-article-link{cursor:pointer;border-radius:8px;overflow:hidden;text-decoration:none!important}
+#menu .issue-article-link:hover{outline:2px solid #0858a8;outline-offset:2px}
+#menu .issue-open-button{display:flex;align-items:center;justify-content:center;min-height:46px;padding:10px 14px!important;margin-top:14px!important;background:#0858a8;color:#fff!important;border-radius:6px;font-size:17px!important;font-weight:800;box-sizing:border-box}
+a.no-print[href="#menu"]{display:inline-flex!important;align-items:center;min-height:48px;margin-top:28px;padding:10px 18px;background:#eef4fa;border:1px solid #9dbde0;border-radius:7px;color:#0858a8;font-size:17px!important;font-weight:800;text-decoration:none;box-sizing:border-box}
+a.no-print[href="#menu"]:hover{background:#dceaf6;text-decoration:underline}
+</style>
 </head>
 <body>
 <x-dc>
@@ -152,36 +159,35 @@ a[href^="#"]:focus-visible,button:focus-visible{outline:3px solid #b35c00!import
       </div>
 
       <div id="menu" style="margin-top:30px;">
-        <div style="display:flex;align-items:baseline;justify-content:space-between;gap:12px;border-bottom:2px solid #201e1d;padding-bottom:10px;">
-          <h2 style="margin:0;font-size:clamp(22px,3vw,28px);font-weight:800;">이번 호 기사 보기</h2>
-          <span style="font-size:14px;color:#55514e;">카드 전체를 누르면 해당 기사로 이동합니다.</span>
-        </div>
-        <div style="margin-top:16px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,148px),1fr));gap:12px;">
-          <a href="#a8" style="display:flex;flex-direction:column;background:#ffffff;border:1px solid #cfdae6;color:#201e1d;" style-hover="border-color:#0858a8;text-decoration:none;color:#0858a8;">
-            <img loading="lazy" decoding="async" src="assets/bk21-hall.jpg" alt="" style="display:block;width:100%;aspect-ratio:4/3;object-fit:cover;">
-            <span style="padding:12px 14px 14px;display:flex;flex-direction:column;gap:4px;flex:1;"><span style="font-size:13px;font-weight:800;color:#0858a8;">커버스토리</span><span style="font-size:16.5px;font-weight:800;line-height:1.4;">BK21 5단계 교내 설명회</span><span style="margin-top:auto;padding-top:6px;font-size:13.5px;font-weight:700;color:#0858a8;">기사 자세히 보기 →</span></span>
-          </a>
-          
-          <a href="#a1" style="display:flex;flex-direction:column;background:#ffffff;border:1px solid #cfdae6;color:#201e1d;" style-hover="border-color:#0858a8;text-decoration:none;color:#0858a8;">
-            <img loading="lazy" decoding="async" src="assets/wa-congrats-close.jpg" alt="" style="display:block;width:100%;aspect-ratio:4/3;object-fit:cover;">
-            <span style="padding:12px 14px 14px;display:flex;flex-direction:column;gap:4px;flex:1;"><span style="font-size:13px;font-weight:800;color:#0858a8;">새로 여는 대학원</span><span style="font-size:16.5px;font-weight:800;line-height:1.4;">웰에이징대학원 출범</span><span style="margin-top:auto;padding-top:6px;font-size:13.5px;font-weight:700;color:#0858a8;">기사 자세히 보기 →</span></span>
-          </a>
-          <a href="#a2" style="display:flex;flex-direction:column;background:#ffffff;border:1px solid #cfdae6;color:#201e1d;" style-hover="border-color:#0858a8;text-decoration:none;color:#0858a8;">
-            <img loading="lazy" decoding="async" src="assets/tri-new-1.jpg" alt="" style="display:block;width:100%;aspect-ratio:4/3;object-fit:cover;">
-            <span style="padding:12px 14px 14px;display:flex;flex-direction:column;gap:4px;flex:1;"><span style="font-size:13px;font-weight:800;color:#0858a8;">연구를 돕는 대학원</span><span style="font-size:16.5px;font-weight:800;line-height:1.4;">장학금·연구비 지원과 성과</span><span style="margin-top:auto;padding-top:6px;font-size:13.5px;font-weight:700;color:#0858a8;">기사 자세히 보기 →</span></span>
-          </a>
-          <a href="#a6" style="display:flex;flex-direction:column;background:#ffffff;border:1px solid #cfdae6;color:#201e1d;" style-hover="border-color:#0858a8;text-decoration:none;color:#0858a8;">
-            <img loading="lazy" decoding="async" src="assets/field-sg-01.jpg" alt="" style="display:block;width:100%;aspect-ratio:4/3;object-fit:cover;">
-            <span style="padding:12px 14px 14px;display:flex;flex-direction:column;gap:4px;flex:1;"><span style="font-size:13px;font-weight:800;color:#0858a8;">세계로 가는 대학원</span><span style="font-size:16.5px;font-weight:800;line-height:1.4;">싱가포르 현장학습·KOICA·복수학위</span><span style="margin-top:auto;padding-top:6px;font-size:13.5px;font-weight:700;color:#0858a8;">기사 자세히 보기 →</span></span>
-          </a>
-          </div>
-        <div style="margin-top:12px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:12px;">
-          <a href="#a9" style="display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;background:#f3f6fa;border:1px solid #d8dee6;border-left:4px solid #0858a8;color:#201e1d;padding:16px 20px;" style-hover="background:#e8eef6;text-decoration:none;color:#201e1d;">
-            <span style="display:flex;flex-direction:column;gap:4px;"><span style="font-size:13px;font-weight:800;color:#0858a8;">입학 안내 · 모집 중</span><span style="font-size:18px;font-weight:800;line-height:1.4;">2027학년도 전기 대학원 신입생 모집</span><span style="font-size:14.5px;color:#3a3735;">일반대학원·미래인재융합대학원 · 원서 접수 11.16(월)까지</span></span>
-            <span style="font-size:14.5px;font-weight:800;color:#0858a8;white-space:nowrap;">모집 일정 보기 →</span>
-          </a>
-        </div>
-      </div>
+<div style="display:flex;flex-direction:column;align-items:flex-start;gap:10px;border-bottom:2px solid #201e1d;padding-bottom:16px;">
+<h2 style="margin:0;font-size:clamp(22px,3vw,28px);font-weight:800;">이번 호 기사 보기</h2>
+<span style="font-size:17px;line-height:1.7;color:#3a3735;">보고 싶은 기사 제목을 누르면 해당 기사로 이동합니다.</span>
+</div>
+<div style="margin-top:16px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,148px),1fr));gap:12px;">
+<a aria-label="커버스토리 BK21 5단계 교내 설명회 기사 자세히 보기 → — 기사로 이동" class="issue-article-link" href="#a8" style="display:flex;flex-direction:column;background:#ffffff;border:1px solid #cfdae6;color:#201e1d;" style-hover="border-color:#0858a8;text-decoration:none;color:#0858a8;">
+<img alt="" decoding="async" loading="lazy" src="assets/bk21-hall.jpg" style="display:block;width:100%;aspect-ratio:4/3;object-fit:cover;"/>
+<span style="padding:12px 14px 14px;display:flex;flex-direction:column;gap:4px;flex:1;"><span style="font-size:13px;font-weight:800;color:#0858a8;">커버스토리</span><span style="font-size:19px;font-weight:800;line-height:1.55;">BK21 5단계 교내 설명회</span><span class="issue-open-button" style="margin-top:auto;">기사 보기 →</span></span>
+</a>
+<a aria-label="새로 여는 대학원 웰에이징대학원 출범 기사 자세히 보기 → — 기사로 이동" class="issue-article-link" href="#a1" style="display:flex;flex-direction:column;background:#ffffff;border:1px solid #cfdae6;color:#201e1d;" style-hover="border-color:#0858a8;text-decoration:none;color:#0858a8;">
+<img alt="" decoding="async" loading="lazy" src="assets/wa-congrats-close.jpg" style="display:block;width:100%;aspect-ratio:4/3;object-fit:cover;"/>
+<span style="padding:12px 14px 14px;display:flex;flex-direction:column;gap:4px;flex:1;"><span style="font-size:13px;font-weight:800;color:#0858a8;">새로 여는 대학원</span><span style="font-size:19px;font-weight:800;line-height:1.55;">웰에이징대학원 출범</span><span class="issue-open-button" style="margin-top:auto;">기사 보기 →</span></span>
+</a>
+<a aria-label="연구를 돕는 대학원 장학금·연구비 지원과 성과 기사 자세히 보기 → — 기사로 이동" class="issue-article-link" href="#a2" style="display:flex;flex-direction:column;background:#ffffff;border:1px solid #cfdae6;color:#201e1d;" style-hover="border-color:#0858a8;text-decoration:none;color:#0858a8;">
+<img alt="" decoding="async" loading="lazy" src="assets/tri-new-1.jpg" style="display:block;width:100%;aspect-ratio:4/3;object-fit:cover;"/>
+<span style="padding:12px 14px 14px;display:flex;flex-direction:column;gap:4px;flex:1;"><span style="font-size:13px;font-weight:800;color:#0858a8;">연구를 돕는 대학원</span><span style="font-size:19px;font-weight:800;line-height:1.55;">장학금·연구비 지원과 성과</span><span class="issue-open-button" style="margin-top:auto;">기사 보기 →</span></span>
+</a>
+<a aria-label="세계로 가는 대학원 싱가포르 현장학습·KOICA·복수학위 기사 자세히 보기 → — 기사로 이동" class="issue-article-link" href="#a6" style="display:flex;flex-direction:column;background:#ffffff;border:1px solid #cfdae6;color:#201e1d;" style-hover="border-color:#0858a8;text-decoration:none;color:#0858a8;">
+<img alt="" decoding="async" loading="lazy" src="assets/field-sg-01.jpg" style="display:block;width:100%;aspect-ratio:4/3;object-fit:cover;"/>
+<span style="padding:12px 14px 14px;display:flex;flex-direction:column;gap:4px;flex:1;"><span style="font-size:13px;font-weight:800;color:#0858a8;">세계로 가는 대학원</span><span style="font-size:19px;font-weight:800;line-height:1.55;">싱가포르 현장학습·KOICA·복수학위</span><span class="issue-open-button" style="margin-top:auto;">기사 보기 →</span></span>
+</a>
+</div>
+<div style="margin-top:12px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:12px;">
+<a aria-label="입학 안내 · 모집 중 2027학년도 전기 대학원 신입생 모집 일반대학원·미래인재융합대학원 · 원서 접수 11.16(월)까지 모집 일정 보기 → — 기사로 이동" class="issue-article-link" href="#a9" style="display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;background:#f3f6fa;border:1px solid #d8dee6;border-left:4px solid #0858a8;color:#201e1d;padding:16px 20px;" style-hover="background:#e8eef6;text-decoration:none;color:#201e1d;">
+<span style="display:flex;flex-direction:column;gap:4px;"><span style="font-size:13px;font-weight:800;color:#0858a8;">입학 안내 · 모집 중</span><span style="font-size:18px;font-weight:800;line-height:1.4;">2027학년도 전기 대학원 신입생 모집</span><span style="font-size:14.5px;color:#3a3735;">일반대학원·미래인재융합대학원 · 원서 접수 11.16(월)까지</span></span>
+<span style="font-size:14.5px;font-weight:800;color:#0858a8;white-space:nowrap;">모집 일정 보기 →</span>
+</a>
+</div>
+</div>
 
       <a id="nextup" href="#a7" class="no-print" style="margin-top:28px;display:block;background:#f3f6fa;color:#201e1d;border-left:4px solid #0858a8;padding:18px 20px;" style-hover="background:#e8eef6;text-decoration:none;color:#201e1d;">
         <div style="display:flex;justify-content:space-between;align-items:baseline;gap:12px;">
@@ -294,7 +300,7 @@ a[href^="#"]:focus-visible,button:focus-visible{outline:3px solid #b35c00!import
       </div>
 
       <p style="margin:16px 0 0;font-size:14px;line-height:1.7;color:#55514e;">※ 1차 기획안 기준 내용으로, 12월 15일 시안에서 바뀔 수 있습니다.</p>
-      <a href="#menu" class="no-print" style="margin-top:28px;display:inline-block;font-size:14.5px;font-weight:700;color:#0858a8;" style-hover="text-decoration:underline;">↑ 기사 목록으로</a>
+      <a href="#menu" class="no-print" style="margin-top:28px;display:inline-block;font-size:14.5px;font-weight:700;color:#0858a8;" style-hover="text-decoration:underline;">↑ 이번 호 기사 목록으로</a>
     </div>
   </section>
 
@@ -373,7 +379,7 @@ a[href^="#"]:focus-visible,button:focus-visible{outline:3px solid #b35c00!import
           <figure style="margin:0;"><img loading="lazy" decoding="async" src="assets/wa-coffee-smile.jpg" alt="행사장 커피차" style="display:block;width:100%;aspect-ratio:4/3;object-fit:cover;object-position:center 65%;"><figcaption style="margin-top:8px;font-size:14px;line-height:1.6;color:#3a3735;">행사장 커피차</figcaption></figure>
         </div>
       </div>
-    </div>
+    <a class="no-print issue-return" href="#menu">↑ 이번 호 기사 목록으로</a></div>
   </section>
 
   <section id="a6b" data-screen-label="01 웰에이징대학원 · 홍보" style="background:#ffffff;border-top:1px solid #d9d5d1;">
@@ -418,7 +424,7 @@ a[href^="#"]:focus-visible,button:focus-visible{outline:3px solid #b35c00!import
       </figure>
 
       <p style="margin:24px 0 0;font-size:17.5px;line-height:1.95;color:#2b2927;">홍보는 KSMCB 2026에서 그치지 않았습니다. 10월 17일(토)부터 20일(화)까지 제주에서 열린 한국미생물학회에 두 번째 글로벌 아웃리치로 참가해 웰에이징대학원을 소개했고, 10월 28일(수)과 29일(목)에는 출범식·오픈하우스에 맞춰 교내 곳곳에서 학과별 체험·상담 부스를 운영했습니다.</p>
-      <a href="#menu" class="no-print" style="margin-top:28px;display:inline-block;font-size:14.5px;font-weight:700;color:#0858a8;" style-hover="text-decoration:underline;">↑ 기사 목록으로</a>
+      <a href="#menu" class="no-print" style="margin-top:28px;display:inline-block;font-size:14.5px;font-weight:700;color:#0858a8;" style-hover="text-decoration:underline;">↑ 이번 호 기사 목록으로</a>
     </div>
   </section>
 
@@ -469,7 +475,7 @@ a[href^="#"]:focus-visible,button:focus-visible{outline:3px solid #b35c00!import
         </sc-for>
       </div>
       <a href="https://grad.chosun.ac.kr" target="_blank" rel="noopener" style="margin-top:18px;display:inline-flex;align-items:center;gap:8px;border:1.5px solid #0858a8;color:#0858a8;font-size:15.5px;font-weight:800;padding:11px 18px;" style-hover="background:#eef4fa;text-decoration:none;color:#0858a8;">프로그램별 일정과 모집 공고는 대학원 홈페이지에서 →</a>
-    </div>
+    <a class="no-print issue-return" href="#menu">↑ 이번 호 기사 목록으로</a></div>
   </section>
 
   <section id="a2b" data-screen-label="02 연구 지원 · 지난해 성과" style="background:#ffffff;border-top:1px solid #d9d5d1;">
@@ -560,7 +566,7 @@ a[href^="#"]:focus-visible,button:focus-visible{outline:3px solid #b35c00!import
         <img loading="lazy" decoding="async" src="assets/symposium-group.png" alt="제2회 CSU 혁신인재 양성 심포지엄 단체 사진" style="display:block;width:100%;height:auto;">
         <figcaption style="margin-top:8px;font-size:14px;color:#3a3735;line-height:1.6;">제2회 CSU 혁신인재 양성 심포지엄 · 2026년 2월 11일(수)</figcaption>
       </figure>
-    </div>
+    <a class="no-print issue-return" href="#menu">↑ 이번 호 기사 목록으로</a></div>
   </section>
 
   <section id="a3" data-screen-label="02 연구 지원 · 대학혁신" style="background:#ffffff;border-top:1px solid #d9d5d1;">
@@ -601,7 +607,7 @@ a[href^="#"]:focus-visible,button:focus-visible{outline:3px solid #b35c00!import
         <div style="display:grid;grid-template-columns:92px minmax(0,1fr);gap:14px;padding:12px 0;border-top:1px solid #d8d5d2;"><span style="font-size:14px;font-weight:800;color:#0858a8;">운영 예정</span><span style="font-size:16px;line-height:1.7;">수화언어학과(11월 20일(금), 본관 2176강의실)</span></div>
         <div style="display:grid;grid-template-columns:92px minmax(0,1fr);gap:14px;padding:12px 0;border-top:1px solid #d8d5d2;border-bottom:1px solid #d8d5d2;"><span style="font-size:14px;font-weight:800;color:#0858a8;">타 대학 교류형</span><span style="font-size:16px;line-height:1.7;">상담심리학과, 선박해양공학과, 신소재공학과 선정</span></div>
       </div>
-      <a href="#menu" class="no-print" style="margin-top:28px;display:inline-block;font-size:14.5px;font-weight:700;color:#0858a8;" style-hover="text-decoration:underline;">↑ 기사 목록으로</a>
+      <a href="#menu" class="no-print" style="margin-top:28px;display:inline-block;font-size:14.5px;font-weight:700;color:#0858a8;" style-hover="text-decoration:underline;">↑ 이번 호 기사 목록으로</a>
     </div>
   </section>
 
@@ -664,7 +670,7 @@ a[href^="#"]:focus-visible,button:focus-visible{outline:3px solid #b35c00!import
           <li>잘 모르던 참가자와도 한 번 더 이야기해 보세요.</li>
         </ol>
       </div>
-    </div>
+    <a class="no-print issue-return" href="#menu">↑ 이번 호 기사 목록으로</a></div>
   </section>
 
   <section id="a4" data-screen-label="03 세계로 · KOICA" style="background:#ffffff;border-top:1px solid #d9d5d1;">
@@ -705,7 +711,7 @@ a[href^="#"]:focus-visible,button:focus-visible{outline:3px solid #b35c00!import
         <p style="margin:10px 0 0;font-size:14px;color:#55514e;">전남일보 2026년 10월 7일(수) 보도 · <a href="https://www.jnilbo.com/news/articleView.html?idxno=90000071511" target="_blank" rel="noopener">기사 원문</a></p>
       </blockquote>
 
-    </div>
+    <a class="no-print issue-return" href="#menu">↑ 이번 호 기사 목록으로</a></div>
   </section>
 
   <section id="a4b" data-screen-label="03 세계로 · 복수학위" style="background:#ffffff;border-top:1px solid #d9d5d1;">
@@ -730,7 +736,7 @@ a[href^="#"]:focus-visible,button:focus-visible{outline:3px solid #b35c00!import
         <p style="margin:12px 0 0;font-size:15.5px;line-height:1.8;color:#2b2927;">이 교수는 7월 방문 이후 북경이공대 법학과 이화(Li Hua) 교수와 실무 협의를 맡아 교육과정, 학점 인정, 학위 취득 요건을 정했습니다.</p>
         <p style="margin:10px 0 0;font-size:14px;color:#55514e;">한국대학신문 2026년 9월 7일(월) 보도 · <a href="https://news.unn.net/news/articleView.html?idxno=597039" target="_blank" rel="noopener">기사 원문</a></p>
       </blockquote>
-      <a href="#menu" class="no-print" style="margin-top:28px;display:inline-block;font-size:14.5px;font-weight:700;color:#0858a8;" style-hover="text-decoration:underline;">↑ 기사 목록으로</a>
+      <a href="#menu" class="no-print" style="margin-top:28px;display:inline-block;font-size:14.5px;font-weight:700;color:#0858a8;" style-hover="text-decoration:underline;">↑ 이번 호 기사 목록으로</a>
     </div>
   </section>
 
@@ -766,7 +772,7 @@ a[href^="#"]:focus-visible,button:focus-visible{outline:3px solid #b35c00!import
       </div>
       <p style="margin:18px 0 0;font-size:16px;line-height:1.85;color:#2b2927;">모집 학과와 지원 자격, 제출 서류는 모집요강에서 확인할 수 있습니다. 진학을 고민하는 학부생과 주변의 연구자에게도 소식을 전해 주세요.</p>
       <a href="https://grad.chosun.ac.kr" target="_blank" rel="noopener" style="margin-top:18px;display:inline-flex;align-items:center;gap:8px;background:#0858a8;color:#ffffff;font-size:16px;font-weight:800;padding:13px 20px;" style-hover="background:#064a8f;color:#ffffff;text-decoration:none;">대학원 홈페이지에서 모집요강 보기 →</a>
-      <a href="#menu" class="no-print" style="margin-top:28px;display:table;font-size:14.5px;font-weight:700;color:#0858a8;" style-hover="text-decoration:underline;">↑ 기사 목록으로</a>
+      <a href="#menu" class="no-print" style="margin-top:28px;display:table;font-size:14.5px;font-weight:700;color:#0858a8;" style-hover="text-decoration:underline;">↑ 이번 호 기사 목록으로</a>
     </div>
   </section>
 
@@ -859,7 +865,7 @@ a[href^="#"]:focus-visible,button:focus-visible{outline:3px solid #b35c00!import
           <div>대표전화 : 062.608.5038/5019 · 팩스 : 062.608.5239</div>
         </div>
       </div>
-      <a href="#menu" class="no-print" style="margin-top:28px;display:inline-block;font-size:14.5px;font-weight:700;color:#0858a8;" style-hover="text-decoration:underline;">↑ 기사 목록으로</a>
+      <a href="#menu" class="no-print" style="margin-top:28px;display:inline-block;font-size:14.5px;font-weight:700;color:#0858a8;" style-hover="text-decoration:underline;">↑ 이번 호 기사 목록으로</a>
       <a href="#top" class="no-print" style="margin-top:28px;margin-left:18px;display:inline-block;font-size:14.5px;font-weight:700;color:#0858a8;" style-hover="text-decoration:underline;">↑ 처음으로</a>
     </div>
   </section>
