@@ -34,7 +34,7 @@ a[href^="#"]:focus-visible,button:focus-visible{outline:2px solid #0858a8!import
 </style>
 <style>
 #menu .issue-article-link{cursor:pointer;border-radius:0;overflow:hidden;text-decoration:none!important}
-#menu .issue-article-link:hover{outline:2px solid #0858a8;outline-offset:2px}
+#menu .issue-article-link:hover{outline:none;outline-offset:0}
 #menu .issue-open-button{display:flex;align-items:center;justify-content:center;min-height:46px;padding:10px 14px!important;margin-top:14px!important;background:#0858a8;color:#fff!important;border-radius:0;font-size:17px!important;font-weight:800;box-sizing:border-box}
 a.no-print[href="#menu"]{display:inline-flex!important;align-items:center;min-height:48px;margin-top:28px;padding:10px 18px;background:#eef4fa;border:1px solid #9dbde0;border-radius:0;color:#0858a8;font-size:17px!important;font-weight:800;text-decoration:none;box-sizing:border-box}
 a.no-print[href="#menu"]:hover{background:#dceaf6;text-decoration:underline}
@@ -54,6 +54,13 @@ a.no-print[href="#menu"]:hover{background:#dceaf6;text-decoration:underline}
 a:focus:not(:focus-visible),button:focus:not(:focus-visible),input:focus:not(:focus-visible),select:focus:not(:focus-visible){outline:none!important;box-shadow:none!important}
 a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid #0858a8!important;outline-offset:3px!important}
 #hdr a:focus-visible,#hdr button:focus-visible{outline-color:#fff!important}
+</style>
+<style>
+/* No rectangular selection outline on click, hover, or keyboard focus. */
+a:focus,a:focus-visible,a:hover,button:focus,button:focus-visible,button:hover{outline:none!important;box-shadow:none!important}
+/* Keyboard location remains visible without a box. */
+a:focus-visible{ text-decoration:underline!important;text-decoration-thickness:3px!important;text-underline-offset:5px!important }
+button:focus-visible{ text-decoration:underline!important;text-decoration-thickness:3px!important;text-underline-offset:4px!important }
 </style>
 </head>
 <body>
@@ -686,46 +693,43 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{ou
     <a class="no-print issue-return" href="#menu">↑ 이번 호 기사 목록으로</a></div>
   </section>
 
-  <section id="a4" data-screen-label="03 세계로 · KOICA" style="background:#ffffff;border-top:1px solid #d9d5d1;">
-    <div style="max-width:960px;margin:0 auto;padding:clamp(36px,5vw,56px) clamp(20px,5vw,48px);">
-      <div style="display:flex;align-items:flex-end;justify-content:space-between;gap:20px;border-bottom:2px solid #0858a8;padding-bottom:14px;">
-        <div>
-          <div style="font-size:14px;font-weight:700;letter-spacing:.08em;color:#0858a8;">세계로 가는 대학원 · KOICA</div>
-          <h2 style="margin:10px 0 0;font-size:clamp(26px,4.6vw,40px);font-weight:800;letter-spacing:-.02em;line-height:1.25;text-wrap:balance;">함께 기르는 국제협력 전문인재</h2>
-        </div>
-      </div>
+  <section data-screen-label="03 세계로 · KOICA" id="a4" style="background:#ffffff;border-top:1px solid #d9d5d1;">
+<div style="max-width:960px;margin:0 auto;padding:clamp(36px,5vw,56px) clamp(20px,5vw,48px);">
+<div style="display:flex;align-items:flex-end;justify-content:space-between;gap:20px;border-bottom:2px solid #0858a8;padding-bottom:14px;">
+<div>
+<div style="font-size:14px;font-weight:700;letter-spacing:.08em;color:#0858a8;">세계로 가는 대학원 · KOICA</div>
+<h2 style="margin:10px 0 0;font-size:clamp(26px,4.6vw,40px);font-weight:800;letter-spacing:-.02em;line-height:1.25;text-wrap:balance;">함께 기르는 국제협력 전문인재</h2>
+</div>
+</div>
+<div style="margin-top:24px;background:#f3f6fa;color:#201e1d;border-left:4px solid #0858a8;padding:clamp(22px,4vw,34px);">
+<div style="font-size:14px;font-weight:700;">KOICA(한국국제협력단) 전문인재 양성 프로그램</div>
+<h3 style="margin:8px 0 0;font-size:clamp(21px,3.2vw,26px);font-weight:800;">협력국 학생 10명, 기계공학 석사과정 시작</h3>
+<p style="margin:14px 0 0;font-size:17px;line-height:1.9;">조선대학교는 이 프로그램의 엔지니어링 분야 연수기관으로 선정됐습니다. 연수생들은 30개월 동안 기계공학과 석사과정(24개월)과 한국어교육(약 400시간), 산업체 인턴십(6개월)을 이수합니다.</p>
+<p style="margin:12px 0 0;font-size:17px;line-height:1.9;">등록금, 한국어교육비, 항공료, 기숙사비, 생활비, 건강보험료는 KOICA가 지원합니다.</p>
+<div style="margin-top:18px;border-top:1px solid rgba(255,255,255,.4);padding-top:14px;display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;">
+<span style="font-size:14px;">2026~2030년 사업 규모</span>
+<span style="font-size:clamp(28px,4vw,38px);font-weight:800;line-height:1;">약 24<span style="font-size:16px;margin-left:4px;">억 원</span></span>
+</div>
+</div><figure style="margin:24px 0 0;">
+<img alt="KOICA 전문인재양성프로그램 오리엔테이션 단체 기념촬영" decoding="async" loading="lazy" src="assets/koica-01.jpg" style="display:block;width:100%;aspect-ratio:16/9;object-fit:cover;"/>
+<div style="margin-top:10px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:10px;">
+<img alt="실시간 AI 통번역 화면을 띄우고 진행하는 오리엔테이션" decoding="async" loading="lazy" src="assets/koica-04.jpg" style="display:block;width:100%;aspect-ratio:4/3;object-fit:cover;"/>
+<img alt="환영 인사를 하는 김도경 대학원장" decoding="async" loading="lazy" src="assets/koica-06.jpg" style="display:block;width:100%;aspect-ratio:4/3;object-fit:cover;"/>
+</div>
+<figcaption style="margin-top:8px;font-size:14px;line-height:1.6;color:#3a3735;">10월 1일(목) 오리엔테이션 · 단체 기념촬영 · 한국어·베트남어 실시간 AI 통번역 · 김도경 대학원장 환영 인사</figcaption>
+</figure>
 
-      <figure style="margin:24px 0 0;">
-        <img loading="lazy" decoding="async" src="assets/koica-01.jpg" alt="KOICA 전문인재양성프로그램 오리엔테이션 단체 기념촬영" style="display:block;width:100%;aspect-ratio:16/9;object-fit:cover;">
-        <div style="margin-top:10px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:10px;">
-          <img loading="lazy" decoding="async" src="assets/koica-04.jpg" alt="실시간 AI 통번역 화면을 띄우고 진행하는 오리엔테이션" style="display:block;width:100%;aspect-ratio:4/3;object-fit:cover;">
-          <img loading="lazy" decoding="async" src="assets/koica-06.jpg" alt="환영 인사를 하는 김도경 대학원장" style="display:block;width:100%;aspect-ratio:4/3;object-fit:cover;">
-        </div>
-        <figcaption style="margin-top:8px;font-size:14px;line-height:1.6;color:#3a3735;">10월 1일(목) 오리엔테이션 · 단체 기념촬영 · 한국어·베트남어 실시간 AI 통번역 · 김도경 대학원장 환영 인사</figcaption>
-      </figure>
-      <div style="margin-top:24px;background:#f3f6fa;color:#201e1d;border-left:4px solid #0858a8;padding:clamp(22px,4vw,34px);">
-        <div style="font-size:14px;font-weight:700;">KOICA(한국국제협력단) 전문인재 양성 프로그램</div>
-        <h3 style="margin:8px 0 0;font-size:clamp(21px,3.2vw,26px);font-weight:800;">협력국 학생 10명, 기계공학 석사과정 시작</h3>
-        <p style="margin:14px 0 0;font-size:17px;line-height:1.9;">조선대학교는 이 프로그램의 엔지니어링 분야 연수기관으로 선정됐습니다. 연수생들은 30개월 동안 기계공학과 석사과정(24개월)과 한국어교육(약 400시간), 산업체 인턴십(6개월)을 이수합니다.</p>
-        <p style="margin:12px 0 0;font-size:17px;line-height:1.9;">등록금, 한국어교육비, 항공료, 기숙사비, 생활비, 건강보험료는 KOICA가 지원합니다.</p>
-        <div style="margin-top:18px;border-top:1px solid rgba(255,255,255,.4);padding-top:14px;display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;">
-          <span style="font-size:14px;">2026~2030년 사업 규모</span>
-          <span style="font-size:clamp(28px,4vw,38px);font-weight:800;line-height:1;">약 24<span style="font-size:16px;margin-left:4px;">억 원</span></span>
-        </div>
-      </div>
-
-      <div style="margin-top:32px;font-size:14px;font-weight:800;letter-spacing:.06em;color:#0858a8;">10월 1일(목) · 오리엔테이션</div>
-      <h3 style="margin:8px 0 0;font-size:clamp(21px,3.2vw,26px);font-weight:800;line-height:1.4;text-wrap:balance;">언어 장벽 없이 시작한 대학원 생활</h3>
-      <p style="margin:14px 0 0;font-size:17.5px;line-height:1.95;color:#2b2927;">10월 1일(목) 국제관에서 ‘2026학년도 KOICA 전문인재양성프로그램(KOICA NEXT Fellowship) 오리엔테이션’이 열렸습니다. 김도경 대학원장과 기계공학과 교수진, 대학원교학팀·국제협력팀 교직원이 신규 연수생을 맞았고, 프로그램 운영 방식과 학사 일정, 지원 내용을 안내했습니다.</p>
-      <p style="margin:12px 0 0;font-size:17.5px;line-height:1.95;color:#2b2927;">이날 행사에는 실시간 AI 통번역 시스템을 처음 도입해 발표 내용을 한국어와 베트남어로 화면에 띄웠습니다. 연수생들은 앞으로 함께할 지도교수진과 첫인사를 나눴습니다.</p>
-      <blockquote style="margin:20px 0 0;background:#ffffff;border-left:4px solid #0858a8;padding:clamp(18px,3vw,26px);">
-        <p style="margin:0;font-size:clamp(17px,2.4vw,20px);line-height:1.85;font-weight:600;">“조선대에서 쌓은 전문지식과 경험이 여러분의 나라 발전에 큰 힘이 되기를 바랍니다.”</p>
-        <div style="margin-top:14px;font-size:15px;font-weight:800;color:#0858a8;">김도경 · 대학원장</div>
-        <p style="margin:10px 0 0;font-size:14px;color:#55514e;">전남일보 2026년 10월 7일(수) 보도 · <a href="https://www.jnilbo.com/news/articleView.html?idxno=90000071511" target="_blank" rel="noopener">기사 원문</a></p>
-      </blockquote>
-
-    <a class="no-print issue-return" href="#menu">↑ 이번 호 기사 목록으로</a></div>
-  </section>
+<div style="margin-top:32px;font-size:14px;font-weight:800;letter-spacing:.06em;color:#0858a8;">10월 1일(목) · 오리엔테이션</div>
+<h3 style="margin:8px 0 0;font-size:clamp(21px,3.2vw,26px);font-weight:800;line-height:1.4;text-wrap:balance;">언어 장벽 없이 시작한 대학원 생활</h3>
+<p style="margin:14px 0 0;font-size:17.5px;line-height:1.95;color:#2b2927;">10월 1일(목) 국제관에서 ‘2026학년도 KOICA 전문인재양성프로그램(KOICA NEXT Fellowship) 오리엔테이션’이 열렸습니다. 김도경 대학원장과 기계공학과 교수진, 대학원교학팀·국제협력팀 교직원이 신규 연수생을 맞았고, 프로그램 운영 방식과 학사 일정, 지원 내용을 안내했습니다.</p>
+<p style="margin:12px 0 0;font-size:17.5px;line-height:1.95;color:#2b2927;">이날 행사에는 실시간 AI 통번역 시스템을 처음 도입해 발표 내용을 한국어와 베트남어로 화면에 띄웠습니다. 연수생들은 앞으로 함께할 지도교수진과 첫인사를 나눴습니다.</p>
+<blockquote style="margin:20px 0 0;background:#ffffff;border-left:4px solid #0858a8;padding:clamp(18px,3vw,26px);">
+<p style="margin:0;font-size:clamp(17px,2.4vw,20px);line-height:1.85;font-weight:600;">“조선대에서 쌓은 전문지식과 경험이 여러분의 나라 발전에 큰 힘이 되기를 바랍니다.”</p>
+<div style="margin-top:14px;font-size:15px;font-weight:800;color:#0858a8;">김도경 · 대학원장</div>
+<p style="margin:10px 0 0;font-size:14px;color:#55514e;">전남일보 2026년 10월 7일(수) 보도 · <a href="https://www.jnilbo.com/news/articleView.html?idxno=90000071511" rel="noopener" target="_blank">기사 원문</a></p>
+</blockquote>
+<a class="no-print issue-return" href="#menu">↑ 이번 호 기사 목록으로</a></div>
+</section>
 
   <section id="a4b" data-screen-label="03 세계로 · 복수학위" style="background:#ffffff;border-top:1px solid #d9d5d1;">
     <div style="max-width:960px;margin:0 auto;padding:clamp(36px,5vw,56px) clamp(20px,5vw,48px);">
@@ -1099,11 +1103,20 @@ class Component extends DCLogic {
     this._cuBox = box;
     const nums = () => [...box.querySelectorAll('[data-count]')], bars = () => [...box.querySelectorAll('[data-bar]')];
     let shown = false;
-    const reset = () => { nums().forEach(el => { el.textContent = el.getAttribute('data-count') || '0'; }); bars().forEach(el => { el.style.transition = 'none'; el.style.width = '0%'; }); };
+    const reset = () => { nums().forEach(el => { el.textContent = '0'; }); bars().forEach(el => { el.style.transition = 'none'; el.style.width = '0%'; }); };
     const play = () => {
       const bs = bars(); bs.forEach(el => { void el.offsetWidth; });
       setTimeout(() => { if (!shown) return; bs.forEach((el, i) => { el.style.transition = 'width 1.8s ease-out'; el.style.width = el.getAttribute('data-bar') || '100%'; }); }, 40);
-      nums().forEach(el => { el.textContent = el.getAttribute('data-count') || '0'; });
+      const ns = nums(), start = performance.now(), duration = 2800;
+      const token = this._cuId = (this._cuId || 0) + 1;
+      const frame = now => {
+        if (!shown || token !== this._cuId) return;
+        const progress = Math.min(1, (now - start) / duration);
+        const eased = progress * progress * (3 - 2 * progress);
+        ns.forEach(el => { el.textContent = Math.round(Number(el.getAttribute('data-count') || 0) * eased).toLocaleString('ko-KR'); });
+        if (progress < 1) requestAnimationFrame(frame);
+      };
+      requestAnimationFrame(frame);
     };
     const check = () => {
       if (!box.isConnected) return;
