@@ -137,6 +137,17 @@ button:focus-visible{ text-decoration:underline!important;text-decoration-thickn
 #p-stats [data-count]{font-variant-numeric:tabular-nums}
 @media(max-width:600px){#p-cover>div>div:first-child{grid-template-columns:minmax(0,1fr) 90px!important;gap:12px!important}#p-cover>div>div:first-child p{font-size:15px!important}#p-cover h1{font-size:29px!important}#menu .issue-article-link:has(.issue-open-button)>span{padding:11px!important}#menu .issue-article-link:has(.issue-open-button)>span>span:nth-child(2){font-size:16px!important}#top section[id^="a"]>div{padding-top:26px!important;padding-bottom:26px!important}}
 </style>
+<style>
+.related-article-links{display:flex;align-items:center;flex-wrap:wrap;gap:4px 18px;margin-top:12px;padding:10px 0;border-top:1px solid #dbe2e9;font-size:14px;line-height:1.6}
+.related-article-links>span{color:#55514e;font-weight:700}
+.related-article-links>a{display:inline-flex;align-items:center;min-height:40px;color:#0858a8;text-decoration:underline;text-underline-offset:4px;font-weight:700}
+.policy-status-note{margin:14px 0 0;padding:10px 12px;border-left:3px solid #0858a8;background:#f3f6fa;font-size:14px!important;line-height:1.7!important;color:#3a3735}
+#menu .issue-article-link:has(.issue-open-button)>span{display:grid!important;grid-template-rows:auto 1fr auto;gap:7px!important}
+#menu .issue-article-link:has(.issue-open-button)>span>span:nth-child(2){min-height:0!important;margin-bottom:8px!important}
+#menu .issue-open-button{margin:0!important;align-self:end}
+@media(max-width:600px){#menu>div:has(>.issue-article-link:has(.issue-open-button)){grid-template-columns:repeat(2,minmax(0,1fr))!important}.related-article-links{gap:2px 14px;font-size:13px}}
+@media(max-width:340px){#menu>div:has(>.issue-article-link:has(.issue-open-button)){grid-template-columns:1fr!important}}
+</style>
 </head>
 <body>
 <x-dc>
@@ -246,7 +257,7 @@ button:focus-visible{ text-decoration:underline!important;text-decoration-thickn
       <div id="menu" style="margin-top:30px;">
 <div style="display:flex;flex-direction:column;align-items:flex-start;gap:10px;border-bottom:2px solid #201e1d;padding-bottom:16px;">
 <h2 style="margin:0;font-size:clamp(22px,3vw,28px);font-weight:800;">이번 호 기사 보기</h2>
-<span style="font-size:17px;line-height:1.7;color:#3a3735;">보고 싶은 기사 제목을 누르면 해당 기사로 이동합니다.</span>
+<span style="font-size:17px;line-height:1.7;color:#3a3735;">기사 제목이나 ‘기사 보기’ 버튼을 누르세요. 아래 ‘다음’ 버튼으로 순서대로 읽을 수도 있습니다.</span>
 </div>
 <div style="margin-top:16px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,148px),1fr));gap:12px;">
 <a aria-label="커버스토리 BK21 5단계 교내 설명회 기사 자세히 보기 → — 기사로 이동" class="issue-article-link" href="#a8" style="display:flex;flex-direction:column;background:#ffffff;border:1px solid #cfdae6;color:#201e1d;" style-hover="border-color:#0858a8;text-decoration:none;color:#0858a8;">
@@ -255,18 +266,18 @@ button:focus-visible{ text-decoration:underline!important;text-decoration-thickn
 </a>
 <a aria-label="새로 여는 대학원 웰에이징대학원 출범 기사 자세히 보기 → — 기사로 이동" class="issue-article-link" href="#a1" style="display:flex;flex-direction:column;background:#ffffff;border:1px solid #cfdae6;color:#201e1d;" style-hover="border-color:#0858a8;text-decoration:none;color:#0858a8;">
 <img alt="" decoding="async" loading="lazy" src="assets/wa-congrats-close.jpg" style="display:block;width:100%;aspect-ratio:4/3;object-fit:cover;"/>
-<span style="padding:12px 14px 14px;display:flex;flex-direction:column;gap:4px;flex:1;"><span style="font-size:13px;font-weight:800;color:#0858a8;">새로 여는 대학원</span><span style="font-size:19px;font-weight:800;line-height:1.55;">웰에이징대학원 출범</span><span class="issue-open-button" style="margin-top:auto;">기사 보기 →</span></span>
+<span style="padding:12px 14px 14px;display:flex;flex-direction:column;gap:4px;flex:1;"><span style="font-size:13px;font-weight:800;color:#0858a8;">글로컬대학사업</span><span style="font-size:19px;font-weight:800;line-height:1.55;">웰에이징대학원 출범</span><span class="issue-open-button" style="margin-top:auto;">기사 보기 →</span></span>
 </a>
 <a aria-label="연구를 돕는 대학원 장학금·연구비 지원과 성과 기사 자세히 보기 → — 기사로 이동" class="issue-article-link" href="#a2" style="display:flex;flex-direction:column;background:#ffffff;border:1px solid #cfdae6;color:#201e1d;" style-hover="border-color:#0858a8;text-decoration:none;color:#0858a8;">
 <img alt="" decoding="async" loading="lazy" src="assets/tri-new-1.jpg" style="display:block;width:100%;aspect-ratio:4/3;object-fit:cover;"/>
-<span style="padding:12px 14px 14px;display:flex;flex-direction:column;gap:4px;flex:1;"><span style="font-size:13px;font-weight:800;color:#0858a8;">연구를 돕는 대학원</span><span style="font-size:19px;font-weight:800;line-height:1.55;">장학금·연구비 지원과 성과</span><span class="issue-open-button" style="margin-top:auto;">기사 보기 →</span></span>
+<span style="padding:12px 14px 14px;display:flex;flex-direction:column;gap:4px;flex:1;"><span style="font-size:13px;font-weight:800;color:#0858a8;">앵커사업</span><span style="font-size:19px;font-weight:800;line-height:1.55;">장학금·연구비 지원과 성과</span><span class="issue-open-button" style="margin-top:auto;">기사 보기 →</span></span>
 </a>
-<a aria-label="세계로 가는 대학원 싱가포르 현장학습·KOICA·복수학위 기사 자세히 보기 → — 기사로 이동" class="issue-article-link" href="#a6" style="display:flex;flex-direction:column;background:#ffffff;border:1px solid #cfdae6;color:#201e1d;" style-hover="border-color:#0858a8;text-decoration:none;color:#0858a8;">
+<a aria-label="싱가포르 현장학습 기사로 이동" class="issue-article-link" href="#a6" style="display:flex;flex-direction:column;background:#ffffff;border:1px solid #cfdae6;color:#201e1d;" style-hover="border-color:#0858a8;text-decoration:none;color:#0858a8;">
 <img alt="" decoding="async" loading="lazy" src="assets/field-sg-01.jpg" style="display:block;width:100%;aspect-ratio:4/3;object-fit:cover;"/>
-<span style="padding:12px 14px 14px;display:flex;flex-direction:column;gap:4px;flex:1;"><span style="font-size:13px;font-weight:800;color:#0858a8;">세계로 가는 대학원</span><span style="font-size:19px;font-weight:800;line-height:1.55;">싱가포르 현장학습·KOICA·복수학위</span><span class="issue-open-button" style="margin-top:auto;">기사 보기 →</span></span>
+<span style="padding:12px 14px 14px;display:flex;flex-direction:column;gap:4px;flex:1;"><span style="font-size:13px;font-weight:800;color:#0858a8;">세계로 가는 대학원</span><span style="font-size:19px;font-weight:800;line-height:1.55;">싱가포르 현장학습</span><span class="issue-open-button" style="margin-top:auto;">기사 보기 →</span></span>
 </a>
 </div>
-<div style="margin-top:12px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:12px;">
+<div class="related-article-links" aria-label="다른 기사 바로가기"><span>다른 기사</span><a href="#a3">대학혁신지원사업 →</a><a href="#a4">KOICA →</a><a href="#a4b">복수학위 →</a></div><div style="margin-top:12px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:12px;">
 <a aria-label="입학 안내 · 모집 중 2027학년도 전기 대학원 신입생 모집 일반대학원·미래인재융합대학원 · 원서 접수 11.16(월)까지 모집 일정 보기 → — 기사로 이동" class="issue-article-link" href="#a9" style="display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;background:#f3f6fa;border:1px solid #d8dee6;border-left:4px solid #0858a8;color:#201e1d;padding:16px 20px;" style-hover="background:#e8eef6;text-decoration:none;color:#201e1d;">
 <span style="display:flex;flex-direction:column;gap:4px;"><span style="font-size:13px;font-weight:800;color:#0858a8;">입학 안내 · 모집 중</span><span style="font-size:18px;font-weight:800;line-height:1.4;">2027학년도 전기 대학원 신입생 모집</span><span style="font-size:14.5px;color:#3a3735;">일반대학원·미래인재융합대학원 · 원서 접수 11.16(월)까지</span></span>
 <span style="font-size:14.5px;font-weight:800;color:#0858a8;white-space:nowrap;">모집 일정 보기 →</span>
@@ -327,7 +338,7 @@ button:focus-visible{ text-decoration:underline!important;text-decoration-thickn
       <div style="display:flex;align-items:flex-end;justify-content:space-between;gap:20px;border-bottom:2px solid #0858a8;padding-bottom:14px;">
         <div>
           <div style="font-size:14px;font-weight:700;letter-spacing:.08em;color:#0858a8;">커버스토리 · 5단계 BK21사업 교내 설명회</div>
-          <h2 style="margin:10px 0 0;font-size:clamp(26px,4.6vw,40px);font-weight:800;letter-spacing:-.02em;line-height:1.25;text-wrap:balance;">5단계 BK21사업, 지역과 AI 중심의 추진 방향 공유</h2>
+          <h2 style="margin:10px 0 0;font-size:clamp(26px,4.6vw,40px);font-weight:800;letter-spacing:-.02em;line-height:1.25;text-wrap:balance;">5단계 BK21사업, 지역과 AI 중심의 추진 방향 공유</h2><p class="policy-status-note">아래 추진 방향과 일정은 1차 기획안 기준이며, 최종 공고에 따라 변경될 수 있습니다.</p>
         </div>
       </div>
 
