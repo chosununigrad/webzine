@@ -62,6 +62,12 @@ a:focus,a:focus-visible,a:hover,button:focus,button:focus-visible,button:hover{o
 a:focus-visible{ text-decoration:underline!important;text-decoration-thickness:3px!important;text-underline-offset:5px!important }
 button:focus-visible{ text-decoration:underline!important;text-decoration-thickness:3px!important;text-underline-offset:4px!important }
 </style>
+<style>
+.bottom-reading-tools button,.bottom-reading-tools a{display:inline-flex;align-items:center;justify-content:center;min-height:42px;padding:8px 12px;border:1px solid #9dbde0;background:#fff;color:#0858a8;font:inherit;font-size:16px;font-weight:800;text-decoration:none;cursor:pointer;box-sizing:border-box}
+.bottom-reading-tools button:hover,.bottom-reading-tools a:hover{background:#dceaf6}
+.scroll-reading-tools{position:fixed;bottom:0;left:0;right:0;z-index:41;border-top:2px solid #0858a8}
+@media(max-width:600px){.bottom-reading-tools{gap:5px!important}.bottom-reading-tools button,.bottom-reading-tools a{font-size:14px;padding:7px 9px}}
+</style>
 </head>
 <body>
 <x-dc>
@@ -149,17 +155,7 @@ button:focus-visible{ text-decoration:underline!important;text-decoration-thickn
         <a href="https://grad.chosun.ac.kr" target="_blank" rel="noopener" title="조선대학교 대학원 홈페이지" style="display:block;flex:none;"><img src="assets/logo-grad-white.png" alt="조선대학교 대학원" style="display:block;height:28px;width:auto;"></a>
         <span style="font-size:13px;opacity:.92;white-space:nowrap;">뉴스레터 2026년 11월호</span>
       </div>
-      <div style="display:flex;align-items:center;gap:12px;margin-left:auto;">
-        <sc-if value="{{ true }}" hint-placeholder-val="{{ true }}">
-          <div style="display:flex;align-items:center;gap:4px;">
-            <button onClick="{{ toggleMode }}" style="font:inherit;font-size:12.5px;font-weight:700;height:30px;padding:0 9px;border:1px solid rgba(255,255,255,.7);background:transparent;color:#ffffff;cursor:pointer;white-space:nowrap;" style-hover="background:rgba(255,255,255,.15);">{{ modeLabel }}</button>
-            <button onClick="{{ smaller }}" aria-label="글자 작게" style="font:inherit;font-size:12.5px;font-weight:800;padding:0 8px;white-space:nowrap;height:30px;border:1px solid rgba(255,255,255,.7);background:transparent;color:#ffffff;cursor:pointer;" style-hover="background:rgba(255,255,255,.15);">가−</button>
-            <button onClick="{{ bigger }}" aria-label="글자 크게" style="font:inherit;font-size:13.5px;font-weight:800;padding:0 8px;white-space:nowrap;height:30px;border:1px solid #ffffff;background:#ffffff;color:#0858a8;cursor:pointer;" style-hover="background:#dceaf6;">가+</button>
-          </div>
-        </sc-if>
-        <a href="#menu" style="font-size:13px;font-weight:700;color:#ffffff;white-space:nowrap;" style-hover="color:#ffffff;text-decoration:underline;">기사 목록</a>
-        <a href="#a7" style="font-size:13px;font-weight:700;color:#ffffff;white-space:nowrap;" style-hover="color:#ffffff;text-decoration:underline;">학사 일정</a>
-      </div>
+
     </div>
     <div style="height:4px;background:rgba(255,255,255,.25);"><div id="progbar" style="height:100%;background:#f5b800;width:{{ progress }};transition:width .15s linear;"></div></div>
   </div>
@@ -921,12 +917,15 @@ button:focus-visible{ text-decoration:underline!important;text-decoration-thickn
 </div>
 
 <sc-if value="{{ pageMode }}" hint-placeholder-val="{{ false }}">
-  <nav id="pager" class="no-print" aria-label="페이지 넘기기" style="position:fixed;left:0;right:0;bottom:0;z-index:41;background:#ffffff;border-top:2px solid #0858a8;box-shadow:0 -4px 14px rgba(0,0,0,.08);">
+  <nav id="pager" class="no-print" aria-label="페이지 넘기기" style="position:fixed;left:0;right:0;bottom:0;z-index:41;background:#ffffff;border-top:2px solid #0858a8;box-shadow:0 -4px 14px rgba(0,0,0,.08);"><div class="bottom-reading-tools" style="display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:8px;padding:8px 12px;background:#eef4fa;border-bottom:1px solid #c6d7e8;">
+<button onClick="{{ toggleMode }}">{{ modeLabel }}</button>
+<button onClick="{{ smaller }}" aria-label="글자 작게">가−</button><button onClick="{{ bigger }}" aria-label="글자 크게">가+</button>
+<a href="#menu">이번 호 기사 보기</a><a href="#a7">학사 일정</a></div>
     <div style="max-width:960px;margin:0 auto;display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:center;gap:10px;padding:8px clamp(12px,4vw,48px);">
       <button onClick="{{ prevPage }}" disabled="{{ atFirst }}" style="font:inherit;font-size:15px;font-weight:800;height:44px;padding:0 16px;border:1px solid #0858a8;background:#ffffff;color:#0858a8;cursor:pointer;opacity:{{ prevOp }};" style-hover="background:#eef4fa;">‹ 이전</button>
       <div style="display:flex;flex-direction:column;align-items:center;gap:5px;min-width:0;">
         <span style="display:flex;align-items:center;gap:8px;font-size:14.5px;font-weight:800;white-space:nowrap;max-width:100%;"><span style="overflow:hidden;text-overflow:ellipsis;">{{ pageTitle }}</span><input type="number" min="1" max="{{ pageMax }}" value="{{ pageInputVal }}" onChange="{{ pageInputChange }}" onKeyDown="{{ pageInputKey }}" onBlur="{{ pageInputGo }}" aria-label="이동할 페이지 번호" style="font:inherit;font-size:14.5px;font-weight:800;color:#0858a8;width:52px;height:30px;padding:0 4px;text-align:center;border:1px solid #9dbde0;background:#ffffff;"><span style="color:#0858a8;">/ {{ pageMax }}</span></span>
-        <button onClick="{{ toMenu }}" style="font:inherit;font-size:12.5px;font-weight:700;border:0;background:none;color:#0858a8;cursor:pointer;padding:0;text-decoration:underline;">기사 목록 보기</button>
+        <button onClick="{{ firstPage }}" style="font:inherit;font-size:16px;font-weight:800;border:1px solid #9dbde0;background:#eef4fa;color:#0858a8;cursor:pointer;padding:8px 14px;min-height:42px;">첫 페이지로 가기</button>
         <div onClick="{{ barClick }}" role="slider" aria-label="페이지 이동" aria-valuenow="{{ pageNow }}" aria-valuemin="1" aria-valuemax="{{ pageMax }}" style="width:min(100%,360px);padding:6px 0;cursor:pointer;"><div style="height:8px;background:#dceaf6;"><div style="height:100%;background:#0858a8;width:{{ pageBar }};transition:width .25s;"></div></div></div>
       </div>
       <button onClick="{{ nextPage }}" style="font:inherit;font-size:15px;font-weight:800;height:44px;padding:0 16px;border:1px solid #0858a8;background:#0858a8;color:#ffffff;cursor:pointer;white-space:nowrap;" style-hover="background:#064a8f;">{{ nextLabel }}</button>
@@ -934,6 +933,10 @@ button:focus-visible{ text-decoration:underline!important;text-decoration-thickn
   </nav>
 </sc-if>
 
+<sc-if value="{{ !pageMode }}" hint-placeholder-val="{{ false }}"><nav class="scroll-reading-tools no-print" aria-label="읽기 도구"><div class="bottom-reading-tools" style="display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:8px;padding:8px 12px;background:#eef4fa;border-bottom:1px solid #c6d7e8;">
+<button onClick="{{ toggleMode }}">{{ modeLabel }}</button>
+<button onClick="{{ smaller }}" aria-label="글자 작게">가−</button><button onClick="{{ bigger }}" aria-label="글자 크게">가+</button>
+<a href="#menu">이번 호 기사 보기</a><a href="#a7">학사 일정</a></div></nav></sc-if>
 <sc-if value="{{ false }}" hint-placeholder-val="{{ false }}">
 <div class="no-print" style="position:fixed;right:12px;bottom:{{ panelBottom }};z-index:40;display:flex;align-items:center;gap:5px;padding:5px;background:#ffffff;border:1px solid #201e1d;box-shadow:0 4px 14px rgba(0,0,0,.14);">
   <button onClick="{{ toggleMode }}" style="font:inherit;font-size:12px;font-weight:800;height:32px;padding:0 9px;border:1px solid #0858a8;background:#eef4fa;color:#0858a8;cursor:pointer;white-space:nowrap;" style-hover="background:#dceaf6;">{{ modeLabel }}</button>
@@ -1095,7 +1098,7 @@ class Component extends DCLogic {
     window.removeEventListener('touchend', this._onTe);
     if (this._io) this._io.disconnect();
   }
-  componentDidUpdate() { this.scheduleLayout(); this.countUp(); }
+  componentDidUpdate() { this.scheduleLayout(); this.countUp(); if (this._cuCheck) this._cuCheck(); }
 
   countUp() {
     const box = document.getElementById('p-stats');
@@ -1105,19 +1108,31 @@ class Component extends DCLogic {
     let shown = false;
     const reset = () => { nums().forEach(el => { el.textContent = '0'; }); bars().forEach(el => { el.style.transition = 'none'; el.style.width = '0%'; }); };
     const play = () => {
-      const bs = bars(); bs.forEach(el => { void el.offsetWidth; });
-      setTimeout(() => { if (!shown) return; bs.forEach((el, i) => { el.style.transition = 'width 1.8s ease-out'; el.style.width = el.getAttribute('data-bar') || '100%'; }); }, 40);
-      const ns = nums(), start = performance.now(), duration = 2800;
-      const token = this._cuId = (this._cuId || 0) + 1;
+      const ns = nums(), bs = bars();
+      const duration = 3200, token = this._cuId = (this._cuId || 0) + 1;
+      const start = performance.now();
+      bs.forEach(el => { el.style.transition = 'none'; el.style.width = '0%'; });
+      let previousStep = -1;
       const frame = now => {
         if (!shown || token !== this._cuId) return;
-        const progress = Math.min(1, (now - start) / duration);
-        const eased = progress * progress * (3 - 2 * progress);
-        ns.forEach(el => { el.textContent = Math.round(Number(el.getAttribute('data-count') || 0) * eased).toLocaleString('ko-KR'); });
-        if (progress < 1) requestAnimationFrame(frame);
+        const t = Math.min(1, (now - start) / duration);
+        const progress = t * t * (3 - 2 * t);
+        // Calm numeric changes: a small fixed number of updates, not a flickering counter.
+        const step = Math.min(12, Math.floor(t * 12));
+        if (step !== previousStep || t === 1) {
+          previousStep = step;
+          const q = step / 12, valueProgress = q * q * (3 - 2 * q);
+          ns.forEach(el => { el.textContent = Math.round(Number(el.getAttribute('data-count') || 0) * valueProgress).toLocaleString('ko-KR'); });
+        }
+        bs.forEach(el => {
+          const target = Math.min(100, Math.max(0, parseFloat(el.getAttribute('data-bar')) || 0));
+          el.style.setProperty('width', (target * progress).toFixed(3) + '%', 'important');
+        });
+        if (t < 1) requestAnimationFrame(frame);
       };
       requestAnimationFrame(frame);
     };
+
     const check = () => {
       if (!box.isConnected) return;
       const r = box.getBoundingClientRect(), h = window.innerHeight || document.documentElement.clientHeight;
@@ -1296,7 +1311,7 @@ class Component extends DCLogic {
       scrollMode: this.state.mode !== 'page',
       modeLabel: this.state.mode === 'page' ? '스크롤로 보기' : '넘겨 보기',
       toggleMode: () => this.setMode(this.state.mode === 'page' ? 'scroll' : 'page'),
-      padBottom: '0px',
+      padBottom: this.state.mode === 'page' ? '0px' : '130px',
       panelBottom: this.state.mode === 'page' ? '76px' : '12px',
       pageTitle: this.pages[this.state.page].t,
       pageMax: this.pages.length,
@@ -1313,6 +1328,7 @@ class Component extends DCLogic {
       prevOp: this.state.page === 0 ? 0.35 : 1,
       nextOp: this.state.page >= this.pages.length - 1 ? 0.35 : 1,
       prevPage: () => this.goPage(this.state.page - 1),
+      firstPage: () => { if (this.state.page === 0) { const t = document.getElementById('top'); if (t) t.scrollTop = 0; } else this.goPage(0); },
       toMenu: () => { if (this.state.mode === 'page') { this.goPage(0); setTimeout(() => { const m = document.getElementById('menu'), tp = document.getElementById('top'); if (m && tp) tp.scrollTop += m.getBoundingClientRect().top - tp.getBoundingClientRect().top - 8; }, 380); } },
       nextPage: () => this.goPage(this.state.page >= this.pages.length - 1 ? 0 : this.state.page + 1),
       nextLabel: this.state.page >= this.pages.length - 1 ? '처음으로 ↺' : '다음 ›',
