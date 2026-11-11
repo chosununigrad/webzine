@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html>
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -19,144 +19,6 @@
 <meta name="twitter:image" content="https://chosununigrad.github.io/webzine/og-cover-2026-11.png">
 <script>window.__resources={"https://unpkg.com/react@18.3.1/umd/react.production.min.js":"vendor/react.production.min.js","https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js":"vendor/react-dom.production.min.js"};</script>
 <script src="./support.js"></script>
-
-<style>
-/* Clear, large controls without adding a second navigation section. */
-.clear-article-button{display:flex!important;flex-direction:column;justify-content:center;gap:8px;flex:1 1 200px;min-height:88px;padding:16px 20px;background:#0858a8!important;border:2px solid #0858a8!important;border-radius:0;color:#fff!important;text-decoration:none!important;cursor:pointer;box-sizing:border-box}
-.clear-button-title{font-size:18px;font-weight:800;line-height:1.5}
-.clear-button-action{display:flex;align-items:center;justify-content:space-between;gap:20px;font-size:16px;font-weight:700;line-height:1.5}
-.clear-button-action>span{font-size:25px;line-height:1}
-.clear-article-button:hover{background:#06427e!important;border-color:#06427e!important;text-decoration:underline!important}
-a[href^="#"]:focus-visible,button:focus-visible{outline:2px solid #0858a8!important;outline-offset:4px}
-#menu a[href^="#a"]{cursor:pointer;min-height:64px}
-@media(max-width:600px){.clear-article-button{flex-basis:100%;min-height:88px}}
-@media(prefers-reduced-motion:reduce){#p-stats [data-bar]{transition:none!important}}
-</style>
-<style>
-#menu .issue-article-link{cursor:pointer;border-radius:0;overflow:hidden;text-decoration:none!important}
-#menu .issue-article-link:hover{outline:none;outline-offset:0}
-#menu .issue-open-button{display:flex;align-items:center;justify-content:center;min-height:46px;padding:10px 14px!important;margin-top:14px!important;background:#0858a8;color:#fff!important;border-radius:0;font-size:17px!important;font-weight:800;box-sizing:border-box}
-a.no-print[href="#menu"]{display:inline-flex!important;align-items:center;min-height:48px;margin-top:28px;padding:10px 18px;background:#eef4fa;border:1px solid #9dbde0;border-radius:0;color:#0858a8;font-size:17px!important;font-weight:800;text-decoration:none;box-sizing:border-box}
-a.no-print[href="#menu"]:hover{background:#dceaf6;text-decoration:underline}
-</style>
-<style>
-#menu .issue-article-link>span:has(.issue-open-button){flex:1;display:flex;flex-direction:column}
-#menu .issue-article-link .issue-open-button{margin-top:auto!important;flex-shrink:0}
-#menu .issue-article-link>span>span:nth-child(2){min-height:4.65em;margin-bottom:14px}
-.funding-amount{white-space:nowrap;font-size:clamp(21px,2.6vw,28px)!important;letter-spacing:-.04em;line-height:1.35!important}
-</style>
-<style>
-/* Consistent square corners across cards, images, controls and content panels. */
-#top *,#pager *,#top *::before,#top *::after{border-radius:0!important}
-</style>
-<style>
-/* Pointer clicks stay clean; keyboard users retain a consistent blue focus cue. */
-a:focus:not(:focus-visible),button:focus:not(:focus-visible),input:focus:not(:focus-visible),select:focus:not(:focus-visible){outline:none!important;box-shadow:none!important}
-a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid #0858a8!important;outline-offset:3px!important}
-#hdr a:focus-visible,#hdr button:focus-visible{outline-color:#fff!important}
-</style>
-<style>
-/* No rectangular selection outline on click, hover, or keyboard focus. */
-a:focus,a:focus-visible,a:hover,button:focus,button:focus-visible,button:hover{outline:none!important;box-shadow:none!important}
-/* Keyboard location remains visible without a box. */
-a:focus-visible{ text-decoration:underline!important;text-decoration-thickness:3px!important;text-underline-offset:5px!important }
-button:focus-visible{ text-decoration:underline!important;text-decoration-thickness:3px!important;text-underline-offset:4px!important }
-</style>
-<style>
-.bottom-reading-tools button,.bottom-reading-tools a{display:inline-flex;align-items:center;justify-content:center;min-height:42px;padding:8px 12px;border:1px solid #9dbde0;background:#fff;color:#0858a8;font:inherit;font-size:16px;font-weight:800;text-decoration:none;cursor:pointer;box-sizing:border-box}
-.bottom-reading-tools button:hover,.bottom-reading-tools a:hover{background:#dceaf6}
-.scroll-reading-tools{position:fixed;bottom:0;left:0;right:0;z-index:41;border-top:2px solid #0858a8}
-@media(max-width:600px){.bottom-reading-tools{gap:5px!important}.bottom-reading-tools button,.bottom-reading-tools a{font-size:14px;padding:7px 9px}}
-</style>
-
-<style>
-/* Compact reader controls: no tall tiles, no wrapping page counter. */
-.reading-main{max-width:760px;grid-template-columns:110px minmax(0,1fr) 110px;gap:12px;padding:7px 16px;align-items:center}
-.reading-main button{height:40px;min-height:40px;padding:6px 12px;font-size:15px;line-height:1.3;white-space:nowrap}
-.reading-main .reading-home{display:flex;align-items:center;justify-content:center;gap:12px;font-size:14px;border:0;background:transparent}
-.reading-home span{display:inline!important;margin:0!important;font-size:13px;line-height:1.3;white-space:nowrap!important;word-break:normal!important;overflow-wrap:normal!important;flex-shrink:0;color:#55514e}
-.refined-pager>.bottom-reading-tools{padding:3px 10px;gap:6px;flex-wrap:nowrap}
-.refined-pager .bottom-reading-tools button,.refined-pager .bottom-reading-tools a{min-height:30px;padding:4px 10px;font-size:13px;white-space:nowrap}
-@media(max-width:600px){.reading-main{grid-template-columns:76px minmax(0,1fr) 76px;padding:6px 12px;gap:6px}.reading-main button{height:38px;min-height:38px;font-size:14px;padding:5px 8px}.reading-main .reading-home{font-size:13px;gap:8px}.reading-home span{font-size:12px}.refined-pager .bottom-reading-tools button,.refined-pager .bottom-reading-tools a{padding:4px 8px;font-size:12px}}
-</style>
-<style>
-.refined-pager{position:fixed;left:0;right:0;bottom:0;z-index:41;background:#fff;border-top:1px solid #c6d7e8}
-.reading-main{margin:0 auto;display:grid}
-.reading-main button{font-family:inherit;font-weight:700;border:1px solid #9dbde0;background:#fff;color:#0858a8;cursor:pointer;box-sizing:border-box}
-.reading-main .reading-next{background:#0858a8;border-color:#0858a8;color:#fff}
-.reading-main button:disabled{opacity:.35;cursor:default}
-.refined-pager>.bottom-reading-tools{display:flex;align-items:center;justify-content:center;background:#f3f6fa;border-top:1px solid #e1e7ee}
-</style>
-<style>
-/* Scope card title sizing to article cards, not the admissions notice. */
-#menu .issue-article-link>span>span:nth-child(2){min-height:0!important;margin-bottom:0!important}
-#menu .issue-article-link:has(.issue-open-button)>span>span:nth-child(2){min-height:3.1em!important;margin-bottom:10px!important}
-#menu .issue-article-link:has(.issue-open-button)>span{padding-bottom:12px!important}
-#menu .issue-open-button{margin-top:10px!important}
-#menu .issue-article-link[href="#a9"]{padding:16px 20px!important;gap:12px!important;align-items:center!important}
-#menu .issue-article-link[href="#a9"]>span:first-child{gap:5px!important;flex:1 1 400px!important}
-#menu .issue-article-link[href="#a9"]>span:last-child{min-height:0!important;margin:0!important;flex:0 0 auto!important}
-</style>
-<style>
-/* Consistent proportions: symmetric reader controls and balanced card spacing. */
-.reading-main{grid-template-columns:110px minmax(0,1fr) 110px;align-items:center;gap:12px}
-.reading-main .reading-home{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;height:auto;min-height:44px;padding:3px 8px;line-height:1.3}
-.reading-home span{display:block!important;margin:0!important;line-height:1.3;font-size:12px;font-weight:500}
-.reading-prev,.reading-next{width:100%;height:40px!important;min-height:40px!important}
-#menu .issue-article-link:has(.issue-open-button){height:100%;box-sizing:border-box}
-#menu .issue-article-link:has(.issue-open-button)>img{width:100%;aspect-ratio:4/3;object-fit:cover}
-#menu .issue-article-link:has(.issue-open-button)>span{display:flex;flex-direction:column;flex:1;padding:12px 14px!important;gap:5px}
-#menu .issue-article-link:has(.issue-open-button)>span>span:nth-child(2){min-height:3.1em!important;margin-bottom:10px!important;line-height:1.55!important}
-#menu .issue-open-button{margin-top:auto!important;min-height:44px;padding:9px 12px!important;box-sizing:border-box}
-#menu .issue-article-link[href="#a9"]>span>span:nth-child(2){min-height:0!important;margin-bottom:0!important}
-@media(max-width:600px){.reading-main{grid-template-columns:76px minmax(0,1fr) 76px;gap:8px}.reading-main .reading-home{font-size:13px;gap:3px}.reading-home span{font-size:11px}.reading-prev,.reading-next{height:38px!important;min-height:38px!important}}
-</style>
-<style>
-/* Editorial refinement: compact rhythm, clear hierarchy, restrained decoration. */
-.reading-main .reading-home>.page-counter{display:inline-flex!important;flex-direction:row!important;align-items:center!important;justify-content:center!important;gap:5px!important;width:auto!important;min-width:58px!important;white-space:nowrap!important;flex-shrink:0!important}
-.reading-main .reading-home>.page-counter>span{display:inline!important;flex:0 0 auto!important;width:auto!important;min-width:0!important;white-space:nowrap!important;word-break:normal!important;overflow-wrap:normal!important;font-size:12px!important;line-height:16px!important}
-#top{color:#201e1d}
-#top h1,#top h2,#top h3{letter-spacing:-.025em}
-#p-cover>div{padding-top:28px!important;padding-bottom:30px!important}
-#p-cover>div>div:first-child{grid-template-columns:minmax(0,1fr) 160px!important;gap:20px!important;align-items:center!important}
-#p-cover h1{font-size:clamp(30px,4.3vw,42px)!important;line-height:1.25!important;margin-top:0!important}
-#p-cover>div>div:first-child>img{max-width:160px!important;width:100%!important}
-#p-cover>div>div:first-child p{font-size:18px!important;line-height:1.6!important}
-#menu{margin-top:24px!important}
-#menu>div:has(>.issue-article-link:has(.issue-open-button)){gap:14px!important}
-#menu .issue-article-link:has(.issue-open-button){border:1px solid #d5dfe8!important;background:#fff!important}
-#menu .issue-article-link:has(.issue-open-button)>span{padding:14px!important;gap:7px!important}
-#menu .issue-article-link:has(.issue-open-button)>span>span:nth-child(2){font-size:17px!important;line-height:1.5!important;min-height:3em!important;margin-bottom:12px!important}
-#menu .issue-open-button{min-height:40px!important;font-size:15px!important;padding:8px 10px!important}
-#menu .issue-article-link[href="#a9"]{background:#f3f6fa!important;border:1px solid #d5dfe8!important;border-left:3px solid #0858a8!important}
-#top section[id^="a"]>div{padding-top:32px!important;padding-bottom:32px!important}
-#top section[id^="a"] h2{font-size:clamp(27px,3.8vw,36px)!important;line-height:1.35!important}
-#top section[id^="a"] p{line-height:1.85!important}
-#top section[id^="a"] figcaption{line-height:1.65!important;color:#55514e!important}
-#p-stats>div{padding-top:28px!important;padding-bottom:28px!important}
-#p-stats [data-count]{font-variant-numeric:tabular-nums}
-@media(max-width:600px){#p-cover>div>div:first-child{grid-template-columns:minmax(0,1fr) 90px!important;gap:12px!important}#p-cover>div>div:first-child p{font-size:15px!important}#p-cover h1{font-size:29px!important}#menu .issue-article-link:has(.issue-open-button)>span{padding:11px!important}#menu .issue-article-link:has(.issue-open-button)>span>span:nth-child(2){font-size:16px!important}#top section[id^="a"]>div{padding-top:26px!important;padding-bottom:26px!important}}
-</style>
-<style>
-.related-article-links{display:flex;align-items:center;flex-wrap:wrap;gap:4px 18px;margin-top:12px;padding:10px 0;border-top:1px solid #dbe2e9;font-size:14px;line-height:1.6}
-.related-article-links>span{color:#55514e;font-weight:700}
-.related-article-links>a{display:inline-flex;align-items:center;min-height:40px;color:#0858a8;text-decoration:underline;text-underline-offset:4px;font-weight:700}
-.policy-status-note{margin:14px 0 0;padding:10px 12px;border-left:3px solid #0858a8;background:#f3f6fa;font-size:14px!important;line-height:1.7!important;color:#3a3735}
-#menu .issue-article-link:has(.issue-open-button)>span{display:grid!important;grid-template-rows:auto 1fr auto;gap:7px!important}
-#menu .issue-article-link:has(.issue-open-button)>span>span:nth-child(2){min-height:0!important;margin-bottom:8px!important}
-#menu .issue-open-button{margin:0!important;align-self:end}
-@media(max-width:600px){#menu>div:has(>.issue-article-link:has(.issue-open-button)){grid-template-columns:repeat(2,minmax(0,1fr))!important}.related-article-links{gap:2px 14px;font-size:13px}}
-@media(max-width:340px){#menu>div:has(>.issue-article-link:has(.issue-open-button)){grid-template-columns:1fr!important}}
-</style>
-<style>
-.bottom-reading-tools button,.bottom-reading-tools a{transition:background-color .12s,color .12s,border-color .12s;touch-action:manipulation}
-.bottom-reading-tools button:active,.bottom-reading-tools a:active{background:#dceaf6!important;color:#06427e!important}
-.scroll-reading-tools{border-top:2px solid #0858a8}
-.scroll-reading-tools .bottom-reading-tools{background:#f5f8fc!important;border-bottom:0!important;gap:8px!important;padding:7px 12px!important}
-.scroll-reading-tools .bottom-reading-tools button,.scroll-reading-tools .bottom-reading-tools a{background:#fff;border-color:#c9d8e7;color:#0858a8;font-size:14px;min-height:38px;padding:7px 12px}
-.scroll-reading-tools .bottom-reading-tools button:first-child{background:#0858a8!important;border-color:#0858a8!important;color:#fff!important}
-.scroll-reading-tools .bottom-reading-tools button:first-child:hover{background:#06427e!important}
-</style>
 </head>
 <body>
 <x-dc>
@@ -197,8 +59,33 @@ button:focus-visible{ text-decoration:underline!important;text-decoration-thickn
   :focus-visible { outline:3px solid #0858a8; outline-offset:2px; }
   ::selection { background:#cfe0f0; }
   section[id] { scroll-margin-top: 56px; }
-  #top section[id^="a"] img { border-radius:0; }
-  #top a[href="#menu"].no-print { padding: 8px 14px; border: 1px solid #9dbde0; background: #ffffff; text-decoration: none !important; border-radius:0; }
+  /* clickable affordance */
+  a, button, summary { cursor: pointer; }
+  #menu a { transition: transform .15s ease, box-shadow .15s ease, border-color .15s ease; }
+  #menu a:hover { transform: translateY(-4px); box-shadow: 0 10px 24px rgba(8,88,168,.18); border-color: #0858a8; }
+  #menu a:hover img { filter: brightness(1.04); }
+  #menu a span:last-child > span:last-child { transition: transform .15s ease; display: inline-block; }
+  #menu a:hover span:last-child > span:last-child { transform: translateX(4px); text-decoration: underline; text-underline-offset: 3px; }
+  #top a[href^="#"]:not([id="nextup"]):hover, #top a[href^="http"]:hover { text-decoration: underline; text-underline-offset: 3px; }
+  #nextup, #top a { transition: background .15s ease, border-color .15s ease, color .15s ease; }
+  #hdr a:hover { text-decoration: underline !important; text-underline-offset: 3px; }
+  .cday:hover { outline: 2px solid #9dbde0; outline-offset: -2px; }
+  #top a, #top button, #top summary { transition: transform .18s ease, box-shadow .18s ease, background-color .18s ease, color .18s ease, border-color .18s ease; }
+  #top a:focus-visible, #top button:focus-visible { outline: 3px solid #f5b800; outline-offset: 2px; }
+  #menu a { position: relative; overflow: hidden; border-radius: 8px; }
+  #menu a img { transition: transform .35s ease; }
+  #menu a:hover { transform: translateY(-4px); box-shadow: 0 10px 24px rgba(8,88,168,.18); border-color: #0858a8 !important; }
+  #menu a:hover img { transform: scale(1.06); }
+  #menu a:hover span span:last-child { text-decoration: underline; text-underline-offset: 3px; }
+  #top section a[href^="#a"]:not(#menu a):hover, #nextup:hover, #p-stats a:hover { box-shadow: 0 6px 16px rgba(8,88,168,.14); transform: translateY(-2px); }
+  #top a[href^="http"]:hover { text-decoration: underline; text-underline-offset: 3px; }
+  #top a[href="#menu"]:hover, #top a[href="#top"]:hover { background: #eef4fa !important; border-color: #0858a8 !important; }
+  #top button:not([disabled]):hover { transform: translateY(-1px); box-shadow: 0 3px 8px rgba(0,0,0,.12); }
+  #top summary:hover { background: #eef4fa; }
+  #hdr a:hover, #hdr button:hover { transform: none; box-shadow: none; }
+  @media (hover: none) { #menu a:hover, #top a:hover, #top button:hover { transform: none !important; box-shadow: none !important; } }
+  #top section[id^="a"] img { border-radius: 6px; }
+  #top a[href="#menu"].no-print { padding: 8px 14px; border: 1px solid #9dbde0; background: #ffffff; text-decoration: none !important; border-radius: 6px; }
   @media screen {
     body[data-paged] { overflow:hidden; height:100vh; }
     body[data-paged] #hdr { position:fixed !important; left:0; right:0; top:0; }
@@ -240,59 +127,74 @@ button:focus-visible{ text-decoration:underline!important;text-decoration-thickn
 
   <div id="hdr" class="no-print" style="position:sticky;top:0;z-index:20;background:#0858a8;color:#ffffff;">
     <div style="max-width:960px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px 16px;padding:10px clamp(16px,5vw,48px);">
-      <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;min-width:0;width:100%;flex-wrap:nowrap;">
+      <div style="display:flex;align-items:center;gap:12px;min-width:0;flex-wrap:wrap;row-gap:4px;">
         <a href="https://grad.chosun.ac.kr" target="_blank" rel="noopener" title="조선대학교 대학원 홈페이지" style="display:block;flex:none;"><img src="assets/logo-grad-white.png" alt="조선대학교 대학원" style="display:block;height:28px;width:auto;"></a>
         <span style="font-size:13px;opacity:.92;white-space:nowrap;">뉴스레터 2026년 11월호</span>
       </div>
-
+      <div style="display:flex;align-items:center;gap:12px;margin-left:auto;">
+        <sc-if value="{{ true }}" hint-placeholder-val="{{ true }}">
+          <div style="display:flex;align-items:center;gap:4px;">
+            <button onClick="{{ toggleMode }}" style="font:inherit;font-size:12.5px;font-weight:700;height:30px;padding:0 9px;border:1px solid rgba(255,255,255,.7);background:transparent;color:#ffffff;cursor:pointer;white-space:nowrap;" style-hover="background:rgba(255,255,255,.15);">{{ modeLabel }}</button>
+            <button onClick="{{ smaller }}" aria-label="글자 작게" style="font:inherit;font-size:12.5px;font-weight:800;padding:0 8px;white-space:nowrap;height:30px;border:1px solid rgba(255,255,255,.7);background:transparent;color:#ffffff;cursor:pointer;" style-hover="background:rgba(255,255,255,.15);">가−</button>
+            <button onClick="{{ bigger }}" aria-label="글자 크게" style="font:inherit;font-size:13.5px;font-weight:800;padding:0 8px;white-space:nowrap;height:30px;border:1px solid #ffffff;background:#ffffff;color:#0858a8;cursor:pointer;" style-hover="background:#dceaf6;">가+</button>
+          </div>
+        </sc-if>
+        <a href="#menu" style="font-size:13px;font-weight:700;color:#ffffff;white-space:nowrap;" style-hover="color:#ffffff;text-decoration:underline;">기사 목록</a>
+        <a href="#a7" style="font-size:13px;font-weight:700;color:#ffffff;white-space:nowrap;" style-hover="color:#ffffff;text-decoration:underline;">학사 일정</a>
+      </div>
     </div>
     <div style="height:4px;background:rgba(255,255,255,.25);"><div id="progbar" style="height:100%;background:#f5b800;width:{{ progress }};transition:width .15s linear;"></div></div>
   </div>
 
   <section id="p-cover" style="background:#ffffff;">
-    <div style="max-width:960px;margin:0 auto;padding:clamp(32px,5vw,56px) clamp(20px,5vw,48px);">
+    <div style="max-width:1080px;margin:0 auto;padding:clamp(32px,5vw,56px) clamp(20px,5vw,48px);">
       <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:clamp(16px,4vw,36px);align-items:center;">
         <div>
-          
+          <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;">
+            <span style="font-size:13px;font-weight:800;letter-spacing:.06em;padding:6px 10px;background:#0858a8;color:#ffffff;">조선대학교 대학원 뉴스레터</span>
+            <span style="font-size:13px;font-weight:700;color:#0858a8;">2026년 11월 창간호</span>
+          </div>
           <h1 style="margin:20px 0 0;font-size:clamp(34px,6vw,56px);line-height:1.15;font-weight:800;letter-spacing:-.02em;text-wrap:balance;">대학원 혁신의 현장</h1>
           <p style="margin:14px 0 0;font-size:clamp(18px,2.4vw,22px);font-weight:700;color:#0858a8;line-height:1.45;">지역·산업·세계와 연결되는 연구 생태계</p>
         </div>
-        <img src="assets/joa-friends.png" alt="조아프렌즈" style="width:100%;max-width:min(300px,52vw);height:auto;display:block;justify-self:center;">
+        <img src="assets/joa-friends.png" alt="조아프렌즈" style="width:100%;max-width:420px;height:auto;display:block;justify-self:center;">
       </div>
-      <div style="margin-top:24px;padding:16px 20px;background:#f6f8fa;border-left:4px solid #0858a8;">
-        <p style="margin:0;font-size:16.5px;line-height:1.8;color:#2b2927;"><b style="color:#0858a8;">창간호를 내며</b> · 조선대학교 대학원이 뉴스레터를 창간합니다. 대학원의 지원사업과 그 성과, 학사 일정을 학내 구성원과 함께 나누겠습니다.</p>
-      </div>
+      <p style="margin:24px 0 0;font-size:18px;line-height:1.9;color:#3a3735;text-wrap:pretty;"><span style="display:block;">올해 조선대학교 대학원은 국책사업 4개로 18개 프로그램을 운영하고 있습니다.</span><span style="display:block;">웰에이징대학원의 문을 열 준비를 하고, 석·박사과정의 연구를 장학금과 연구비로 뒷받침했습니다.</span><span style="display:block;">여름에는 대학원생 36명이 싱가포르의 연구 현장을 다녀왔고, 10월에는 KSMCB 2026 국제학술대회에서 웰에이징대학원을 알렸습니다.</span></p>
 
       <div id="menu" style="margin-top:30px;">
-<div style="display:flex;flex-direction:column;align-items:flex-start;gap:10px;border-bottom:2px solid #201e1d;padding-bottom:16px;">
-<h2 style="margin:0;font-size:clamp(22px,3vw,28px);font-weight:800;">이번 호 기사 보기</h2>
-<span style="font-size:17px;line-height:1.7;color:#3a3735;">기사 제목이나 ‘기사 보기’ 버튼을 누르세요. 아래 ‘다음’ 버튼으로 순서대로 읽을 수도 있습니다.</span>
-</div>
-<div style="margin-top:16px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,148px),1fr));gap:12px;">
-<a aria-label="커버스토리 BK21 5단계 교내 설명회 기사 자세히 보기 → — 기사로 이동" class="issue-article-link" href="#a8" style="display:flex;flex-direction:column;background:#ffffff;border:1px solid #cfdae6;color:#201e1d;" style-hover="border-color:#0858a8;text-decoration:none;color:#0858a8;">
-<img alt="" decoding="async" loading="lazy" src="assets/bk21-hall.jpg" style="display:block;width:100%;aspect-ratio:4/3;object-fit:cover;"/>
-<span style="padding:12px 14px 14px;display:flex;flex-direction:column;gap:4px;flex:1;"><span style="font-size:13px;font-weight:800;color:#0858a8;">커버스토리</span><span style="font-size:19px;font-weight:800;line-height:1.55;">BK21 5단계 교내 설명회</span><span class="issue-open-button" style="margin-top:auto;">기사 보기 →</span></span>
-</a>
-<a aria-label="새로 여는 대학원 웰에이징대학원 출범 기사 자세히 보기 → — 기사로 이동" class="issue-article-link" href="#a1" style="display:flex;flex-direction:column;background:#ffffff;border:1px solid #cfdae6;color:#201e1d;" style-hover="border-color:#0858a8;text-decoration:none;color:#0858a8;">
-<img alt="" decoding="async" loading="lazy" src="assets/wa-congrats-close.jpg" style="display:block;width:100%;aspect-ratio:4/3;object-fit:cover;"/>
-<span style="padding:12px 14px 14px;display:flex;flex-direction:column;gap:4px;flex:1;"><span style="font-size:13px;font-weight:800;color:#0858a8;">글로컬대학사업</span><span style="font-size:19px;font-weight:800;line-height:1.55;">웰에이징대학원 출범</span><span class="issue-open-button" style="margin-top:auto;">기사 보기 →</span></span>
-</a>
-<a aria-label="연구를 돕는 대학원 장학금·연구비 지원과 성과 기사 자세히 보기 → — 기사로 이동" class="issue-article-link" href="#a2" style="display:flex;flex-direction:column;background:#ffffff;border:1px solid #cfdae6;color:#201e1d;" style-hover="border-color:#0858a8;text-decoration:none;color:#0858a8;">
-<img alt="" decoding="async" loading="lazy" src="assets/tri-new-1.jpg" style="display:block;width:100%;aspect-ratio:4/3;object-fit:cover;"/>
-<span style="padding:12px 14px 14px;display:flex;flex-direction:column;gap:4px;flex:1;"><span style="font-size:13px;font-weight:800;color:#0858a8;">앵커사업</span><span style="font-size:19px;font-weight:800;line-height:1.55;">장학금·연구비 지원과 성과</span><span class="issue-open-button" style="margin-top:auto;">기사 보기 →</span></span>
-</a>
-<a aria-label="싱가포르 현장학습 기사로 이동" class="issue-article-link" href="#a6" style="display:flex;flex-direction:column;background:#ffffff;border:1px solid #cfdae6;color:#201e1d;" style-hover="border-color:#0858a8;text-decoration:none;color:#0858a8;">
-<img alt="" decoding="async" loading="lazy" src="assets/field-sg-01.jpg" style="display:block;width:100%;aspect-ratio:4/3;object-fit:cover;"/>
-<span style="padding:12px 14px 14px;display:flex;flex-direction:column;gap:4px;flex:1;"><span style="font-size:13px;font-weight:800;color:#0858a8;">세계로 가는 대학원</span><span style="font-size:19px;font-weight:800;line-height:1.55;">싱가포르 현장학습</span><span class="issue-open-button" style="margin-top:auto;">기사 보기 →</span></span>
-</a>
-</div>
-<div class="related-article-links" aria-label="다른 기사 바로가기"><span>다른 기사</span><a href="#a3">대학혁신지원사업 →</a><a href="#a4">KOICA →</a><a href="#a4b">복수학위 →</a></div><div style="margin-top:12px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:12px;">
-<a aria-label="입학 안내 · 모집 중 2027학년도 전기 대학원 신입생 모집 일반대학원·미래인재융합대학원 · 원서 접수 11.16(월)까지 모집 일정 보기 → — 기사로 이동" class="issue-article-link" href="#a9" style="display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;background:#f3f6fa;border:1px solid #d8dee6;border-left:4px solid #0858a8;color:#201e1d;padding:16px 20px;" style-hover="background:#e8eef6;text-decoration:none;color:#201e1d;">
-<span style="display:flex;flex-direction:column;gap:4px;"><span style="font-size:13px;font-weight:800;color:#0858a8;">입학 안내 · 모집 중</span><span style="font-size:18px;font-weight:800;line-height:1.4;">2027학년도 전기 대학원 신입생 모집</span><span style="font-size:14.5px;color:#3a3735;">일반대학원·미래인재융합대학원 · 원서 접수 11.16(월)까지</span></span>
-<span style="font-size:14.5px;font-weight:800;color:#0858a8;white-space:nowrap;">모집 일정 보기 →</span>
-</a>
-</div>
-</div>
+        <div style="display:flex;align-items:baseline;justify-content:space-between;gap:12px;border-bottom:2px solid #201e1d;padding-bottom:10px;">
+          <h2 style="margin:0;font-size:clamp(22px,3vw,28px);font-weight:800;">이번 호 기사 보기</h2>
+          <span style="font-size:14px;color:#55514e;">보고 싶은 기사를 누르세요</span>
+        </div>
+        <div style="margin-top:16px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,148px),1fr));gap:12px;">
+          <a href="#a8" style="display:flex;flex-direction:column;background:#ffffff;border:1px solid #cfdae6;color:#201e1d;" style-hover="border-color:#0858a8;text-decoration:none;color:#0858a8;">
+            <img loading="lazy" decoding="async" src="assets/bk21-hall.jpg" alt="" style="display:block;width:100%;aspect-ratio:4/3;object-fit:cover;">
+            <span style="padding:12px 14px 14px;display:flex;flex-direction:column;gap:4px;flex:1;"><span style="font-size:13px;font-weight:800;color:#0858a8;">주요 소식</span><span style="font-size:16.5px;font-weight:800;line-height:1.4;">BK21 5단계 교내 설명회</span><span style="margin-top:auto;padding-top:6px;font-size:13.5px;font-weight:700;color:#0858a8;">읽기 →</span></span>
+          </a>
+          <a href="#a0" style="display:flex;flex-direction:column;background:#ffffff;border:1px solid #cfdae6;color:#201e1d;" style-hover="border-color:#0858a8;text-decoration:none;color:#0858a8;">
+            <img loading="lazy" decoding="async" src="assets/share-meeting.jpg" alt="" style="display:block;width:100%;aspect-ratio:4/3;object-fit:cover;">
+            <span style="padding:12px 14px 14px;display:flex;flex-direction:column;gap:4px;flex:1;"><span style="font-size:13px;font-weight:800;color:#0858a8;">기획</span><span style="font-size:16.5px;font-weight:800;line-height:1.4;">올해 대학원이 바꾼 다섯 가지</span><span style="margin-top:auto;padding-top:6px;font-size:13.5px;font-weight:700;color:#0858a8;">읽기 →</span></span>
+          </a>
+          <a href="#a1" style="display:flex;flex-direction:column;background:#ffffff;border:1px solid #cfdae6;color:#201e1d;" style-hover="border-color:#0858a8;text-decoration:none;color:#0858a8;">
+            <img loading="lazy" decoding="async" src="assets/wa-congrats-close.jpg" alt="" style="display:block;width:100%;aspect-ratio:4/3;object-fit:cover;">
+            <span style="padding:12px 14px 14px;display:flex;flex-direction:column;gap:4px;flex:1;"><span style="font-size:13px;font-weight:800;color:#0858a8;">새로 여는 대학원</span><span style="font-size:16.5px;font-weight:800;line-height:1.4;">웰에이징대학원 출범</span><span style="margin-top:auto;padding-top:6px;font-size:13.5px;font-weight:700;color:#0858a8;">읽기 →</span></span>
+          </a>
+          <a href="#a2" style="display:flex;flex-direction:column;background:#ffffff;border:1px solid #cfdae6;color:#201e1d;" style-hover="border-color:#0858a8;text-decoration:none;color:#0858a8;">
+            <img loading="lazy" decoding="async" src="assets/tri-new-1.jpg" alt="" style="display:block;width:100%;aspect-ratio:4/3;object-fit:cover;">
+            <span style="padding:12px 14px 14px;display:flex;flex-direction:column;gap:4px;flex:1;"><span style="font-size:13px;font-weight:800;color:#0858a8;">연구를 돕는 대학원</span><span style="font-size:16.5px;font-weight:800;line-height:1.4;">장학금·연구비 지원과 성과</span><span style="margin-top:auto;padding-top:6px;font-size:13.5px;font-weight:700;color:#0858a8;">읽기 →</span></span>
+          </a>
+          <a href="#a6" style="display:flex;flex-direction:column;background:#ffffff;border:1px solid #cfdae6;color:#201e1d;" style-hover="border-color:#0858a8;text-decoration:none;color:#0858a8;">
+            <img loading="lazy" decoding="async" src="assets/field-sg-01.jpg" alt="" style="display:block;width:100%;aspect-ratio:4/3;object-fit:cover;">
+            <span style="padding:12px 14px 14px;display:flex;flex-direction:column;gap:4px;flex:1;"><span style="font-size:13px;font-weight:800;color:#0858a8;">세계로 가는 대학원</span><span style="font-size:16.5px;font-weight:800;line-height:1.4;">싱가포르 현장학습·KOICA·복수학위</span><span style="margin-top:auto;padding-top:6px;font-size:13.5px;font-weight:700;color:#0858a8;">읽기 →</span></span>
+          </a>
+          </div>
+        <div style="margin-top:12px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:12px;">
+          <a href="#a9" style="display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;background:#f3f6fa;border:1px solid #d8dee6;border-left:4px solid #0858a8;color:#201e1d;padding:16px 20px;" style-hover="background:#e8eef6;text-decoration:none;color:#201e1d;">
+            <span style="display:flex;flex-direction:column;gap:4px;"><span style="font-size:13px;font-weight:800;color:#0858a8;">입학 안내 · 모집 중</span><span style="font-size:18px;font-weight:800;line-height:1.4;">2027학년도 전기 대학원 신입생 모집</span><span style="font-size:14.5px;color:#3a3735;">일반대학원·미래인재융합대학원 · 원서 접수 11.16(월)까지</span></span>
+            <span style="font-size:14.5px;font-weight:800;color:#0858a8;white-space:nowrap;">모집 일정 보기 →</span>
+          </a>
+        </div>
+      </div>
 
       <a id="nextup" href="#a7" class="no-print" style="margin-top:28px;display:block;background:#f3f6fa;color:#201e1d;border-left:4px solid #0858a8;padding:18px 20px;" style-hover="background:#e8eef6;text-decoration:none;color:#201e1d;">
         <div style="display:flex;justify-content:space-between;align-items:baseline;gap:12px;">
@@ -312,16 +214,27 @@ button:focus-visible{ text-decoration:underline!important;text-decoration-thickn
     </div>
   </section>
 
+  <section id="p-intro" data-screen-label="창간호를 내며" style="background:#ffffff;border-top:1px solid #d9d5d1;">
+    <div style="max-width:960px;margin:0 auto;padding:clamp(30px,4vw,44px) clamp(20px,5vw,48px);">
+      <h2 style="margin:0;font-size:clamp(22px,3vw,28px);font-weight:800;">창간호를 내며</h2>
+      <p style="margin:14px 0 0;font-size:17.5px;line-height:1.95;color:#2b2927;">대학원의 일은 대개 눈에 잘 띄지 않는 곳에서 이루어집니다. 등록금 고지서의 장학금 한 줄, 실험실의 연구비, 학회로 떠나는 출장 일정 같은 곳입니다.</p>
+      <p style="margin:14px 0 0;font-size:17.5px;line-height:1.95;color:#2b2927;">올해 석·박사과정생 70명이 장학금을, 79명이 연구비를 받았습니다. 학술지에 논문을 실은 학생들에게는 논문게재 장학금 261건이 지급됐습니다. 지난해 연구비를 받은 학생들은 국제학술지에 논문 33편을 발표했습니다.</p>
+      <p style="margin:14px 0 0;font-size:17.5px;line-height:1.95;color:#2b2927;">이런 일들은 그동안 결과보고서 속 표와 숫자로만 남아 있었습니다. 앞으로 이 뉴스레터에 사업 소식과 연구 성과, 학사 일정을 차례로 담겠습니다.</p>
+      <p style="margin:14px 0 0;font-size:17.5px;line-height:1.95;color:#2b2927;">창간호는 11월 4일 열린 5단계 BK21사업 교내 설명회 소식으로 시작합니다.</p>
+      <p style="margin:22px 0 0;font-size:15.5px;color:#55514e;text-align:right;">조선대학교 대학원</p>
+    </div>
+  </section>
+
   <section id="p-stats" style="background:#f3f6fa;color:#201e1d;border-top:1px solid #d9d5d1;">
     <div style="max-width:960px;margin:0 auto;padding:clamp(32px,4vw,48px) clamp(20px,5vw,48px);">
       <h2 style="margin:0;font-size:clamp(26px,4vw,34px);font-weight:800;">숫자로 보는 대학원</h2>
       <p style="margin:10px 0 0;font-size:16px;line-height:1.8;">2026년 11월 첫째 주 기준</p>
       <div ref="{{ statsRef }}" style="margin-top:22px;display:grid;grid-template-columns:repeat(auto-fit,minmax(max(140px,calc((100% - 36px) / 4)),1fr));gap:12px;">
         <sc-for list="{{ stats }}" as="s" hint-placeholder-count="8">
-          <div style="padding:18px 18px 16px;display:flex;flex-direction:column;gap:8px;background:#ffffff;border:1px solid #d8dee6;border-radius:0;">
+          <div style="padding:18px 18px 16px;display:flex;flex-direction:column;gap:8px;background:#ffffff;border:1px solid #d8dee6;border-radius:8px;">
             <div style="font-size:12.5px;font-weight:800;color:#0858a8;letter-spacing:.02em;">{{ s.group }}</div>
             <div style="font-size:clamp(32px,4vw,40px);font-weight:800;line-height:1.05;white-space:nowrap;color:#201e1d;"><span data-count="{{ s.n }}">{{ s.value }}</span><span style="font-size:16px;font-weight:700;margin-left:3px;color:#55514e;">{{ s.unit }}</span></div>
-            <div style="height:6px;background:#e6ecf3;border-radius:0;overflow:hidden;"><div style="height:6px;background:#0858a8;border-radius:0;width:{{ s.bar }};" data-bar="{{ s.bar }}"></div></div>
+            <div style="height:6px;background:#e6ecf3;border-radius:3px;overflow:hidden;"><div style="height:6px;background:#0858a8;border-radius:3px;width:{{ s.bar }};" data-bar="{{ s.bar }}"></div></div>
             <div style="font-size:15px;font-weight:800;line-height:1.45;">{{ s.label }}</div>
             <div style="font-size:13.5px;line-height:1.5;color:#55514e;">{{ s.sub }}</div>
           </div>
@@ -331,23 +244,23 @@ button:focus-visible{ text-decoration:underline!important;text-decoration-thickn
         <img loading="lazy" decoding="async" src="assets/joa-mega.png" alt="" style="height:clamp(90px,12vw,130px);width:auto;flex:none;">
         <div style="flex:1 1 320px;min-width:0;">
           <p style="margin:0;font-size:clamp(18px,2.3vw,21px);font-weight:800;line-height:1.5;">숫자 뒤에는 학생 한 명 한 명의 연구가 있습니다.</p>
-          <p style="margin:6px 0 0;font-size:15.5px;line-height:1.7;color:#3a3735;">아래 파란색 버튼을 누르면 해당 기사를 볼 수 있습니다.</p>
+          <p style="margin:6px 0 0;font-size:15.5px;line-height:1.7;color:#3a3735;">어떤 지원으로 어떤 성과가 나왔는지 기사에서 확인해 보세요.</p>
           <div style="margin-top:14px;display:flex;flex-wrap:wrap;gap:8px;">
-            <a class="clear-article-button" href="#a2" aria-label="장학금·연구비 지원 기사 보기"><span class="clear-button-title">장학금·연구비 지원</span><span class="clear-button-action">눌러서 기사 보기 <span aria-hidden="true">→</span></span></a>
-            <a class="clear-article-button" href="#a3" aria-label="Triangle·논문 장학금 기사 보기"><span class="clear-button-title">Triangle·논문 장학금</span><span class="clear-button-action">눌러서 기사 보기 <span aria-hidden="true">→</span></span></a>
-            <a class="clear-article-button" href="#a6" aria-label="싱가포르 현장학습 기사 보기"><span class="clear-button-title">싱가포르 현장학습</span><span class="clear-button-action">눌러서 기사 보기 <span aria-hidden="true">→</span></span></a>
+            <a href="#a2" style="font-size:14.5px;font-weight:800;padding:9px 14px;background:#ffffff;color:#0858a8;border:1px solid #9dbde0;" style-hover="background:#eef4fa;text-decoration:none;">장학금·연구비 지원 →</a>
+            <a href="#a3" style="font-size:14.5px;font-weight:800;padding:9px 14px;background:#ffffff;color:#0858a8;border:1px solid #9dbde0;" style-hover="background:#eef4fa;text-decoration:none;">Triangle·논문 장학금 →</a>
+            <a href="#a6" style="font-size:14.5px;font-weight:800;padding:9px 14px;background:#ffffff;color:#0858a8;border:1px solid #9dbde0;" style-hover="background:#eef4fa;text-decoration:none;">싱가포르 현장학습 →</a>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <section id="a8" data-screen-label="커버스토리 BK21 설명회" style="background:#ffffff;border-top:1px solid #d9d5d1;">
+  <section id="a8" data-screen-label="주요 소식 BK21 설명회" style="background:#ffffff;border-top:1px solid #d9d5d1;">
     <div style="max-width:960px;margin:0 auto;padding:clamp(36px,5vw,56px) clamp(20px,5vw,48px);">
       <div style="display:flex;align-items:flex-end;justify-content:space-between;gap:20px;border-bottom:2px solid #0858a8;padding-bottom:14px;">
         <div>
-          <div style="font-size:14px;font-weight:700;letter-spacing:.08em;color:#0858a8;">커버스토리 · 5단계 BK21사업 교내 설명회</div>
-          <h2 style="margin:10px 0 0;font-size:clamp(26px,4.6vw,40px);font-weight:800;letter-spacing:-.02em;line-height:1.25;text-wrap:balance;">5단계 BK21사업, 지역과 AI 중심의 추진 방향 공유</h2><p class="policy-status-note">아래 추진 방향과 일정은 1차 기획안 기준이며, 최종 공고에 따라 변경될 수 있습니다.</p>
+          <div style="font-size:14px;font-weight:700;letter-spacing:.08em;color:#0858a8;">주요 소식 · 5단계 BK21사업 교내 설명회</div>
+          <h2 style="margin:10px 0 0;font-size:clamp(26px,4.6vw,40px);font-weight:800;letter-spacing:-.02em;line-height:1.25;text-wrap:balance;">BK21 5단계, 틀은 유지하고 무게는 지역과 AI로</h2>
         </div>
       </div>
 
@@ -368,7 +281,7 @@ button:focus-visible{ text-decoration:underline!important;text-decoration-thickn
       <h3 style="margin:36px 0 0;font-size:clamp(21px,3.2vw,26px);font-weight:800;line-height:1.4;">한눈에 보는 BK21 5단계</h3>
       <div style="margin-top:14px;display:grid;grid-template-columns:repeat(auto-fit,minmax(max(200px,calc((100% - 36px) / 4)),1fr));gap:12px;">
         <div style="background:#f6f8fa;border-top:3px solid #0858a8;padding:18px 20px 20px;"><div style="font-size:13.5px;color:#55514e;font-weight:700;">사업 기간</div><div style="margin-top:6px;font-size:clamp(24px,3vw,30px);font-weight:800;color:#0858a8;line-height:1.15;">7년</div><div style="margin-top:8px;font-size:15px;line-height:1.65;color:#2b2927;">2027년 9월 ~ 2034년 8월<br>2027년 2월 공고 예정</div></div>
-        <div style="background:#f6f8fa;border-top:3px solid #0858a8;padding:18px 20px 20px;"><div style="font-size:13.5px;color:#55514e;font-weight:700;">연간 지원 규모</div><div style="margin-top:6px;font-size:clamp(24px,3vw,30px);font-weight:800;color:#0858a8;line-height:1.15;" class="funding-amount">약 7,500억<span style="font-size:.7em;"> 원</span></div><div style="margin-top:8px;font-size:15px;line-height:1.65;color:#2b2927;">2026년 대비 약 38.5% 증가<br><span style="font-size:14px;color:#55514e;">2026년 5,415억 원 기준</span></div></div>
+        <div style="background:#f6f8fa;border-top:3px solid #0858a8;padding:18px 20px 20px;"><div style="font-size:13.5px;color:#55514e;font-weight:700;">연간 지원 규모</div><div style="margin-top:6px;font-size:clamp(24px,3vw,30px);font-weight:800;color:#0858a8;line-height:1.15;">약 7,500억 원</div><div style="margin-top:8px;font-size:15px;line-height:1.65;color:#2b2927;">2026년 5,415억 원보다 약 38.5% 늘어난 규모</div></div>
         <div style="background:#f6f8fa;border-top:3px solid #0858a8;padding:18px 20px 20px;"><div style="font-size:13.5px;color:#55514e;font-weight:700;">2대 키워드</div><div style="margin-top:6px;font-size:clamp(24px,3vw,30px);font-weight:800;color:#0858a8;line-height:1.15;">지역 · AI</div><div style="margin-top:8px;font-size:15px;line-height:1.65;color:#2b2927;">수도권–지역 동반성장과 대학원 AI 내재화</div></div>
         <div style="background:#f6f8fa;border-top:3px solid #0858a8;padding:18px 20px 20px;"><div style="font-size:13.5px;color:#55514e;font-weight:700;">참여 조건</div><div style="margin-top:6px;font-size:clamp(24px,3vw,30px);font-weight:800;color:#0858a8;line-height:1.15;">참여교수 70%</div><div style="margin-top:8px;font-size:15px;line-height:1.65;color:#2b2927;">1교수 1교육연구단, 겸임·겸무는 원 소속의 50% 이내</div></div>
       </div>
@@ -405,28 +318,74 @@ button:focus-visible{ text-decoration:underline!important;text-decoration-thickn
       </div>
 
       <p style="margin:16px 0 0;font-size:14px;line-height:1.7;color:#55514e;">※ 1차 기획안 기준 내용으로, 12월 15일 시안에서 바뀔 수 있습니다.</p>
-      <a href="#menu" class="no-print" style="margin-top:28px;display:inline-block;font-size:14.5px;font-weight:700;color:#0858a8;" style-hover="text-decoration:underline;">↑ 이번 호 기사 목록으로</a>
+      <a href="#menu" class="no-print" style="margin-top:28px;display:inline-block;font-size:14.5px;font-weight:700;color:#0858a8;" style-hover="text-decoration:underline;">↑ 기사 목록으로</a>
     </div>
   </section>
 
-  
+  <section id="a0" data-screen-label="기획" style="background:#ffffff;">
+    <div style="max-width:960px;margin:0 auto;padding:clamp(36px,6vw,64px) clamp(20px,5vw,48px);">
+      <div style="font-size:14px;font-weight:700;letter-spacing:.08em;color:#0858a8;">기획 · 올해의 대학원</div>
+      <h2 style="margin:12px 0 0;font-size:clamp(30px,5.4vw,48px);font-weight:800;letter-spacing:-.03em;line-height:1.2;text-wrap:balance;">학위논문 너머로 이어지는 연구</h2>
+      <figure style="margin:26px 0 0;">
+        <img loading="lazy" decoding="async" src="assets/share-meeting.jpg" alt="2026학년도 하계 대학원 대학혁신 운영과제 성과공유회" style="display:block;width:100%;aspect-ratio:16/9;object-fit:cover;object-position:50% 78%;">
+        <figcaption style="margin-top:10px;font-size:14.5px;color:#3a3735;line-height:1.6;">2026학년도 하계 대학원 대학혁신 운영과제 성과공유회</figcaption>
+      </figure>
+      <p style="margin:28px 0 0;font-size:clamp(19px,2.4vw,21px);line-height:1.85;font-weight:700;color:#201e1d;">조선대학교 대학원은 올해 학생의 연구가 학위논문에서 끝나지 않도록 교육·연구 지원 체계를 새로 짰습니다. 연구를 지역산업의 변화로, 기업 현장의 문제해결로, 해외 연구진과의 공동연구로 잇는 것이 목표입니다.</p>
+      <p style="margin:16px 0 0;font-size:17.5px;line-height:1.95;color:#2b2927;">이를 위해 정부·교육부 지원사업 네 개를 함께 운영하고 있습니다.</p>
+      <div style="margin-top:22px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:12px;">
+        <a href="#a1" style="display:flex;flex-direction:column;border-top:3px solid #0858a8;background:#eef4fa;padding:16px 18px;color:#201e1d;" style-hover="background:#dceaf6;text-decoration:none;color:#201e1d;">
+          <div style="font-size:16.5px;font-weight:800;">글로컬대학사업</div>
+          <div style="margin-top:6px;font-size:14.5px;line-height:1.6;color:#3a3735;">웰에이징대학원 신설 · 과제 4개</div>
+          <div style="margin-top:auto;padding-top:12px;font-size:18px;font-weight:800;color:#0858a8;">CAPSTONE 37명</div>
+        </a>
+        <a href="#a2" style="display:flex;flex-direction:column;border-top:3px solid #0858a8;background:#eef4fa;padding:16px 18px;color:#201e1d;" style-hover="background:#dceaf6;text-decoration:none;color:#201e1d;">
+          <div style="font-size:16.5px;font-weight:800;">앵커사업</div>
+          <div style="margin-top:6px;font-size:14.5px;line-height:1.6;color:#3a3735;">광주 주력산업 인재 · 과제 10개</div>
+          <div style="margin-top:auto;padding-top:12px;font-size:18px;font-weight:800;color:#0858a8;">장학생 70명</div>
+        </a>
+        <a href="#a3" style="display:flex;flex-direction:column;border-top:3px solid #0858a8;background:#eef4fa;padding:16px 18px;color:#201e1d;" style-hover="background:#dceaf6;text-decoration:none;color:#201e1d;">
+          <div style="font-size:16.5px;font-weight:800;">대학혁신지원사업</div>
+          <div style="margin-top:6px;font-size:14.5px;line-height:1.6;color:#3a3735;">학생 연구 경험 · 과제 3개</div>
+          <div style="margin-top:auto;padding-top:12px;font-size:18px;font-weight:800;color:#0858a8;">논문 장학금 261건</div>
+        </a>
+        <a href="#a4" style="display:flex;flex-direction:column;border-top:3px solid #0858a8;background:#eef4fa;padding:16px 18px;color:#201e1d;" style-hover="background:#dceaf6;text-decoration:none;color:#201e1d;">
+          <div style="font-size:16.5px;font-weight:800;">KOICA사업</div>
+          <div style="margin-top:6px;font-size:14.5px;line-height:1.6;color:#3a3735;">협력국 인재 양성 · 과제 1개</div>
+          <div style="margin-top:auto;padding-top:12px;font-size:18px;font-weight:800;color:#0858a8;">연수생 10명</div>
+        </a>
+      </div>
+      <h3 style="margin:40px 0 0;font-size:clamp(21px,3.2vw,26px);font-weight:800;line-height:1.4;">올해 대학원이 바꾼 다섯 가지</h3>
+      <div style="margin-top:12px;display:flex;flex-direction:column;">
+        <sc-for list="{{ five }}" as="f" hint-placeholder-count="5">
+          <a href="{{ f.href }}" style="display:grid;grid-template-columns:52px minmax(0,1fr);gap:14px;padding:18px 0;border-top:1px solid #d8d5d2;color:#201e1d;" style-hover="text-decoration:none;color:#201e1d;background:#f6f8fa;">
+            <span style="font-size:28px;font-weight:800;color:#0858a8;line-height:1.1;">{{ f.no }}</span>
+            <span><span style="display:block;font-size:18px;font-weight:800;line-height:1.45;">{{ f.title }}</span><span style="display:block;margin-top:6px;font-size:16.5px;line-height:1.8;color:#2b2927;">{{ f.text }}</span></span>
+          </a>
+        </sc-for>
+      </div>
+      <blockquote style="margin:28px 0 0;background:#f3f6fa;color:#201e1d;border-left:4px solid #0858a8;padding:clamp(24px,4vw,40px);">
+        <p style="margin:0;font-size:clamp(24px,4vw,36px);line-height:1.35;font-weight:800;letter-spacing:-.02em;">지역의 과제를 연구로,<br>산업의 수요를 교육으로,<br>연구성과를 세계로.</p>
+      </blockquote>
+      <a href="#menu" class="no-print" style="margin-top:28px;display:inline-block;font-size:14.5px;font-weight:700;color:#0858a8;" style-hover="text-decoration:underline;">↑ 기사 목록으로</a>
+    </div>
+  </section>
 
   <section id="a1" data-screen-label="01 웰에이징대학원" style="background:#ffffff;border-top:1px solid #d9d5d1;">
     <div style="max-width:960px;margin:0 auto;padding:clamp(36px,5vw,56px) clamp(20px,5vw,48px);">
       <div style="display:flex;align-items:flex-end;justify-content:space-between;gap:20px;border-bottom:2px solid #0858a8;padding-bottom:14px;">
         <div>
-          <div style="font-size:14px;font-weight:700;letter-spacing:.08em;color:#0858a8;">새로 여는 대학원 · 글로컬대학사업</div>
-          <h2 style="margin:10px 0 0;font-size:clamp(26px,4.6vw,40px);font-weight:800;letter-spacing:-.02em;line-height:1.25;text-wrap:balance;">3개 융합학과로 구성된 웰에이징대학원 신설</h2>
+          <div style="font-size:14px;font-weight:700;letter-spacing:.08em;color:#0858a8;">새로 여는 대학원 · 웰에이징대학원</div>
+          <h2 style="margin:10px 0 0;font-size:clamp(26px,4.6vw,40px);font-weight:800;letter-spacing:-.02em;line-height:1.25;text-wrap:balance;">학과 세 곳을 묶은 웰에이징대학원 신설</h2>
         </div>
       </div>
-      <p style="margin:22px 0 0;font-size:clamp(18px,2.3vw,20px);line-height:1.8;font-weight:700;color:#0858a8;">대학원은 융합교육과 연구 활성화를 위한 웰에이징대학원 신설을 추진하고 있습니다.</p>
+      <p style="margin:22px 0 0;font-size:clamp(18px,2.3vw,20px);line-height:1.8;font-weight:700;color:#0858a8;">올해 대학원의 가장 큰 변화는 새 대학원을 세우는 일입니다.</p>
 
-      <p style="margin:26px 0 0;font-size:17.5px;line-height:1.95;color:#2b2927;">글로컬대학사업(지역과 세계를 연결하는 교육부의 대학 지원사업)에서 대학원은 웰에이징(건강하게 나이 드는 삶) 분야를 맡았습니다. 바이오메디융합학과, 에이지테크융합학과, 라이프케어융합학과를 하나의 웰에이징대학원으로 묶어, 바이오·의료·인공지능·돌봄·복지를 연계한 융합교육을 운영할 계획입니다.</p>
+      <p style="margin:26px 0 0;font-size:17.5px;line-height:1.95;color:#2b2927;">글로컬대학사업(지역과 세계를 함께 겨냥한 교육부 대학 지원사업)에서 대학원은 웰에이징(건강하게 나이 드는 삶) 분야를 맡았습니다. 바이오메디융합학과, 에이지테크융합학과, 라이프케어융합학과를 하나의 웰에이징대학원으로 묶어, 바이오·의료·인공지능·돌봄·복지를 함께 가르칠 계획입니다.</p>
 
       <div style="margin-top:26px;display:flex;flex-direction:column;gap:14px;">
         <div style="background:#ffffff;border:1px solid #cfdae6;padding:22px 24px;">
           <div style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;align-items:baseline;">
-            <h3 style="margin:0;font-size:19px;font-weight:800;line-height:1.4;">웰에이징대학원·3개 융합학과 신설</h3>
+            <h3 style="margin:0;font-size:19px;font-weight:800;line-height:1.4;">웰에이징대학원·3대 융합학과 신설</h3>
             
           </div>
           <p style="margin:12px 0 0;font-size:17px;line-height:1.85;color:#2b2927;">신설 근거를 마련하기 위해 대학원 학칙 개정에 들어갔습니다. 융합교과목은 7월 14일(화)부터 11월 15일(일)까지 개발하며, 완성한 교육과정은 2027년 3월 학기부터 운영합니다.</p>
@@ -451,7 +410,7 @@ button:focus-visible{ text-decoration:underline!important;text-decoration-thickn
             
           </div>
           <div style="margin-top:12px;display:flex;flex-wrap:wrap;gap:16px 22px;align-items:flex-start;">
-          <p style="margin:0;flex:1 1 320px;font-size:17px;line-height:1.85;color:#2b2927;">여름방학에는 R&amp;D 참여형 인턴십으로 학생들을 6주간 연구소에 연결했습니다. 글로벌 아웃리치로는 한국분자·세포생물학회 국제학술대회(KSMCB 2026, 10월 6일(화)~8일(목))에서 홍보 부스를 운영했고, 10월 17일(토)~20일(화) 제주에서 열린 한국미생물학회에도 참가했습니다. 10월 28일(수)~29일(목)에는 교내에서 웰에이징대학원 출범식과 오픈하우스를 열었습니다. <a href="#a6b">현장 기사 보기</a></p>
+          <p style="margin:0;flex:1 1 320px;font-size:17px;line-height:1.85;color:#2b2927;">여름방학에는 R&amp;D 참여형 인턴십으로 학생들을 6주간 연구소에 연결했습니다. 글로벌 아웃리치로는 한국분자·세포생물학회 국제학술대회(KSMCB 2026, 10월 6일(화)~8일(목))에서 홍보 부스를 운영했고, 10월 17일(토)~20일(화) 제주에서 열리는 한국미생물학회에도 참가합니다. 10월 28일(수)~29일(목)에는 교내에서 웰에이징대학원 출범식과 오픈하우스를 열었습니다. <a href="#a6b">현장 기사 보기</a></p>
           <figure style="margin:0;flex:0 1 280px;"><img loading="lazy" decoding="async" src="assets/rnd-internship-ot.png" alt="R&amp;D 참여형 인턴십 오리엔테이션" style="display:block;width:100%;aspect-ratio:4/3;object-fit:cover;"><figcaption style="margin-top:8px;font-size:14px;line-height:1.6;color:#3a3735;">R&amp;D 참여형 인턴십 오리엔테이션</figcaption></figure>
           </div>
         </div>
@@ -484,7 +443,7 @@ button:focus-visible{ text-decoration:underline!important;text-decoration-thickn
           <figure style="margin:0;"><img loading="lazy" decoding="async" src="assets/wa-coffee-smile.jpg" alt="행사장 커피차" style="display:block;width:100%;aspect-ratio:4/3;object-fit:cover;object-position:center 65%;"><figcaption style="margin-top:8px;font-size:14px;line-height:1.6;color:#3a3735;">행사장 커피차</figcaption></figure>
         </div>
       </div>
-    <a class="no-print issue-return" href="#menu">↑ 이번 호 기사 목록으로</a></div>
+    </div>
   </section>
 
   <section id="a6b" data-screen-label="01 웰에이징대학원 · 홍보" style="background:#ffffff;border-top:1px solid #d9d5d1;">
@@ -506,7 +465,7 @@ button:focus-visible{ text-decoration:underline!important;text-decoration-thickn
 
       <div style="margin-top:22px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:12px;">
         <div style="background:#f6f8fa;border-top:3px solid #0858a8;padding:16px 18px;">
-          <div style="font-size:16.5px;font-weight:800;">3개 융합학과 안내</div>
+          <div style="font-size:16.5px;font-weight:800;">3대 융합학과 안내</div>
           <div style="margin-top:6px;font-size:15px;line-height:1.7;color:#2b2927;">학과별 안내판과 리플릿 「꿈을 펼쳐라! 올래? 갈래!」를 배포했습니다.</div>
         </div>
         <div style="background:#f6f8fa;border-top:3px solid #0858a8;padding:16px 18px;">
@@ -529,7 +488,7 @@ button:focus-visible{ text-decoration:underline!important;text-decoration-thickn
       </figure>
 
       <p style="margin:24px 0 0;font-size:17.5px;line-height:1.95;color:#2b2927;">홍보는 KSMCB 2026에서 그치지 않았습니다. 10월 17일(토)부터 20일(화)까지 제주에서 열린 한국미생물학회에 두 번째 글로벌 아웃리치로 참가해 웰에이징대학원을 소개했고, 10월 28일(수)과 29일(목)에는 출범식·오픈하우스에 맞춰 교내 곳곳에서 학과별 체험·상담 부스를 운영했습니다.</p>
-      <a href="#menu" class="no-print" style="margin-top:28px;display:inline-block;font-size:14.5px;font-weight:700;color:#0858a8;" style-hover="text-decoration:underline;">↑ 이번 호 기사 목록으로</a>
+      <a href="#menu" class="no-print" style="margin-top:28px;display:inline-block;font-size:14.5px;font-weight:700;color:#0858a8;" style-hover="text-decoration:underline;">↑ 기사 목록으로</a>
     </div>
   </section>
 
@@ -580,7 +539,7 @@ button:focus-visible{ text-decoration:underline!important;text-decoration-thickn
         </sc-for>
       </div>
       <a href="https://grad.chosun.ac.kr" target="_blank" rel="noopener" style="margin-top:18px;display:inline-flex;align-items:center;gap:8px;border:1.5px solid #0858a8;color:#0858a8;font-size:15.5px;font-weight:800;padding:11px 18px;" style-hover="background:#eef4fa;text-decoration:none;color:#0858a8;">프로그램별 일정과 모집 공고는 대학원 홈페이지에서 →</a>
-    <a class="no-print issue-return" href="#menu">↑ 이번 호 기사 목록으로</a></div>
+    </div>
   </section>
 
   <section id="a2b" data-screen-label="02 연구 지원 · 지난해 성과" style="background:#ffffff;border-top:1px solid #d9d5d1;">
@@ -595,10 +554,10 @@ button:focus-visible{ text-decoration:underline!important;text-decoration-thickn
       <div style="margin-top:18px;display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;">
         <div style="border-top:2px solid #0858a8;padding-top:10px;"><div style="font-size:34px;font-weight:800;color:#0858a8;line-height:1.1;">94<span style="font-size:15px;margin-left:2px;">명</span></div><div style="margin-top:6px;font-size:14.5px;line-height:1.5;">결과보고서 제출</div></div>
         <div style="border-top:2px solid #0858a8;padding-top:10px;"><div style="font-size:34px;font-weight:800;color:#0858a8;line-height:1.1;">33<span style="font-size:15px;margin-left:2px;">편</span></div><div style="margin-top:6px;font-size:14.5px;line-height:1.5;">국제학술지 논문<br>SCIE 27 · SCOPUS 6</div></div>
-        <div style="border-top:2px solid #0858a8;padding-top:10px;"><div style="font-size:34px;font-weight:800;color:#0858a8;line-height:1.1;">17<span style="font-size:15px;margin-left:2px;">편</span></div><div style="margin-top:6px;font-size:14.5px;line-height:1.5;">SCIE 제1저자 논문</div></div>
+        <div style="border-top:2px solid #0858a8;padding-top:10px;"><div style="font-size:34px;font-weight:800;color:#0858a8;line-height:1.1;">17<span style="font-size:15px;margin-left:2px;">편</span></div><div style="margin-top:6px;font-size:14.5px;line-height:1.5;">SCIE 1저자 논문</div></div>
         <div style="border-top:2px solid #0858a8;padding-top:10px;"><div style="font-size:34px;font-weight:800;color:#0858a8;line-height:1.1;">약 5<span style="font-size:15px;margin-left:2px;">억 원</span></div><div style="margin-top:6px;font-size:14.5px;line-height:1.5;">집행 연구비</div></div>
       </div>
-      <p style="margin:20px 0 0;font-size:17px;line-height:1.9;color:#2b2927;">SCIE·Scopus(국제 학술지 색인) 논문 게재를 목표로 연구재료비, 학술비, 논문게재료를 지원했습니다. 지원 대상은 세 차례 공모로 선정했으며, 2026년 2월 11일(수) 성과공유회에서는 참여 학생 81명이 연구성과를 포스터로 발표했습니다.</p>
+      <p style="margin:20px 0 0;font-size:17px;line-height:1.9;color:#2b2927;">SCIE·SCOPUS(국제 학술지 색인) 논문 게재를 목표로 연구재료비, 학술비, 논문게재료를 지원했습니다. 지원 대상은 세 차례 공모로 선정했으며, 2026년 2월 11일(수) 성과공유회에서는 참여 학생 81명이 포스터를 발표했습니다.</p>
 
       <h4 style="margin:28px 0 0;font-size:18px;font-weight:800;">눈에 띈 연구 다섯 편</h4>
       <div style="margin-top:12px;display:flex;flex-direction:column;background:#ffffff;border:1px solid #cfdae6;">
@@ -611,7 +570,7 @@ button:focus-visible{ text-decoration:underline!important;text-decoration-thickn
         </sc-for>
       </div>
       <details style="margin-top:14px;background:#ffffff;border:1px solid #cfdae6;">
-        <summary style="display:flex;justify-content:space-between;align-items:center;gap:12px;padding:16px 20px;font-size:16px;font-weight:800;color:#0858a8;" style-hover="background:#eef4fa;">SCIE 제1저자 논문 17편 전체 보기<span class="plus" style="font-size:22px;line-height:1;transition:transform .2s;">+</span></summary>
+        <summary style="display:flex;justify-content:space-between;align-items:center;gap:12px;padding:16px 20px;font-size:16px;font-weight:800;color:#0858a8;" style-hover="background:#eef4fa;">SCIE 1저자 논문 17편 전체 보기<span class="plus" style="font-size:22px;line-height:1;transition:transform .2s;">+</span></summary>
         <div style="padding:0 20px 12px;">
           <sc-for list="{{ papers }}" as="p" hint-placeholder-count="4">
             <div style="padding:12px 0;border-top:1px solid #e2dfdc;">
@@ -671,7 +630,7 @@ button:focus-visible{ text-decoration:underline!important;text-decoration-thickn
         <img loading="lazy" decoding="async" src="assets/symposium-group.png" alt="제2회 CSU 혁신인재 양성 심포지엄 단체 사진" style="display:block;width:100%;height:auto;">
         <figcaption style="margin-top:8px;font-size:14px;color:#3a3735;line-height:1.6;">제2회 CSU 혁신인재 양성 심포지엄 · 2026년 2월 11일(수)</figcaption>
       </figure>
-    <a class="no-print issue-return" href="#menu">↑ 이번 호 기사 목록으로</a></div>
+    </div>
   </section>
 
   <section id="a3" data-screen-label="02 연구 지원 · 대학혁신" style="background:#ffffff;border-top:1px solid #d9d5d1;">
@@ -684,7 +643,7 @@ button:focus-visible{ text-decoration:underline!important;text-decoration-thickn
       </div>
 
       <h3 style="margin:32px 0 0;font-size:clamp(21px,3.2vw,26px);font-weight:800;line-height:1.4;">Triangle 연구 활성화: 교원·대학원생·학부생이 한 팀으로</h3>
-      <p style="margin:14px 0 0;font-size:17.5px;line-height:1.95;color:#2b2927;">교원 1명과 대학원생·학부생이 팀을 구성해 공동 프로젝트와 멘토링을 진행합니다. 학부생은 연구실 활동을 경험하며 대학원 진학과 연구 분야를 탐색할 수 있습니다. 올해 교원 20명과 학생 72명이 참여했습니다.</p>
+      <p style="margin:14px 0 0;font-size:17.5px;line-height:1.95;color:#2b2927;">교원 한 명과 대학원생, 학부생이 팀을 이뤄 공동 프로젝트를 하거나 멘토링을 진행합니다. 학부생은 연구실을 미리 경험하며 대학원 진학을 판단할 수 있습니다. 올해 교원 20명과 학생 72명이 참여했습니다.</p>
       <div style="margin-top:18px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,150px),1fr));gap:12px;"><div style="border-top:2px solid #0858a8;padding-top:10px;"><div style="font-size:30px;font-weight:800;color:#0858a8;line-height:1.1;">20<span style="font-size:15px;margin-left:2px;">명</span></div><div style="margin-top:4px;font-size:14.5px;color:#3a3735;">참여 교원</div></div><div style="border-top:2px solid #0858a8;padding-top:10px;"><div style="font-size:30px;font-weight:800;color:#0858a8;line-height:1.1;">23<span style="font-size:15px;margin-left:2px;">명</span></div><div style="margin-top:4px;font-size:14.5px;color:#3a3735;">대학원생</div></div><div style="border-top:2px solid #0858a8;padding-top:10px;"><div style="font-size:30px;font-weight:800;color:#0858a8;line-height:1.1;">49<span style="font-size:15px;margin-left:2px;">명</span></div><div style="margin-top:4px;font-size:14.5px;color:#3a3735;">학부생</div></div><div style="border-top:2px solid #0858a8;padding-top:10px;"><div style="font-size:30px;font-weight:800;color:#0858a8;line-height:1.1;">4.88<span style="font-size:15px;margin-left:2px;">점</span></div><div style="margin-top:4px;font-size:14.5px;color:#3a3735;">만족도 (5점 만점)</div></div></div>
       <figure style="margin:22px 0 0;">
         <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:10px;">
@@ -699,7 +658,7 @@ button:focus-visible{ text-decoration:underline!important;text-decoration-thickn
       </figure>
 
       <h3 style="margin:40px 0 0;font-size:clamp(21px,3.2vw,26px);font-weight:800;line-height:1.4;">논문게재 장학금 261건 지급</h3>
-      <p style="margin:14px 0 0;font-size:17.5px;line-height:1.95;color:#2b2927;">학술지에 논문을 게재한 대학원생과 학부생을 지원하는 장학금입니다. 8월 14일(금) 1차로 174건을 지급했고, 2차로 87건(대학원생 61건, 학부생 26건), 29,188,000원을 추가 지급해 모두 261건을 지원했습니다. 목표(175건)의 149%로, 예산을 모두 집행하고 운영을 마쳤습니다.</p>
+      <p style="margin:14px 0 0;font-size:17.5px;line-height:1.95;color:#2b2927;">학술지에 논문을 실은 대학원생과 학부생에게 주는 장학금입니다. 8월 14일(금) 1차로 174건을 지급했고, 2차로 87건(대학원생 61건, 학부생 26건), 29,188,000원을 추가 지급해 모두 261건을 지원했습니다. 목표(175건)의 149%로, 예산을 모두 집행하고 운영을 마쳤습니다.</p>
       <div style="margin-top:16px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;">
         <div style="border-top:2px solid #0858a8;padding-top:10px;"><div style="font-size:13.5px;color:#55514e;">1차 지급 · 8월 14일(금)</div><div style="margin-top:4px;font-size:32px;font-weight:800;color:#0858a8;line-height:1.1;">174<span style="font-size:15px;margin-left:2px;">건</span></div></div>
         <div style="border-top:2px solid #0858a8;padding-top:10px;"><div style="font-size:13.5px;color:#55514e;">2차 지급 완료</div><div style="margin-top:4px;font-size:32px;font-weight:800;color:#0858a8;line-height:1.1;">87<span style="font-size:15px;margin-left:2px;">건</span></div></div>
@@ -712,7 +671,7 @@ button:focus-visible{ text-decoration:underline!important;text-decoration-thickn
         <div style="display:grid;grid-template-columns:92px minmax(0,1fr);gap:14px;padding:12px 0;border-top:1px solid #d8d5d2;"><span style="font-size:14px;font-weight:800;color:#0858a8;">운영 예정</span><span style="font-size:16px;line-height:1.7;">수화언어학과(11월 20일(금), 본관 2176강의실)</span></div>
         <div style="display:grid;grid-template-columns:92px minmax(0,1fr);gap:14px;padding:12px 0;border-top:1px solid #d8d5d2;border-bottom:1px solid #d8d5d2;"><span style="font-size:14px;font-weight:800;color:#0858a8;">타 대학 교류형</span><span style="font-size:16px;line-height:1.7;">상담심리학과, 선박해양공학과, 신소재공학과 선정</span></div>
       </div>
-      <a href="#menu" class="no-print" style="margin-top:28px;display:inline-block;font-size:14.5px;font-weight:700;color:#0858a8;" style-hover="text-decoration:underline;">↑ 이번 호 기사 목록으로</a>
+      <a href="#menu" class="no-print" style="margin-top:28px;display:inline-block;font-size:14.5px;font-weight:700;color:#0858a8;" style-hover="text-decoration:underline;">↑ 기사 목록으로</a>
     </div>
   </section>
 
@@ -775,46 +734,49 @@ button:focus-visible{ text-decoration:underline!important;text-decoration-thickn
           <li>잘 모르던 참가자와도 한 번 더 이야기해 보세요.</li>
         </ol>
       </div>
-    <a class="no-print issue-return" href="#menu">↑ 이번 호 기사 목록으로</a></div>
+    </div>
   </section>
 
-  <section data-screen-label="03 세계로 · KOICA" id="a4" style="background:#ffffff;border-top:1px solid #d9d5d1;">
-<div style="max-width:960px;margin:0 auto;padding:clamp(36px,5vw,56px) clamp(20px,5vw,48px);">
-<div style="display:flex;align-items:flex-end;justify-content:space-between;gap:20px;border-bottom:2px solid #0858a8;padding-bottom:14px;">
-<div>
-<div style="font-size:14px;font-weight:700;letter-spacing:.08em;color:#0858a8;">세계로 가는 대학원 · KOICA</div>
-<h2 style="margin:10px 0 0;font-size:clamp(26px,4.6vw,40px);font-weight:800;letter-spacing:-.02em;line-height:1.25;text-wrap:balance;">함께 기르는 국제협력 전문인재</h2>
-</div>
-</div>
-<div style="margin-top:24px;background:#f3f6fa;color:#201e1d;border-left:4px solid #0858a8;padding:clamp(22px,4vw,34px);">
-<div style="font-size:14px;font-weight:700;">KOICA(한국국제협력단) 전문인재 양성 프로그램</div>
-<h3 style="margin:8px 0 0;font-size:clamp(21px,3.2vw,26px);font-weight:800;">협력국 학생 10명, 기계공학 석사과정 시작</h3>
-<p style="margin:14px 0 0;font-size:17px;line-height:1.9;">조선대학교는 이 프로그램의 엔지니어링 분야 연수기관으로 선정됐습니다. 연수생들은 30개월 동안 기계공학과 석사과정(24개월)과 한국어교육(약 400시간), 산업체 인턴십(6개월)을 이수합니다.</p>
-<p style="margin:12px 0 0;font-size:17px;line-height:1.9;">등록금, 한국어교육비, 항공료, 기숙사비, 생활비, 건강보험료는 KOICA가 지원합니다.</p>
-<div style="margin-top:18px;border-top:1px solid rgba(255,255,255,.4);padding-top:14px;display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;">
-<span style="font-size:14px;">2026~2030년 사업 규모</span>
-<span style="font-size:clamp(28px,4vw,38px);font-weight:800;line-height:1;">약 24<span style="font-size:16px;margin-left:4px;">억 원</span></span>
-</div>
-</div><figure style="margin:24px 0 0;">
-<img alt="KOICA 전문인재양성프로그램 오리엔테이션 단체 기념촬영" decoding="async" loading="lazy" src="assets/koica-01.jpg" style="display:block;width:100%;aspect-ratio:16/9;object-fit:cover;"/>
-<div style="margin-top:10px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:10px;">
-<img alt="실시간 AI 통번역 화면을 띄우고 진행하는 오리엔테이션" decoding="async" loading="lazy" src="assets/koica-04.jpg" style="display:block;width:100%;aspect-ratio:4/3;object-fit:cover;"/>
-<img alt="환영 인사를 하는 김도경 대학원장" decoding="async" loading="lazy" src="assets/koica-06.jpg" style="display:block;width:100%;aspect-ratio:4/3;object-fit:cover;"/>
-</div>
-<figcaption style="margin-top:8px;font-size:14px;line-height:1.6;color:#3a3735;">10월 1일(목) 오리엔테이션 · 단체 기념촬영 · 한국어·베트남어 실시간 AI 통번역 · 김도경 대학원장 환영 인사</figcaption>
-</figure>
+  <section id="a4" data-screen-label="03 세계로 · KOICA" style="background:#ffffff;border-top:1px solid #d9d5d1;">
+    <div style="max-width:960px;margin:0 auto;padding:clamp(36px,5vw,56px) clamp(20px,5vw,48px);">
+      <div style="display:flex;align-items:flex-end;justify-content:space-between;gap:20px;border-bottom:2px solid #0858a8;padding-bottom:14px;">
+        <div>
+          <div style="font-size:14px;font-weight:700;letter-spacing:.08em;color:#0858a8;">세계로 가는 대학원 · KOICA</div>
+          <h2 style="margin:10px 0 0;font-size:clamp(26px,4.6vw,40px);font-weight:800;letter-spacing:-.02em;line-height:1.25;text-wrap:balance;">함께 기르는 국제협력 전문인재</h2>
+        </div>
+      </div>
 
-<div style="margin-top:32px;font-size:14px;font-weight:800;letter-spacing:.06em;color:#0858a8;">10월 1일(목) · 오리엔테이션</div>
-<h3 style="margin:8px 0 0;font-size:clamp(21px,3.2vw,26px);font-weight:800;line-height:1.4;text-wrap:balance;">언어 장벽 없이 시작한 대학원 생활</h3>
-<p style="margin:14px 0 0;font-size:17.5px;line-height:1.95;color:#2b2927;">10월 1일(목) 국제관에서 ‘2026학년도 KOICA 전문인재양성프로그램(KOICA NEXT Fellowship) 오리엔테이션’이 열렸습니다. 김도경 대학원장과 기계공학과 교수진, 대학원 교학팀·국제협력팀 교직원이 신규 연수생을 맞았고, 프로그램 운영 방식과 학사 일정, 지원 내용을 안내했습니다.</p>
-<p style="margin:12px 0 0;font-size:17.5px;line-height:1.95;color:#2b2927;">이날 행사에는 실시간 AI 통번역 시스템을 처음 도입해 발표 내용을 한국어와 베트남어로 화면에 띄웠습니다. 연수생들은 앞으로 함께할 지도교수진과 첫인사를 나눴습니다.</p>
-<blockquote style="margin:20px 0 0;background:#ffffff;border-left:4px solid #0858a8;padding:clamp(18px,3vw,26px);">
-<p style="margin:0;font-size:clamp(17px,2.4vw,20px);line-height:1.85;font-weight:600;">“조선대에서 쌓은 전문지식과 경험이 여러분의 나라 발전에 큰 힘이 되기를 바랍니다.”</p>
-<div style="margin-top:14px;font-size:15px;font-weight:800;color:#0858a8;">김도경 · 대학원장</div>
-<p style="margin:10px 0 0;font-size:14px;color:#55514e;">전남일보 2026년 10월 7일(수) 보도 · <a href="https://www.jnilbo.com/news/articleView.html?idxno=90000071511" rel="noopener" target="_blank">기사 원문</a></p>
-</blockquote>
-<a class="no-print issue-return" href="#menu">↑ 이번 호 기사 목록으로</a></div>
-</section>
+      <figure style="margin:24px 0 0;">
+        <img loading="lazy" decoding="async" src="assets/koica-01.jpg" alt="KOICA 전문인재양성프로그램 오리엔테이션 단체 기념촬영" style="display:block;width:100%;aspect-ratio:16/9;object-fit:cover;">
+        <div style="margin-top:10px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:10px;">
+          <img loading="lazy" decoding="async" src="assets/koica-04.jpg" alt="실시간 AI 통번역 화면을 띄우고 진행하는 오리엔테이션" style="display:block;width:100%;aspect-ratio:4/3;object-fit:cover;">
+          <img loading="lazy" decoding="async" src="assets/koica-06.jpg" alt="환영 인사를 하는 김도경 대학원장" style="display:block;width:100%;aspect-ratio:4/3;object-fit:cover;">
+        </div>
+        <figcaption style="margin-top:8px;font-size:14px;line-height:1.6;color:#3a3735;">10월 1일(목) 오리엔테이션 · 단체 기념촬영 · 한국어·베트남어 실시간 AI 통번역 · 김도경 대학원장 환영 인사</figcaption>
+      </figure>
+      <div style="margin-top:24px;background:#f3f6fa;color:#201e1d;border-left:4px solid #0858a8;padding:clamp(22px,4vw,34px);">
+        <div style="font-size:14px;font-weight:700;">KOICA(한국국제협력단) 전문인재 양성 프로그램</div>
+        <h3 style="margin:8px 0 0;font-size:clamp(21px,3.2vw,26px);font-weight:800;">협력국 학생 10명, 기계공학 석사과정 시작</h3>
+        <p style="margin:14px 0 0;font-size:17px;line-height:1.9;">조선대학교는 이 프로그램의 엔지니어링 분야 연수기관으로 선정됐습니다. 연수생들은 30개월 동안 기계공학과 석사과정(24개월)과 한국어교육(약 400시간), 산업체 인턴십(6개월)을 이수합니다.</p>
+        <p style="margin:12px 0 0;font-size:17px;line-height:1.9;">등록금, 한국어교육비, 항공료, 기숙사비, 생활비, 건강보험료는 KOICA가 지원합니다.</p>
+        <div style="margin-top:18px;border-top:1px solid rgba(255,255,255,.4);padding-top:14px;display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;">
+          <span style="font-size:14px;">2026~2030년 사업 규모</span>
+          <span style="font-size:clamp(28px,4vw,38px);font-weight:800;line-height:1;">약 24<span style="font-size:16px;margin-left:4px;">억 원</span></span>
+        </div>
+      </div>
+
+      <div style="margin-top:32px;font-size:14px;font-weight:800;letter-spacing:.06em;color:#0858a8;">10월 1일(목) · 오리엔테이션</div>
+      <h3 style="margin:8px 0 0;font-size:clamp(21px,3.2vw,26px);font-weight:800;line-height:1.4;text-wrap:balance;">언어 장벽 없이 시작한 대학원 생활</h3>
+      <p style="margin:14px 0 0;font-size:17.5px;line-height:1.95;color:#2b2927;">10월 1일(목) 국제관에서 ‘2026학년도 KOICA 전문인재양성프로그램(KOICA NEXT Fellowship) 오리엔테이션’이 열렸습니다. 김도경 대학원장과 기계공학과 교수진, 대학원교학팀·국제협력팀 교직원이 신규 연수생을 맞았고, 프로그램 운영 방식과 학사 일정, 지원 내용을 안내했습니다.</p>
+      <p style="margin:12px 0 0;font-size:17.5px;line-height:1.95;color:#2b2927;">이날 행사에는 실시간 AI 통번역 시스템을 처음 도입해 발표 내용을 한국어와 베트남어로 화면에 띄웠습니다. 연수생들은 앞으로 함께할 지도교수진과 첫인사를 나눴습니다.</p>
+      <blockquote style="margin:20px 0 0;background:#ffffff;border-left:4px solid #0858a8;padding:clamp(18px,3vw,26px);">
+        <p style="margin:0;font-size:clamp(17px,2.4vw,20px);line-height:1.85;font-weight:600;">“조선대에서 쌓은 전문지식과 경험이 여러분의 나라 발전에 큰 힘이 되기를 바랍니다.”</p>
+        <div style="margin-top:14px;font-size:15px;font-weight:800;color:#0858a8;">김도경 · 대학원장</div>
+        <p style="margin:10px 0 0;font-size:14px;color:#55514e;">전남일보 2026년 10월 7일(수) 보도 · <a href="https://www.jnilbo.com/news/articleView.html?idxno=90000071511" target="_blank" rel="noopener">기사 원문</a></p>
+      </blockquote>
+
+    </div>
+  </section>
 
   <section id="a4b" data-screen-label="03 세계로 · 복수학위" style="background:#ffffff;border-top:1px solid #d9d5d1;">
     <div style="max-width:960px;margin:0 auto;padding:clamp(36px,5vw,56px) clamp(20px,5vw,48px);">
@@ -838,7 +800,7 @@ button:focus-visible{ text-decoration:underline!important;text-decoration-thickn
         <p style="margin:12px 0 0;font-size:15.5px;line-height:1.8;color:#2b2927;">이 교수는 7월 방문 이후 북경이공대 법학과 이화(Li Hua) 교수와 실무 협의를 맡아 교육과정, 학점 인정, 학위 취득 요건을 정했습니다.</p>
         <p style="margin:10px 0 0;font-size:14px;color:#55514e;">한국대학신문 2026년 9월 7일(월) 보도 · <a href="https://news.unn.net/news/articleView.html?idxno=597039" target="_blank" rel="noopener">기사 원문</a></p>
       </blockquote>
-      <a href="#menu" class="no-print" style="margin-top:28px;display:inline-block;font-size:14.5px;font-weight:700;color:#0858a8;" style-hover="text-decoration:underline;">↑ 이번 호 기사 목록으로</a>
+      <a href="#menu" class="no-print" style="margin-top:28px;display:inline-block;font-size:14.5px;font-weight:700;color:#0858a8;" style-hover="text-decoration:underline;">↑ 기사 목록으로</a>
     </div>
   </section>
 
@@ -850,8 +812,8 @@ button:focus-visible{ text-decoration:underline!important;text-decoration-thickn
           <h2 style="margin:10px 0 0;font-size:clamp(26px,4.6vw,40px);font-weight:800;letter-spacing:-.02em;line-height:1.25;text-wrap:balance;">2027학년도 전기 대학원 신입생 모집</h2>
         </div>
       </div>
-      <p style="margin:22px 0 0;font-size:clamp(18px,2.3vw,20px);line-height:1.8;font-weight:700;color:#0858a8;">배움과 연구를 이어갈 예비 대학원생 여러분을 기다립니다.</p>
-      <p style="margin:14px 0 0;font-size:17.5px;line-height:1.95;color:#2b2927;">일반대학원과 미래인재융합대학원이 함께 2027학년도 전기 신입생을 모집하고 있습니다. 두 대학원 모두 원서 접수는 11월 16일(월), 서류 제출은 11월 17일(화)에 마감하고, 합격자는 12월 18일(금) 발표할 예정입니다. 구술(면접)시험 일정은 대학원별로 다르므로 해당 모집요강을 확인하시기 바랍니다.</p>
+      <p style="margin:22px 0 0;font-size:clamp(18px,2.3vw,20px);line-height:1.8;font-weight:700;color:#0858a8;">이 모든 지원을 함께 누릴 새 대학원생을 찾습니다.</p>
+      <p style="margin:14px 0 0;font-size:17.5px;line-height:1.95;color:#2b2927;">일반대학원과 미래인재융합대학원이 함께 2027학년도 전기 신입생을 모집하고 있습니다. 두 대학원 모두 원서 접수는 11월 16일(월), 서류 제출은 11월 17일(화)에 마감하고, 합격자는 12월 18일(금) 발표할 예정입니다. 구술(면접)시험 일정만 조금 다릅니다.</p>
       <div style="margin-top:22px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:12px;">
         <div style="background:#ffffff;border-top:3px solid #0858a8;padding:20px 22px;">
           <div style="font-size:19px;font-weight:800;">일반대학원</div>
@@ -874,7 +836,7 @@ button:focus-visible{ text-decoration:underline!important;text-decoration-thickn
       </div>
       <p style="margin:18px 0 0;font-size:16px;line-height:1.85;color:#2b2927;">모집 학과와 지원 자격, 제출 서류는 모집요강에서 확인할 수 있습니다. 진학을 고민하는 학부생과 주변의 연구자에게도 소식을 전해 주세요.</p>
       <a href="https://grad.chosun.ac.kr" target="_blank" rel="noopener" style="margin-top:18px;display:inline-flex;align-items:center;gap:8px;background:#0858a8;color:#ffffff;font-size:16px;font-weight:800;padding:13px 20px;" style-hover="background:#064a8f;color:#ffffff;text-decoration:none;">대학원 홈페이지에서 모집요강 보기 →</a>
-      <a href="#menu" class="no-print" style="margin-top:28px;display:table;font-size:14.5px;font-weight:700;color:#0858a8;" style-hover="text-decoration:underline;">↑ 이번 호 기사 목록으로</a>
+      <a href="#menu" class="no-print" style="margin-top:28px;display:table;font-size:14.5px;font-weight:700;color:#0858a8;" style-hover="text-decoration:underline;">↑ 기사 목록으로</a>
     </div>
   </section>
 
@@ -889,13 +851,13 @@ button:focus-visible{ text-decoration:underline!important;text-decoration-thickn
 
       <div style="margin-top:22px;background:#f3f5f8;border:1px solid #d3d9e0;padding:16px clamp(12px,3vw,24px) 0;">
         <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;">
-          <button onClick="{{ prevYear }}" aria-label="이전 해" style="font:inherit;display:flex;align-items:center;gap:8px;border:0;background:none;padding:6px 0;font-size:16px;font-weight:700;color:#3a3735;cursor:pointer;" style-hover="color:#0858a8;"><span style="width:32px;height:32px;border:1px solid #a9b2bc;border-radius:0;display:flex;align-items:center;justify-content:center;font-size:15px;">‹</span>{{ prevYearLabel }}</button>
+          <button onClick="{{ prevYear }}" aria-label="이전 해" style="font:inherit;display:flex;align-items:center;gap:8px;border:0;background:none;padding:6px 0;font-size:16px;font-weight:700;color:#3a3735;cursor:pointer;" style-hover="color:#0858a8;"><span style="width:32px;height:32px;border:1px solid #a9b2bc;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:15px;">‹</span>{{ prevYearLabel }}</button>
           <span style="font-size:clamp(26px,4vw,34px);font-weight:800;color:#0858a8;">{{ calYear }}</span>
-          <button onClick="{{ nextYear }}" aria-label="다음 해" style="font:inherit;display:flex;align-items:center;gap:8px;border:0;background:none;padding:6px 0;font-size:16px;font-weight:700;color:#3a3735;cursor:pointer;" style-hover="color:#0858a8;">{{ nextYearLabel }}<span style="width:32px;height:32px;border:1px solid #a9b2bc;border-radius:0;display:flex;align-items:center;justify-content:center;font-size:15px;">›</span></button>
+          <button onClick="{{ nextYear }}" aria-label="다음 해" style="font:inherit;display:flex;align-items:center;gap:8px;border:0;background:none;padding:6px 0;font-size:16px;font-weight:700;color:#3a3735;cursor:pointer;" style-hover="color:#0858a8;">{{ nextYearLabel }}<span style="width:32px;height:32px;border:1px solid #a9b2bc;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:15px;">›</span></button>
         </div>
         <div style="margin-top:14px;background:#ffffff;display:grid;grid-template-columns:repeat(auto-fit,minmax(54px,1fr));">
           <sc-for list="{{ months }}" as="m" hint-placeholder-count="12">
-            <button onClick="{{ m.pick }}" style="font:inherit;position:relative;border:0;background:none;padding:14px 4px 12px;font-size:15px;font-weight:{{ m.weight }};color:{{ m.color }};cursor:pointer;border-bottom:3px solid {{ m.line }};" style-hover="color:#0858a8;">{{ m.label }}<span style="position:absolute;top:8px;right:calc(50% - 20px);width:5px;height:5px;border-radius:0;background:{{ m.dot }};"></span></button>
+            <button onClick="{{ m.pick }}" style="font:inherit;position:relative;border:0;background:none;padding:14px 4px 12px;font-size:15px;font-weight:{{ m.weight }};color:{{ m.color }};cursor:pointer;border-bottom:3px solid {{ m.line }};" style-hover="color:#0858a8;">{{ m.label }}<span style="position:absolute;top:8px;right:calc(50% - 20px);width:5px;height:5px;border-radius:50%;background:{{ m.dot }};"></span></button>
           </sc-for>
         </div>
       </div>
@@ -904,7 +866,7 @@ button:focus-visible{ text-decoration:underline!important;text-decoration-thickn
         <div style="background:#ffffff;padding:18px clamp(14px,3vw,22px) 22px;">
           <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;padding-bottom:14px;border-bottom:1px solid #c9c6c3;">
             <span style="font-size:18px;font-weight:800;">{{ calTitle }}</span>
-            <button onClick="{{ goToday }}" style="font:inherit;font-size:14px;font-weight:700;padding:5px 12px;border:1.5px solid #0858a8;background:#ffffff;color:#0858a8;border-radius:0;cursor:pointer;" style-hover="background:#eef4fa;">오늘</button>
+            <button onClick="{{ goToday }}" style="font:inherit;font-size:14px;font-weight:700;padding:5px 12px;border:1.5px solid #0858a8;background:#ffffff;color:#0858a8;border-radius:8px;cursor:pointer;" style-hover="background:#eef4fa;">오늘</button>
           </div>
           <div style="display:grid;grid-template-columns:repeat(7,minmax(0,1fr));border-bottom:1px solid #c9c6c3;">
             <span style="text-align:center;padding:12px 0;font-size:14px;font-weight:700;color:#c8372d;">일</span>
@@ -917,12 +879,12 @@ button:focus-visible{ text-decoration:underline!important;text-decoration-thickn
           </div>
           <div style="display:grid;grid-template-columns:repeat(7,minmax(0,1fr));row-gap:4px;padding-top:6px;">
             <sc-for list="{{ cells }}" as="c" hint-placeholder-count="35">
-              <button onClick="{{ c.pick }}" aria-label="{{ c.aria }}" style="font:inherit;height:46px;border:0;background:{{ c.bg }};color:{{ c.fg }};font-size:15.5px;font-weight:{{ c.weight }};box-shadow:{{ c.ring }};cursor:{{ c.cursor }};display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;">{{ c.label }}<span style="width:5px;height:5px;border-radius:0;background:{{ c.dot }};"></span></button>
+              <button onClick="{{ c.pick }}" aria-label="{{ c.aria }}" style="font:inherit;height:46px;border:0;background:{{ c.bg }};color:{{ c.fg }};font-size:15.5px;font-weight:{{ c.weight }};box-shadow:{{ c.ring }};cursor:{{ c.cursor }};display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;">{{ c.label }}<span style="width:5px;height:5px;border-radius:50%;background:{{ c.dot }};"></span></button>
             </sc-for>
           </div>
           <div style="margin-top:12px;display:flex;flex-wrap:wrap;gap:14px;font-size:13px;color:#55514e;">
             <span style="display:flex;align-items:center;gap:6px;"><span style="width:14px;height:14px;background:#e3edf7;"></span>일정 기간</span>
-            <span style="display:flex;align-items:center;gap:6px;"><span style="width:6px;height:6px;border-radius:0;background:#ec3013;"></span>시작·마감일</span>
+            <span style="display:flex;align-items:center;gap:6px;"><span style="width:6px;height:6px;border-radius:50%;background:#ec3013;"></span>시작·마감일</span>
             <span style="display:flex;align-items:center;gap:6px;"><span style="width:14px;height:14px;box-shadow:inset 0 0 0 2px #0858a8;"></span>오늘</span>
           </div>
         </div>
@@ -934,7 +896,7 @@ button:focus-visible{ text-decoration:underline!important;text-decoration-thickn
             </sc-if>
           </div>
           <div style="padding:4px 22px 18px;">
-            <div style="padding:12px 0 4px;font-size:13.5px;color:#0858a8;text-align:right;">상기 일정은 대학 사정에 따라 변경될 수 있습니다.</div>
+            <div style="padding:12px 0 4px;font-size:13.5px;color:#0858a8;text-align:right;">상기 일정은 학교 사정에 따라 바뀔 수 있습니다.</div>
             <sc-if value="{{ noEvents }}" hint-placeholder-val="{{ false }}">
               <div style="padding:40px 0;text-align:center;font-size:15.5px;color:#55514e;">남은 일정이 없습니다.</div>
             </sc-if>
@@ -946,7 +908,7 @@ button:focus-visible{ text-decoration:underline!important;text-decoration-thickn
           </div>
         </sc-for>
         <sc-if value="{{ moreEvents }}" hint-placeholder-val="{{ false }}">
-          <button onClick="{{ toggleEvents }}" style="font:inherit;margin-top:6px;width:100%;padding:10px 0;border:1px solid #d8dee6;background:#f6f8fa;color:#0858a8;font-size:14px;font-weight:800;cursor:pointer;border-radius:0;" style-hover="background:#eef4fa;">{{ moreLabel }}</button>
+          <button onClick="{{ toggleEvents }}" style="font:inherit;margin-top:6px;width:100%;padding:10px 0;border:1px solid #d8dee6;background:#f6f8fa;color:#0858a8;font-size:14px;font-weight:800;cursor:pointer;border-radius:6px;" style-hover="background:#eef4fa;">{{ moreLabel }}</button>
         </sc-if>
           </div>
         </div>
@@ -967,7 +929,7 @@ button:focus-visible{ text-decoration:underline!important;text-decoration-thickn
           <div>대표전화 : 062.608.5038/5019 · 팩스 : 062.608.5239</div>
         </div>
       </div>
-      <a href="#menu" class="no-print" style="margin-top:28px;display:inline-block;font-size:14.5px;font-weight:700;color:#0858a8;" style-hover="text-decoration:underline;">↑ 이번 호 기사 목록으로</a>
+      <a href="#menu" class="no-print" style="margin-top:28px;display:inline-block;font-size:14.5px;font-weight:700;color:#0858a8;" style-hover="text-decoration:underline;">↑ 기사 목록으로</a>
       <a href="#top" class="no-print" style="margin-top:28px;margin-left:18px;display:inline-block;font-size:14.5px;font-weight:700;color:#0858a8;" style-hover="text-decoration:underline;">↑ 처음으로</a>
     </div>
   </section>
@@ -1006,22 +968,25 @@ button:focus-visible{ text-decoration:underline!important;text-decoration-thickn
 </div>
 
 <sc-if value="{{ pageMode }}" hint-placeholder-val="{{ false }}">
-  <nav id="pager" class="no-print refined-pager" aria-label="페이지 넘기기">
-<div class="reading-main"><button class="reading-prev" onClick="{{ prevPage }}" disabled="{{ atFirst }}">← 이전</button><button class="reading-home" onClick="{{ firstPage }}">첫 페이지로 가기<span class="page-counter"><span>{{ pageNow }}</span><span aria-hidden="true">/</span><span>{{ pageMax }}</span></span></button><button class="reading-next" onClick="{{ nextPage }}">{{ nextLabel }} →</button></div>
-<div class="bottom-reading-tools"><button onClick="{{ toggleMode }}">{{ modeLabel }}</button><button onClick="{{ smaller }}" aria-label="글자 작게">글자 −</button><button onClick="{{ bigger }}" aria-label="글자 크게">글자 +</button><a href="#a7">학사 일정</a></div>
-</nav>
+  <nav id="pager" class="no-print" aria-label="페이지 넘기기" style="position:fixed;left:0;right:0;bottom:0;z-index:41;background:#ffffff;border-top:2px solid #0858a8;box-shadow:0 -4px 14px rgba(0,0,0,.08);">
+    <div style="max-width:960px;margin:0 auto;display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:center;gap:10px;padding:8px clamp(12px,4vw,48px);">
+      <button onClick="{{ prevPage }}" disabled="{{ atFirst }}" style="font:inherit;font-size:15px;font-weight:800;height:44px;padding:0 16px;border:1px solid #0858a8;background:#ffffff;color:#0858a8;cursor:pointer;opacity:{{ prevOp }};" style-hover="background:#eef4fa;">‹ 이전</button>
+      <div style="display:flex;flex-direction:column;align-items:center;gap:5px;min-width:0;">
+        <span style="display:flex;align-items:center;gap:8px;font-size:14.5px;font-weight:800;white-space:nowrap;max-width:100%;"><span style="overflow:hidden;text-overflow:ellipsis;">{{ pageTitle }}</span><input type="number" min="1" max="{{ pageMax }}" value="{{ pageInputVal }}" onChange="{{ pageInputChange }}" onKeyDown="{{ pageInputKey }}" onBlur="{{ pageInputGo }}" aria-label="이동할 페이지 번호" style="font:inherit;font-size:14.5px;font-weight:800;color:#0858a8;width:52px;height:30px;padding:0 4px;text-align:center;border:1px solid #9dbde0;background:#ffffff;"><span style="color:#0858a8;">/ {{ pageMax }}</span></span>
+        <button onClick="{{ toMenu }}" style="font:inherit;font-size:12.5px;font-weight:700;border:0;background:none;color:#0858a8;cursor:pointer;padding:0;text-decoration:underline;">기사 목록 보기</button>
+        <div onClick="{{ barClick }}" role="slider" aria-label="페이지 이동" aria-valuenow="{{ pageNow }}" aria-valuemin="1" aria-valuemax="{{ pageMax }}" style="width:min(100%,360px);padding:6px 0;cursor:pointer;"><div style="height:8px;background:#dceaf6;"><div style="height:100%;background:#0858a8;width:{{ pageBar }};transition:width .25s;"></div></div></div>
+      </div>
+      <button onClick="{{ nextPage }}" style="font:inherit;font-size:15px;font-weight:800;height:44px;padding:0 16px;border:1px solid #0858a8;background:#0858a8;color:#ffffff;cursor:pointer;white-space:nowrap;" style-hover="background:#064a8f;">{{ nextLabel }}</button>
+    </div>
+  </nav>
 </sc-if>
 
-<sc-if value="{{ !pageMode }}" hint-placeholder-val="{{ false }}"><nav class="scroll-reading-tools no-print" aria-label="읽기 도구"><div class="bottom-reading-tools" style="display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:8px;padding:8px 12px;background:#eef4fa;border-bottom:1px solid #c6d7e8;">
-<button onClick="{{ toggleMode }}">{{ modeLabel }}</button>
-<button onClick="{{ smaller }}" aria-label="글자 작게">글자 −</button><button onClick="{{ bigger }}" aria-label="글자 크게">글자 +</button>
-<a href="#menu">이번 호 기사 보기</a><a href="#a7">학사 일정</a></div></nav></sc-if>
 <sc-if value="{{ false }}" hint-placeholder-val="{{ false }}">
 <div class="no-print" style="position:fixed;right:12px;bottom:{{ panelBottom }};z-index:40;display:flex;align-items:center;gap:5px;padding:5px;background:#ffffff;border:1px solid #201e1d;box-shadow:0 4px 14px rgba(0,0,0,.14);">
   <button onClick="{{ toggleMode }}" style="font:inherit;font-size:12px;font-weight:800;height:32px;padding:0 9px;border:1px solid #0858a8;background:#eef4fa;color:#0858a8;cursor:pointer;white-space:nowrap;" style-hover="background:#dceaf6;">{{ modeLabel }}</button>
   <span style="font-size:12px;font-weight:700;padding:0 4px;white-space:nowrap;color:#55514e;">글자</span>
-  <button onClick="{{ smaller }}" aria-label="글자 작게" style="font:inherit;font-size:13px;font-weight:800;min-width:34px;height:32px;border:1px solid #0858a8;background:#ffffff;color:#0858a8;cursor:pointer;" style-hover="background:#dceaf6;">글자 −</button>
-  <button onClick="{{ bigger }}" aria-label="글자 크게" style="font:inherit;font-size:15px;font-weight:800;min-width:34px;height:32px;border:1px solid #0858a8;background:#0858a8;color:#ffffff;cursor:pointer;" style-hover="background:#064a8f;">글자 +</button>
+  <button onClick="{{ smaller }}" aria-label="글자 작게" style="font:inherit;font-size:13px;font-weight:800;min-width:34px;height:32px;border:1px solid #0858a8;background:#ffffff;color:#0858a8;cursor:pointer;" style-hover="background:#dceaf6;">가−</button>
+  <button onClick="{{ bigger }}" aria-label="글자 크게" style="font:inherit;font-size:15px;font-weight:800;min-width:34px;height:32px;border:1px solid #0858a8;background:#0858a8;color:#ffffff;cursor:pointer;" style-hover="background:#064a8f;">가+</button>
   <a href="#top" style="font-size:12px;font-weight:700;padding:0 8px;height:32px;display:flex;align-items:center;border:1px solid #c9c6c3;color:#201e1d;" style-hover="background:#eef4fa;color:#0858a8;text-decoration:none;">맨 위로</a>
 </div>
 </sc-if>
@@ -1030,9 +995,10 @@ button:focus-visible{ text-decoration:underline!important;text-decoration-thickn
 class Component extends DCLogic {
   state = { zoom: 1, p: 0, scroll: 0, field: '전체', cal: null, sel: null, mode: 'page', page: 0 };
   pages = [
-    { t: '표지 · 이번 호 기사', ids: ['p-cover'] },
+    { t: '표지 · 창간호를 내며', ids: ['p-cover', 'p-intro'] },
     { t: '숫자로 보는 대학원', ids: ['p-stats'] },
-    { t: '커버스토리 · 5단계 BK21사업 교내 설명회', ids: ['a8'] },
+    { t: '주요 소식 · 5단계 BK21사업 교내 설명회', ids: ['a8'] },
+    { t: '기획 · 올해의 대학원', ids: ['a0'] },
     { t: '새로 여는 대학원 · 웰에이징대학원', ids: ['a1'] },
     { t: '새로 여는 대학원 · 알리는 현장', ids: ['a6b'] },
     { t: '연구를 돕는 대학원 · 앵커사업', ids: ['a2'] },
@@ -1051,7 +1017,6 @@ class Component extends DCLogic {
     if (n === this.state.page) { if (this.state.pageInput != null) this.setState({ pageInput: null }); return; }
     this.setState({ page: n, pageInput: null }, () => {
       this.layout();
-      if (this._cuCheck) this._cuCheck();
       const top = document.getElementById('top');
       if (top) top.scrollTop = 0;
       if (this._cuCheck) setTimeout(this._cuCheck, 60);
@@ -1120,7 +1085,7 @@ class Component extends DCLogic {
         e.preventDefault();
         const hdr = document.getElementById('hdr');
         const go = (smooth) => { const off = (hdr ? hdr.getBoundingClientRect().height : 0) + 8; window.scrollTo({ top: window.scrollY + tel.getBoundingClientRect().top - off, behavior: smooth ? 'smooth' : 'auto' }); };
-        go(false); 
+        go(false); [250, 700, 1500].forEach(ms => setTimeout(() => go(false), ms));
         return;
       }
       if (!a) return;
@@ -1177,11 +1142,7 @@ class Component extends DCLogic {
     window.removeEventListener('touchend', this._onTe);
     if (this._io) this._io.disconnect();
   }
-  componentDidUpdate(prevProps, prevState) {
-    if (!prevState || prevState.mode !== this.state.mode || prevState.page !== this.state.page || prevState.zoom !== this.state.zoom) this.scheduleLayout();
-    this.countUp();
-    if (this._cuCheck) this._cuCheck();
-  }
+  componentDidUpdate() { this.scheduleLayout(); this.countUp(); }
 
   countUp() {
     const box = document.getElementById('p-stats');
@@ -1191,38 +1152,23 @@ class Component extends DCLogic {
     let shown = false;
     const reset = () => { nums().forEach(el => { el.textContent = '0'; }); bars().forEach(el => { el.style.transition = 'none'; el.style.width = '0%'; }); };
     const play = () => {
-      const ns = nums(), bs = bars();
-      const duration = 2400, token = this._cuId = (this._cuId || 0) + 1;
-      const start = performance.now();
-      bs.forEach(el => { el.style.transition = 'none'; el.style.width = '0%'; });
-      let previousStep = -1;
-      const frame = now => {
-        if (!shown || token !== this._cuId) return;
-        const t = Math.min(1, (now - start) / duration);
-        const progress = t * t * (3 - 2 * t);
-        // Calm numeric changes: a small fixed number of updates, not a flickering counter.
-        const step = Math.min(40, Math.floor(t * 40));
-        if (step !== previousStep || t === 1) {
-          previousStep = step;
-          const q = step / 40, valueProgress = q;
-          ns.forEach(el => { el.textContent = Math.round(Number(el.getAttribute('data-count') || 0) * valueProgress).toLocaleString('ko-KR'); });
-        }
-        bs.forEach(el => {
-          const target = Math.min(100, Math.max(0, parseFloat(el.getAttribute('data-bar')) || 0));
-          el.style.setProperty('width', (target * progress).toFixed(3) + '%', 'important');
-        });
-        if (t < 1) requestAnimationFrame(frame);
+      const bs = bars(); bs.forEach(el => { void el.offsetWidth; });
+      setTimeout(() => bs.forEach((el, i) => { el.style.transition = 'width 1.6s cubic-bezier(.2,.7,.2,1) ' + (i * 0.08) + 's'; el.style.width = el.getAttribute('data-bar') || '100%'; }), 40);
+      const ns = nums(), t0 = performance.now(), dur = 1600, id = (this._cuId = (this._cuId || 0) + 1);
+      const tick = now => {
+        if (id !== this._cuId) return;
+        const k = Math.min(1, (now - t0) / dur), ease = 1 - Math.pow(1 - k, 3);
+        ns.forEach(el => { el.textContent = String(Math.round((+el.getAttribute('data-count') || 0) * ease)); });
+        if (k < 1) requestAnimationFrame(tick);
       };
-      requestAnimationFrame(frame);
+      requestAnimationFrame(tick);
     };
-
     const check = () => {
       if (!box.isConnected) return;
       const r = box.getBoundingClientRect(), h = window.innerHeight || document.documentElement.clientHeight;
-      const hiddenPage = !!box.closest('[data-off]');
-      const vis = !hiddenPage && r.width > 0 && r.height > 0 && r.top < h * 0.9 && r.bottom > h * 0.1;
-      if (vis && !shown) { shown = true; reset(); play(); }
-      else if (!vis && shown) { shown = false; this._cuId = (this._cuId || 0) + 1; reset(); }
+      const vis = r.width > 0 && r.top < h * 0.8 && r.bottom > h * 0.2;
+      if (vis && !shown) { shown = true; play(); }
+      else if (!vis && shown && (r.bottom < -40 || r.top > h + 40)) { shown = false; this._cuId = (this._cuId || 0) + 1; reset(); }
     };
     reset();
     this._cuCheck = () => { if (this._cuRaf) return; this._cuRaf = requestAnimationFrame(() => { this._cuRaf = null; check(); }); };
@@ -1394,7 +1340,7 @@ class Component extends DCLogic {
       scrollMode: this.state.mode !== 'page',
       modeLabel: this.state.mode === 'page' ? '스크롤로 보기' : '넘겨 보기',
       toggleMode: () => this.setMode(this.state.mode === 'page' ? 'scroll' : 'page'),
-      padBottom: this.state.mode === 'page' ? '0px' : '130px',
+      padBottom: '0px',
       panelBottom: this.state.mode === 'page' ? '76px' : '12px',
       pageTitle: this.pages[this.state.page].t,
       pageMax: this.pages.length,
@@ -1411,7 +1357,6 @@ class Component extends DCLogic {
       prevOp: this.state.page === 0 ? 0.35 : 1,
       nextOp: this.state.page >= this.pages.length - 1 ? 0.35 : 1,
       prevPage: () => this.goPage(this.state.page - 1),
-      firstPage: () => { if (this.state.page === 0) { const t = document.getElementById('top'); if (t) t.scrollTop = 0; } else this.goPage(0); },
       toMenu: () => { if (this.state.mode === 'page') { this.goPage(0); setTimeout(() => { const m = document.getElementById('menu'), tp = document.getElementById('top'); if (m && tp) tp.scrollTop += m.getBoundingClientRect().top - tp.getBoundingClientRect().top - 8; }, 380); } },
       nextPage: () => this.goPage(this.state.page >= this.pages.length - 1 ? 0 : this.state.page + 1),
       nextLabel: this.state.page >= this.pages.length - 1 ? '처음으로 ↺' : '다음 ›',
@@ -1436,9 +1381,9 @@ class Component extends DCLogic {
       nextYear: () => this.setState({ cal: (cy + 1) * 12 + cm, sel: null }),
       goToday: () => this.setState({ cal: tIdx, sel: today.getDate() }),
       toc: [
-        { href: '#a8', no: 'COVER', label: '커버스토리', title: '5단계 BK21사업, 지역과 AI 중심의 추진 방향 공유', line: '#c3d5e6', pad: '16px 0 6px' },
+        { href: '#a8', no: '주요 소식', label: '', title: 'BK21 5단계, 틀은 유지하고 무게는 지역과 AI로', line: '#c3d5e6', pad: '16px 0 6px' },
         { href: '#a0', no: '기획', label: '올해의 대학원', title: '학위논문 너머로 이어지는 연구', line: '#c3d5e6', pad: '16px 0 6px' },
-        { href: '#a1', no: '01', label: '새로 여는 대학원', title: '3개 융합학과로 구성된 웰에이징대학원 신설', line: '#c3d5e6', pad: '16px 0 6px' },
+        { href: '#a1', no: '01', label: '새로 여는 대학원', title: '학과 세 곳을 묶은 웰에이징대학원 신설', line: '#c3d5e6', pad: '16px 0 6px' },
         { href: '#a1-launch', no: '', label: '', title: '웰에이징대학원 출범식·오픈하우스', line: 'transparent', pad: '4px 0 10px' },
         { href: '#a6b', no: '', label: '', title: '국제학술대회 부스에서 알린 웰에이징대학원', line: 'transparent', pad: '4px 0 10px' },
         { href: '#a2', no: '02', label: '연구를 돕는 대학원', title: '앵커사업: 장학에서 연구, 기업 과제까지', line: '#c3d5e6', pad: '16px 0 6px' },
