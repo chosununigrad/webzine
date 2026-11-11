@@ -73,6 +73,11 @@ section > div:first-child {padding-top:22px !important;padding-bottom:22px !impo
 body[data-paged] #top > [data-last] {flex:0 0 auto !important;min-height:0 !important;}
 </style>
 <style id="cover-natural-wrap">#cover-hero p{word-break:keep-all !important;overflow-wrap:normal !important;text-wrap:pretty;hyphens:none;}#cover-hero p br{display:none;}</style>
+<style id="space-comparison-size">
+figure:has(img[src="assets/space-before.jpg"]){max-width:720px;margin-left:auto !important;margin-right:auto !important;}
+div:has(> img[src="assets/space-before.jpg"]),div:has(> img[src="assets/space-after.jpg"]){min-width:0;}
+img[src="assets/space-before.jpg"],img[src="assets/space-after.jpg"]{aspect-ratio:4/3 !important;object-fit:contain !important;height:auto !important;}
+</style>
 </head>
 <body>
 <x-dc>
