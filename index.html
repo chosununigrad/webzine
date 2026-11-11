@@ -78,6 +78,13 @@ figure:has(img[src="assets/space-before.jpg"]){max-width:720px;margin-left:auto 
 div:has(> img[src="assets/space-before.jpg"]),div:has(> img[src="assets/space-after.jpg"]){min-width:0;}
 img[src="assets/space-before.jpg"],img[src="assets/space-after.jpg"]{aspect-ratio:4/3 !important;object-fit:contain !important;height:auto !important;}
 </style>
+<style id="editorial-photo-balance">
+#a0 figure:has(img[src="assets/share-meeting.jpg"]){max-width:none !important;margin:18px 0 22px !important;}
+#a0 img[src="assets/share-meeting.jpg"]{width:100% !important;height:auto !important;max-height:none !important;aspect-ratio:auto !important;object-fit:initial !important;}
+figure:has(img[src="assets/space-before.jpg"]){width:100% !important;max-width:none !important;margin:20px 0 !important;}
+img[src="assets/space-before.jpg"],img[src="assets/space-after.jpg"]{display:block !important;width:100% !important;height:auto !important;aspect-ratio:auto !important;object-fit:initial !important;margin-top:10px !important;}
+</style>
+<style>#a1-launch p{word-break:keep-all !important;overflow-wrap:normal !important;text-wrap:pretty;}</style>
 </head>
 <body>
 <x-dc>
@@ -980,6 +987,20 @@ class Component extends DCLogic {
     if (n === this.state.page) { if (this.state.pageInput != null) this.setState({ pageInput: null }); return; }
     this.setState({ page: n, pageInput: null }, () => {
       this.layout();
+      const statsBox = document.getElementById('p-stats');
+      if(statsBox){
+        statsBox.classList.remove('stats-bars-visible');
+        if(this.pages[n].ids.includes('p-stats')){
+          requestAnimationFrame(()=>requestAnimationFrame(()=>{
+            statsBox.querySelectorAll('[data-bar]').forEach(bar=>{
+              const target=bar.getAttribute('data-bar') || '100%';
+              bar.style.transition='none';bar.style.width=target;
+              if(bar.animate)bar.animate([{transform:'scaleX(0)'},{transform:'scaleX(1)'}],{duration:1600,easing:'cubic-bezier(.2,.7,.2,1)'});
+            });
+            statsBox.classList.add('stats-bars-visible');
+          }));
+        }
+      }
       const top = document.getElementById('top');
       if (top) top.scrollTop = 0;
       if (this._cuCheck) setTimeout(this._cuCheck, 60);
